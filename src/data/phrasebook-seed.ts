@@ -1,0 +1,169 @@
+export interface PhraseEntry {
+  id: string
+  category: 'greetings' | 'food' | 'directions' | 'emergency' | 'family' | 'car'
+  he: string
+  en: string
+  sk?: string
+  pl?: string
+  noteHe?: string
+  noteEn?: string
+}
+
+/** Concise SK/PL phrases for a Hebrew-speaking family — no personal data. */
+export const phrasebook: PhraseEntry[] = [
+  {
+    id: 'ph-hello',
+    category: 'greetings',
+    he: 'שלום / בוקר טוב',
+    en: 'Hello / good morning',
+    sk: 'Dobrý deň / Dobré ráno',
+    pl: 'Dzień dobry',
+  },
+  {
+    id: 'ph-thanks',
+    category: 'greetings',
+    he: 'תודה',
+    en: 'Thank you',
+    sk: 'Ďakujem',
+    pl: 'Dziękuję',
+  },
+  {
+    id: 'ph-please',
+    category: 'greetings',
+    he: 'בבקשה',
+    en: 'Please',
+    sk: 'Prosím',
+    pl: 'Proszę',
+  },
+  {
+    id: 'ph-sorry',
+    category: 'greetings',
+    he: 'סליחה',
+    en: 'Excuse me / sorry',
+    sk: 'Prepáčte',
+    pl: 'Przepraszam',
+  },
+  {
+    id: 'ph-yes-no',
+    category: 'greetings',
+    he: 'כן / לא',
+    en: 'Yes / no',
+    sk: 'Áno / Nie',
+    pl: 'Tak / Nie',
+  },
+  {
+    id: 'ph-english',
+    category: 'greetings',
+    he: 'אתם מדברים אנגלית?',
+    en: 'Do you speak English?',
+    sk: 'Hovoríte po anglicky?',
+    pl: 'Czy mówisz po angielsku?',
+  },
+  {
+    id: 'ph-bill',
+    category: 'food',
+    he: 'את החשבון, בבקשה',
+    en: 'The bill, please',
+    sk: 'Účet, prosím',
+    pl: 'Rachunek, proszę',
+  },
+  {
+    id: 'ph-water',
+    category: 'food',
+    he: 'מים בבקשה',
+    en: 'Water, please',
+    sk: 'Vodu, prosím',
+    pl: 'Wodę, proszę',
+  },
+  {
+    id: 'ph-kids-menu',
+    category: 'food',
+    he: 'יש תפריט לילדים?',
+    en: 'Do you have a kids menu?',
+    sk: 'Máte detský menu?',
+    pl: 'Czy mają państwo menu dla dzieci?',
+  },
+  {
+    id: 'ph-allergy',
+    category: 'food',
+    he: 'יש אלרגיה ל…',
+    en: 'There is an allergy to…',
+    sk: 'Máme alergiu na…',
+    pl: 'Mamy alergię na…',
+    noteHe: 'להשלים את המזון הספציפי בעל פה',
+    noteEn: 'Complete the specific food verbally',
+  },
+  {
+    id: 'ph-where',
+    category: 'directions',
+    he: 'איפה…?',
+    en: 'Where is…?',
+    sk: 'Kde je…?',
+    pl: 'Gdzie jest…?',
+  },
+  {
+    id: 'ph-toilet',
+    category: 'directions',
+    he: 'איפה השירותים?',
+    en: 'Where is the toilet?',
+    sk: 'Kde sú toalety?',
+    pl: 'Gdzie jest toaleta?',
+  },
+  {
+    id: 'ph-parking',
+    category: 'car',
+    he: 'איפה החניה?',
+    en: 'Where is parking?',
+    sk: 'Kde je parkovanie?',
+    pl: 'Gdzie jest parking?',
+  },
+  {
+    id: 'ph-help',
+    category: 'emergency',
+    he: 'עזרה!',
+    en: 'Help!',
+    sk: 'Pomoc!',
+    pl: 'Pomocy!',
+  },
+  {
+    id: 'ph-doctor',
+    category: 'emergency',
+    he: 'צריך רופא',
+    en: 'We need a doctor',
+    sk: 'Potrebujeme lekára',
+    pl: 'Potrzebujemy lekarza',
+  },
+  {
+    id: 'ph-pharmacy',
+    category: 'emergency',
+    he: 'איפה בית מרקחת?',
+    en: 'Where is a pharmacy?',
+    sk: 'Kde je lekáreň?',
+    pl: 'Gdzie jest apteka?',
+  },
+  {
+    id: 'ph-lost-child',
+    category: 'family',
+    he: 'איבדנו ילד',
+    en: 'We lost a child',
+    sk: 'Stratili sme dieťa',
+    pl: 'Zgubiliśmy dziecko',
+  },
+  {
+    id: 'ph-wifi',
+    category: 'family',
+    he: 'יש Wi‑Fi?',
+    en: 'Is there Wi‑Fi?',
+    sk: 'Máte Wi‑Fi?',
+    pl: 'Czy jest Wi‑Fi?',
+  },
+]
+
+export const phraseCategories = [
+  { id: 'greetings', labelEn: 'Greetings', labelHe: 'ברכות' },
+  { id: 'food', labelEn: 'Food', labelHe: 'אוכל' },
+  { id: 'directions', labelEn: 'Directions', labelHe: 'כיוונים' },
+  { id: 'car', labelEn: 'Car', labelHe: 'רכב' },
+  { id: 'family', labelEn: 'Family', labelHe: 'משפחה' },
+  { id: 'emergency', labelEn: 'Emergency', labelHe: 'חירום' },
+] as const

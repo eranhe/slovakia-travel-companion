@@ -1,0 +1,209 @@
+[
+  {
+    "id": "hero-tatras",
+    "place": "High Tatras panorama",
+    "source": "Wikimedia Commons",
+    "file": "File:Slovakia VysokeTatry panorama hires.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "see Commons file page",
+    "url": "https://commons.wikimedia.org/wiki/File%3ASlovakia_VysokeTatry_panorama_hires.JPG"
+  },
+  {
+    "id": "place-chopok",
+    "place": "Chopok / Jasná",
+    "source": "Wikimedia Commons",
+    "file": "File:Chopok - Jasná Ski Resort.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Pudelek (Marcin Szala)",
+    "url": "https://commons.wikimedia.org/wiki/File%3AChopok_-_Jasn%C3%A1_Ski_Resort.JPG"
+  },
+  {
+    "id": "place-bachledka",
+    "place": "Bachledka treetop walk",
+    "source": "Wikimedia Commons",
+    "file": "File:Chodník Korunami Stromov (Treetop walk) (50359326307).jpg",
+    "license": "CC BY 2.0",
+    "artist": "young shanahan from Bratislava, Slovakia",
+    "url": "https://commons.wikimedia.org/wiki/File%3AChodn%C3%ADk_Korunami_Stromov_(Treetop_walk)_(50359326307).jpg"
+  },
+  {
+    "id": "place-belianska-cave",
+    "place": "Belianska Cave",
+    "source": "Wikimedia Commons",
+    "file": "File:Belianska Cave, Vysoké Tatry, Slovakia (Unsplash).jpg",
+    "license": "CC0",
+    "artist": "Jokūbas Banaitis gulltoppr",
+    "url": "https://commons.wikimedia.org/wiki/File%3ABelianska_Cave%2C_Vysok%C3%A9_Tatry%2C_Slovakia_(Unsplash).jpg"
+  },
+  {
+    "id": "place-besenova",
+    "place": "Bešeňová",
+    "source": "Wikimedia Commons",
+    "file": "File:Besenova -Aquapark Gino Paradise - panoramio.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "ARKADIUSZ MARKIEWICZ",
+    "url": "https://commons.wikimedia.org/wiki/File%3ABesenova_-Aquapark_Gino_Paradise_-_panoramio.jpg"
+  },
+  {
+    "id": "place-dunajec",
+    "place": "Dunajec rafting",
+    "source": "Wikimedia Commons",
+    "file": "File:Rafting on the Dunajec River.jpg",
+    "license": "CC BY 2.5",
+    "artist": "Jerzy Opioła",
+    "url": "https://commons.wikimedia.org/wiki/File%3ARafting_on_the_Dunajec_River.jpg"
+  },
+  {
+    "id": "place-red-monastery",
+    "place": "Red Monastery",
+    "source": "Wikimedia Commons",
+    "file": "File:Červený Kláštor Monastery 01.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Lestat (Jan Mehlich)",
+    "url": "https://commons.wikimedia.org/wiki/File%3A%C4%8Cerven%C3%BD_Kl%C3%A1%C5%A1tor_Monastery_01.JPG"
+  },
+  {
+    "id": "place-ice-cave",
+    "place": "Dobšinská Ice Cave",
+    "source": "Wikimedia Commons",
+    "file": "File:Dobšinská Ice Cave, 11.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "dariusz woźniak",
+    "url": "https://commons.wikimedia.org/wiki/File%3ADob%C5%A1insk%C3%A1_Ice_Cave%2C_11.jpg"
+  },
+  {
+    "id": "place-janosikove-diery",
+    "place": "Jánošíkove Diery",
+    "source": "Wikimedia Commons",
+    "file": "File:Jánošíkove Diery Slovakia (6).jpg",
+    "license": "CC BY 3.0 pl",
+    "artist": "Sylwia Botev",
+    "url": "https://commons.wikimedia.org/wiki/File%3AJ%C3%A1no%C5%A1%C3%ADkove_Diery_Slovakia_(6).jpg"
+  },
+  {
+    "id": "place-liptovska-mara",
+    "place": "Liptovská Mara",
+    "source": "Wikimedia Commons",
+    "file": "File:Liptovská Mara.jpg",
+    "license": "CC BY-SA 2.5",
+    "artist": "User:Ludwik_o",
+    "url": "https://commons.wikimedia.org/wiki/File%3ALiptovsk%C3%A1_Mara.jpg"
+  },
+  {
+    "id": "place-skalnate-pleso",
+    "place": "Skalnaté pleso",
+    "source": "Wikimedia Commons",
+    "file": "File:Skalnaté pleso.jpg",
+    "license": "Public domain",
+    "artist": "Kocsis Viktor",
+    "url": "https://commons.wikimedia.org/wiki/File%3ASkalnat%C3%A9_pleso.jpg"
+  },
+  {
+    "id": "place-sucha-bela",
+    "place": "Suchá Belá",
+    "source": "Wikimedia Commons",
+    "file": "File:Suchá Belá, Slovenský ráj, 2012, 003.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Michal Klajban",
+    "url": "https://commons.wikimedia.org/wiki/File%3ASuch%C3%A1_Bel%C3%A1%2C_Slovensk%C3%BD_r%C3%A1j%2C_2012%2C_003.JPG"
+  },
+  {
+    "id": "place-hrebienok",
+    "place": "Hrebienok",
+    "source": "Wikimedia Commons",
+    "file": "File:Hrebienok.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Karelkam",
+    "url": "https://commons.wikimedia.org/wiki/File%3AHrebienok.jpg"
+  },
+  {
+    "id": "place-zakopane",
+    "place": "Zakopane / Gubałówka",
+    "source": "Wikimedia Commons",
+    "file": "File:Zakopane Gubalowka 1.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Andrzej Otrębski",
+    "url": "https://commons.wikimedia.org/wiki/File%3AZakopane_Gubalowka_1.jpg"
+  },
+  {
+    "id": "place-zdiar",
+    "place": "Ždiar",
+    "source": "Wikimedia Commons",
+    "file": "File:Belianske Tatry from Ždiar, Slovakia 01.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Michal Klajban",
+    "url": "https://commons.wikimedia.org/wiki/File%3ABelianske_Tatry_from_%C5%BDdiar%2C_Slovakia_01.jpg"
+  },
+  {
+    "id": "place-tatralandia",
+    "place": "Tatralandia",
+    "source": "Wikimedia Commons",
+    "file": "File:Aquapark Tatralandia (2).jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "I would appreciate being notified if you use my work outside Wikimedia. Do not copy this image illegally by ignoring the terms of the license below, as it is not in the public domain. If you would like special permission to use, license, or purchase the image please contact me to negotiate terms. More of my work can be found in my personal gallery .",
+    "url": "https://commons.wikimedia.org/wiki/File%3AAquapark_Tatralandia_(2).jpg"
+  },
+  {
+    "id": "place-chocholow",
+    "place": "Chochołów",
+    "source": "Wikimedia Commons",
+    "file": "File:Chochołów.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Aotearoa",
+    "url": "https://commons.wikimedia.org/wiki/File%3AChocho%C5%82%C3%B3w.jpg"
+  },
+  {
+    "id": "place-energylandia",
+    "place": "Energylandia",
+    "source": "Wikimedia Commons",
+    "file": "File:Energylandia - Formuła, Dragon 2018.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Tomasz Adam",
+    "url": "https://commons.wikimedia.org/wiki/File%3AEnergylandia_-_Formu%C5%82a%2C_Dragon_2018.jpg"
+  },
+  {
+    "id": "place-airport",
+    "place": "Kraków Airport",
+    "source": "Wikimedia Commons",
+    "file": "File:International terminal at Balice Airport in Kraków.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "User:Piotrus",
+    "url": "https://commons.wikimedia.org/wiki/File%3AInternational_terminal_at_Balice_Airport_in_Krak%C3%B3w.JPG"
+  },
+  {
+    "id": "place-drive",
+    "place": "Mountain road, Tatras",
+    "source": "Wikimedia Commons",
+    "file": "File:Slovakia High Tatras Strbske Pleso 0349.jpg",
+    "license": "CC BY 2.5",
+    "artist": "Jozef Kotulič",
+    "url": "https://commons.wikimedia.org/wiki/File%3ASlovakia_High_Tatras_Strbske_Pleso_0349.jpg"
+  },
+  {
+    "id": "place-adventure-park",
+    "place": "Vrátna valley",
+    "source": "Wikimedia Commons",
+    "file": "File:Slovakia Vratna 7.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Jozef Kotulič",
+    "url": "https://commons.wikimedia.org/wiki/File%3ASlovakia_Vratna_7.jpg"
+  },
+  {
+    "id": "place-mountain-cart",
+    "place": "Tatranská Lomnica",
+    "source": "Wikimedia Commons",
+    "file": "File:2018-06-30 Gondola lift Tatranská Lomnica - Skalnaté pleso 2.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Maksym Kozlenko",
+    "url": "https://commons.wikimedia.org/wiki/File%3A2018-06-30_Gondola_lift_Tatransk%C3%A1_Lomnica_-_Skalnat%C3%A9_pleso_2.jpg"
+  },
+  {
+    "id": "place-resort",
+    "place": "Liptov / resort area",
+    "source": "Wikimedia Commons",
+    "file": "File:Demanovska dolina.jpg",
+    "license": "Public domain",
+    "artist": "Palo-f at English Wikipedia",
+    "url": "https://commons.wikimedia.org/wiki/File%3ADemanovska_dolina.jpg"
+  }
+]

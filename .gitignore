@@ -1,0 +1,44 @@
+﻿# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Private trip data — never commit
+private-input/
+private-work/
+private-extracted/
+private-review/
+private-output/
+TRIP_SOURCE_INVENTORY.md
+TRIP_FACTS_REVIEW.md
+TRIP_CONFLICTS_AND_GAPS.md
+
+# Test artifacts
+playwright-report/
+test-results/
+coverage/
