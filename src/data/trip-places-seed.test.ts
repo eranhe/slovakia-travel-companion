@@ -9,14 +9,26 @@ describe('trip places seed', () => {
   })
 
   it('never uses unverified coordinates for ll navigation', () => {
+    /** Official KRK P1 pin from the Aug 2026 car-return guide — only allowlisted verified ll. */
+    const verifiedAllowlist = new Set(['ap-krk-p1-return'])
+
     for (const place of tripPlacesSeed) {
       for (const accessPoint of place.accessPoints) {
         if (accessPoint.coordinates) {
-          expect(accessPoint.coordinates.status).not.toBe('verified')
+          if (verifiedAllowlist.has(accessPoint.id)) {
+            expect(accessPoint.coordinates.status).toBe('verified')
+          } else {
+            expect(accessPoint.coordinates.status).not.toBe('verified')
+          }
         }
         const link = buildWazeLink({ place, accessPoint })
         expect(link.ok).toBe(true)
-        if (link.ok) expect(link.mode).toBe('q')
+        if (!link.ok) continue
+        if (verifiedAllowlist.has(accessPoint.id)) {
+          expect(link.mode).toBe('ll')
+        } else {
+          expect(link.mode).toBe('q')
+        }
       }
     }
   })

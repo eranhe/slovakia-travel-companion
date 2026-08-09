@@ -84,6 +84,8 @@ export const DocumentMetaSchema = z.object({
   qrValue: z.string().optional(),
   /** External booking / portal link. */
   externalUrl: z.string().url().optional(),
+  /** Ready-to-copy text (e.g. email draft to the rental desk). */
+  copyText: z.string().optional(),
 })
 
 export const TripProfileSchema = z.object({

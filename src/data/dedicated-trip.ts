@@ -258,9 +258,9 @@ export const dedicatedTripData = {
       weatherSensitivity: 'none',
       imageId: 'place-drive',
       descriptionEn:
-        'Voucher 751370640 · pickup window from 11:00. At the desk confirm: Slovakia cross-border, insurance, fuel policy, e-vignette. Photograph the car from all sides before leaving the lot. RentalCover TWVR-Q8JK-INS.',
+        'Pocket card: Arrivals → Level +1 → Rent a Car → Kaizen Rent → P1 → Sector E → Level 5.5. No shuttle outside the terminal. Voucher Rentalcars 751370640 · Kaizen 540586 · pickup from 11:00. At the desk get in writing: Slovakia Travel Permit (Zone I), fuel policy, e-vignette status, and early return evening 27 Aug ~20:30 with no out-of-hours fee. Photograph every side + odometer/fuel before loading bags. Deposit ~1,000 EUR on the main driver’s physical card. RentalCover TWVR-Q8JK-INS.',
       descriptionHe:
-        'שובר 751370640 · איסוף מחלונות 11:00. בדלפק לאשר: מעבר גבול לסלובקיה, ביטוח, מדיניות דלק, e-vignette. לצלם את הרכב מכל הצדדים לפני היציאה. RentalCover TWVR-Q8JK-INS.',
+        'כרטיס כיס: Arrivals ← מפלס +1 ← Rent a Car ← Kaizen Rent ← P1 ← Sector E ← Level 5.5. בלי שאטל מחוץ לטרמינל. שובר Rentalcars 751370640 · Kaizen 540586 · איסוף מ-11:00. בדלפק לקבל בכתב: Travel Permit לסלובקיה (Zone I), מדיניות דלק, סטטוס e-vignette, והחזרה מוקדמת בערב 27/8 ~20:30 בלי עמלת out-of-hours. לצלם כל צד + קילומטראז׳/דלק לפני העמסת מזוודות. פיקדון ~1,000€ בכרטיס פיזי של הנהג הראשי. RentalCover TWVR-Q8JK-INS.',
     },
     {
       id: 'act-arrival-drive',
@@ -1193,22 +1193,22 @@ export const dedicatedTripData = {
       weatherSensitivity: 'none',
       imageId: 'place-resort',
       descriptionEn:
-        'Confirmation 6756.877.990 · PIN 8081. Drop bags in the rooms first — then return the rental car nearby and walk back to the hotel.',
+        'Confirmation 6756.877.990 · PIN 8081 · +48 12 340 00 00. Plan A: short Kiss & Fly drop (≤8 min first entry), family + all bags into rooms, then driver alone to P1. Passports/meds/hand bags out of the car before drop-off.',
       descriptionHe:
-        'אישור 6756.877.990 · PIN 8081. קודם מורידים מזוודות לחדרים — אחר כך מחזירים את הרכב השכור בסביבה וחוזרים ברגל למלון.',
+        'אישור 6756.877.990 · PIN 8081 · +48 12 340 00 00. תוכנית A: הורדה קצרה ב-Kiss & Fly (עד 8 דק׳ בכניסה הראשונה), משפחה + כל המזוודות לחדרים, ואז נהג לבד ל-P1. להוציא דרכונים/תרופות/תיקי יד לפני ההורדה.',
     },
     {
       id: 'act-refuel-return',
       dayNumber: 10,
-      nameEn: 'Evening refuel + return the rental car',
-      nameHe: 'תדלוק ערב + החזרת רכב השכור',
+      nameEn: 'Evening refuel + return the rental car (P1)',
+      nameHe: 'תדלוק ערב + החזרת רכב (P1)',
       startTime: '20:15',
       endTime: '21:00',
       status: 'confirmed',
       category: 'transport',
       flexibility: 'fixed',
       placeId: 'place-krk-airport',
-      placeName: 'Kraków Airport car rental return',
+      placeName: 'KRK Parking P1 · Sector E · Level 5.5',
       bookingRef: '751370640',
       transportationMethod: 'car',
       travelDurationMinutes: 15,
@@ -1216,9 +1216,9 @@ export const dedicatedTripData = {
       weatherSensitivity: 'none',
       imageId: 'place-drive',
       descriptionEn:
-        'After Hilton check-in: fuel up, return voucher 751370640 at the airport desk, keep the receipt on your phone, walk back to the hotel. Morning of 28 Aug is walk-to-terminal only.',
+        'Pocket card: fuel before airport roads (keep receipt) → navigate Krakow Airport Parking P1 (50.070980, 19.800088) → Sector E · Level 5.5 → photos (fuel/odometer/empty trunk) → Kaizen desk Level +1 with keys + parking ticket → covered walkway ~10–20 min back to Hilton. Voucher 751370640 · Kaizen 540586. Written early-return confirmation required (voucher still shows 28 Aug 10:00 vs flight 09:50). Plan B if late: everyone to P1 with bags, return, then walk to Hilton.',
       descriptionHe:
-        'אחרי צ׳ק-אין בהילטון: לתדלק, להחזיר שובר 751370640 בדלפק השדה, לשמור את המסמך בטלפון, לחזור ברגל למלון. בבוקר 28/8 רק הליכה לטרמינל.',
+        'כרטיס כיס: תדלוק לפני כבישי השדה (לשמור קבלה) ← ניווט Krakow Airport Parking P1 (50.070980, 19.800088) ← Sector E · Level 5.5 ← תמונות (דלק/קילומטראז׳/תא מטען ריק) ← דלפק Kaizen במפלס +1 עם מפתחות + כרטיס חניה ← מעבר מקורה ~10–20 דק׳ חזרה להילטון. שובר 751370640 · Kaizen 540586. חובה אישור כתוב להחזרה מוקדמת (בשובר עדיין 28/8 10:00 מול טיסה 09:50). תוכנית B אם מאחרים: כולם ל-P1 עם מזוודות, החזרה, ואז הליכה להילטון.',
     },
     {
       id: 'act-online-checkin-home',
@@ -1274,16 +1274,16 @@ export const dedicatedTripData = {
       weatherSensitivity: 'none',
       imageId: 'place-resort',
       descriptionEn:
-        'Confirmation 6756.877.990 · PIN 8081. Car already returned last night — walk or hotel shuttle to the terminal.',
+        'Confirmation 6756.877.990 · PIN 8081. Target wake/checkout ~06:15–06:30. Car already returned — covered bridge walk (~40 m from terminal) to security. No taxi/shuttle needed.',
       descriptionHe:
-        'אישור 6756.877.990 · PIN 8081. הרכב כבר הוחזר אתמול בערב — הליכה או שאטל של המלון לטרמינל.',
+        'אישור 6756.877.990 · PIN 8081. יעד קימה/צ׳ק-אאוט ~06:15–06:30. הרכב כבר הוחזר — הליכה בגשר המקורה (~40 מ׳ מהטרמינל) לבידוק. אין צורך במונית/שאטל.',
     },
     {
       id: 'act-security-boarding',
       dayNumber: 11,
       nameEn: 'Security, bags & boarding gate',
       nameHe: 'בידוק, מזוודות ושער עלייה',
-      startTime: '06:30',
+      startTime: '06:45',
       endTime: '09:20',
       status: 'planned',
       category: 'transport',
@@ -1294,9 +1294,9 @@ export const dedicatedTripData = {
       weatherSensitivity: 'none',
       imageId: 'place-airport',
       descriptionEn:
-        'Target ~2.5h before LY5120. Have boarding passes from the 27 Aug online check-in ready offline. Keep the documents bag with you.',
+        'Walk via covered bridge from Hilton (~06:45–07:00). Boarding passes offline from 27 Aug. Keep passports ×4, car-return protocol, fuel receipt & photos in the documents bag.',
       descriptionHe:
-        'לכוון לכ-2.5 שעות לפני LY5120. כרטיסי עלייה מצ׳ק-אין 27/8 מוכנים אופליין. תיק המסמכים נשאר איתכם.',
+        'הליכה בגשר המקורה מהילטון (~06:45–07:00). כרטיסי עלייה אופליין מ-27/8. בתיק המסמכים: 4 דרכונים, פרוטוקול החזרת רכב, קבלת תדלוק ותמונות.',
     },
     {
       id: 'act-flight-home',
@@ -1346,6 +1346,18 @@ export const dedicatedTripData = {
       detailHe: 'פוליסה 310823541.',
     },
     {
+      id: 'rem-kaizen-early-return',
+      date: '2026-08-16',
+      time: '12:00',
+      kind: 'deadline',
+      titleEn: 'CRITICAL — get written Kaizen early-return approval',
+      titleHe: 'קריטי — לקבל אישור כתוב מ-Kaizen להחזרה מוקדמת',
+      detailEn:
+        'Voucher still shows return Fri 28 Aug 10:00, but LY5120 departs 09:50. Email balice.rent@kaizenrent.pl (copy from Wallet → car rental). Ask for evening Thu 27 Aug ~20:30 at P1 Sector E Level 5.5, no out-of-hours fee, Slovakia Travel Permit, fuel level.',
+      detailHe:
+        'בשובר עדיין החזרה שישי 28/8 10:00, אבל LY5120 ממריאה ב-09:50. לשלוח מייל ל-balice.rent@kaizenrent.pl (העתקה מארנק ← השכרת רכב). לבקש ערב חמישי 27/8 ~20:30 ב-P1 Sector E Level 5.5, בלי עמלת out-of-hours, Travel Permit לסלובקיה, רמת דלק.',
+    },
+    {
       id: 'rem-checkin-out',
       date: '2026-08-16',
       kind: 'check-in',
@@ -1363,9 +1375,9 @@ export const dedicatedTripData = {
       titleEn: 'Leave home for TLV — documents bag ready',
       titleHe: 'לצאת מהבית לנתב״ג — תיק מסמכים מוכן',
       detailEn:
-        'Passports, boarding passes, PassportCard 5814, rental voucher 751370640, Maladinovo 6299.313.025 / PIN 0910, insurance 310823541.',
+        'Passports, boarding passes, PassportCard 5814, rental voucher 751370640 + Kaizen 540586, physical + international driving licences, main-driver credit card (EUR 1,000 deposit), Maladinovo 6299.313.025 / PIN 0910, insurance 310823541, written early-return confirmation.',
       detailHe:
-        'דרכונים, כרטיסי עלייה, PassportCard 5814, שובר רכב 751370640, מלאדינובו 6299.313.025 / PIN 0910, ביטוח 310823541.',
+        'דרכונים, כרטיסי עלייה, PassportCard 5814, שובר רכב 751370640 + Kaizen 540586, רישיון ישראלי פיזי + בינלאומי, כרטיס אשראי של הנהג הראשי (פיקדון 1,000€), מלאדינובו 6299.313.025 / PIN 0910, ביטוח 310823541, אישור כתוב להחזרה מוקדמת.',
     },
     {
       id: 'rem-car-desk-checklist',
@@ -1376,9 +1388,9 @@ export const dedicatedTripData = {
       titleEn: 'Car-desk checklist before leaving the lot',
       titleHe: 'צ׳קליסט דלפק הרכב לפני היציאה מהחניון',
       detailEn:
-        'Cross-border to Slovakia · insurance · fuel policy · e-vignette (eZnamka only if needed) · photos of every side of the car.',
+        'Pocket: Arrivals → +1 → Rent a Car → Kaizen → P1 Sector E Level 5.5. Get in writing: Slovakia Travel Permit · fuel policy · e-vignette · early return 27 Aug evening · no out-of-hours fee. Video walk-around + every scratch + odometer/fuel + triangle/vests.',
       detailHe:
-        'מעבר גבול לסלובקיה · ביטוח · מדיניות דלק · e-vignette (רק eZnamka אם צריך) · תמונות מכל צד של הרכב.',
+        'כיס: Arrivals ← +1 ← Rent a Car ← Kaizen ← P1 Sector E Level 5.5. לקבל בכתב: Travel Permit לסלובקיה · מדיניות דלק · e-vignette · החזרה 27/8 ערב · בלי out-of-hours. וידאו מסביב + כל שריטה + קילומטראז׳/דלק + משולש/אפודים.',
     },
     {
       id: 'rem-hilton-cancellation',
@@ -1418,12 +1430,12 @@ export const dedicatedTripData = {
       time: '20:15',
       kind: 'prep',
       dayNumber: 10,
-      titleEn: 'After Hilton check-in — fuel & return the car',
-      titleHe: 'אחרי צ׳ק-אין בהילטון — תדלוק והחזרת רכב',
+      titleEn: 'After Hilton check-in — fuel & return at P1',
+      titleHe: 'אחרי צ׳ק-אין בהילטון — תדלוק והחזרה ב-P1',
       detailEn:
-        'Bags in rooms first. Return voucher 751370640 at the airport desk, keep the receipt, walk back to Hilton. Morning is walk-to-terminal only.',
+        'Plan A: bags in rooms first · driver alone to Parking P1 (50.070980, 19.800088) Sector E Level 5.5 · keys + parking ticket to Kaizen desk · covered walk back. Keep fuel receipt + return photos. Plan B if late: everyone to P1 with bags.',
       detailHe:
-        'קודם מזוודות בחדרים. להחזיר שובר 751370640 בדלפק השדה, לשמור מסמך, לחזור ברגל להילטון. הבוקר הוא הליכה לטרמינל בלבד.',
+        'תוכנית A: קודם מזוודות בחדרים · נהג לבד ל-Parking P1 (50.070980, 19.800088) Sector E Level 5.5 · מפתחות + כרטיס חניה לדלפק Kaizen · חזרה במעבר מקורה. לשמור קבלת תדלוק + תמונות החזרה. תוכנית B אם מאחרים: כולם ל-P1 עם מזוודות.',
     },
     {
       id: 'rem-wake-departure',
@@ -1431,10 +1443,12 @@ export const dedicatedTripData = {
       time: '05:15',
       kind: 'prep',
       dayNumber: 11,
-      titleEn: 'Wake for departure — room sweep, walk to terminal',
-      titleHe: 'קימה ליציאה — בדיקת חדר והליכה לטרמינל',
-      detailEn: 'Flight LY5120 at 09:50. Car already returned last night — target security by ~06:30–07:00.',
-      detailHe: 'טיסה LY5120 ב-09:50. הרכב כבר הוחזר אתמול — לכוון לבידוק בסביבות 06:30–07:00.',
+      titleEn: 'Wake for departure — room sweep, covered bridge to terminal',
+      titleHe: 'קימה ליציאה — בדיקת חדר, גשר מקורה לטרמינל',
+      detailEn:
+        'LY5120 at 09:50. Checkout ~06:15–06:30 · walk covered bridge (~40 m) · security by ~07:00. Passports×4, boarding passes, car-return protocol, fuel receipt.',
+      detailHe:
+        'LY5120 ב-09:50. צ׳ק-אאוט ~06:15–06:30 · הליכה בגשר המקורה (~40 מ׳) · בידוק עד ~07:00. 4 דרכונים, כרטיסי עלייה, פרוטוקול החזרת רכב, קבלת תדלוק.',
     },
 
     // ── Decision card (from the planning guide) ─────────────────────────────
@@ -1580,17 +1594,32 @@ export const dedicatedTripData = {
     // ── Car rental ──────────────────────────────────────────────────────────
     {
       id: 'doc-car-rental',
-      title: 'Car rental — Rentalcars (Nissan Qashqai)',
+      title: 'Car rental — Kaizen / Rentalcars (Nissan Qashqai)',
       category: 'transport',
       mimeType: 'application/pdf',
       dayNumber: 0,
       bookingRef: '751370640',
       createdAt: '2026-08-07T13:17:35.086Z',
       hasBlob: false,
-      note: 'Pick-up KRK airport 17 Aug 11:00. Return on the evening of 27 Aug after Hilton check-in (voucher window was ~28 Aug 10:00 — returning early is fine). RentalCover TWVR-Q8JK-INS. Confirm cross-border to Slovakia, fuel policy & e-vignette at the desk; photograph the car on pickup.',
+      note: 'Rentalcars 751370640 · Kaizen 540586 · desk +48 881 212 968 / hub +48 76 727 99 99 · balice.rent@kaizenrent.pl. Pickup KRK terminal Level +1 on 17 Aug from 11:00 → P1 Sector E Level 5.5. Voucher still shows return 28 Aug 10:00 (conflicts with LY5120 09:50) — require written early return Thu 27 Aug ~20:30. Deposit ~1,000 EUR. Confirm Travel Permit Slovakia Zone I, fuel policy, e-vignette. RentalCover TWVR-Q8JK-INS.',
       fileUrl: 'docs/car-rental.html',
       qrValue: '751370640',
       externalUrl: 'https://www.rentalcars.com/',
+      copyText: `Subject: Early return request - Booking 751370640 / Kaizen 540586
+
+Hello,
+I have a Rentalcars booking number 751370640 and Kaizen confirmation number 540586.
+The current return time is 28 August 2026 at 10:00, but our flight LY5120 departs Krakow Airport at 09:50.
+We would like to return the vehicle one day earlier, on Thursday, 27 August 2026, at approximately 20:30, at Krakow Airport.
+Please confirm in writing:
+1. That the early return is recorded in our booking.
+2. That we should return the vehicle to P1 car park, Sector E, Level 5.5.
+3. That the airport desk will be staffed at approximately 20:30.
+4. That there is no out-of-hours fee.
+5. Whether Rentalcars must formally change the return date.
+6. That written permission for driving the vehicle into Slovakia is included.
+7. What fuel level must be shown at return.
+Thank you.`,
     },
     // ── Lodging ─────────────────────────────────────────────────────────────
     {

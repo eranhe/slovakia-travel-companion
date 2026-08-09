@@ -28,10 +28,23 @@ export function WalletPage() {
   const [docs, setDocs] = useState<DocumentMeta[]>([])
   const [codeDoc, setCodeDoc] = useState<DocumentMeta | null>(null)
   const [qrDoc, setQrDoc] = useState<DocumentMeta | null>(null)
+  const [copiedId, setCopiedId] = useState<string | null>(null)
 
   useEffect(() => {
     void getDocumentIndex().then(setDocs)
   }, [])
+
+  async function copyDocText(doc: DocumentMeta) {
+    if (!doc.copyText) return
+    try {
+      await navigator.clipboard.writeText(doc.copyText)
+      setCopiedId(doc.id)
+      window.setTimeout(() => setCopiedId((id) => (id === doc.id ? null : id)), 2000)
+    } catch {
+      // Fallback for older browsers / denied clipboard
+      window.prompt(isHe ? 'העתיקו את הטקסט:' : 'Copy this text:', doc.copyText)
+    }
+  }
 
   const groups = useMemo(() => {
     const byCategory = new Map<string, DocumentMeta[]>()
@@ -113,6 +126,21 @@ export function WalletPage() {
                         >
                           {isHe ? 'אתר הזמנה' : 'Booking site'}
                         </a>
+                      ) : null}
+                      {doc.copyText ? (
+                        <button
+                          type="button"
+                          className="btn btn-ghost"
+                          onClick={() => void copyDocText(doc)}
+                        >
+                          {copiedId === doc.id
+                            ? isHe
+                              ? 'הועתק ✓'
+                              : 'Copied ✓'
+                            : isHe
+                              ? 'העתק מייל'
+                              : 'Copy email'}
+                        </button>
                       ) : null}
                     </div>
                     {doc.note ? <p className="wallet-note">{doc.note}</p> : null}

@@ -42,6 +42,16 @@ describe('dedicated trip seed', () => {
     expect(refs).toContain('6756.877.990')
   })
 
+  it('includes Kaizen early-return email draft and critical reminder', () => {
+    const car = trip.documents.find((doc) => doc.id === 'doc-car-rental')
+    expect(car?.copyText).toContain('751370640')
+    expect(car?.copyText).toContain('540586')
+    expect(car?.note).toContain('540586')
+    const rem = trip.reminders.find((item) => item.id === 'rem-kaizen-early-return')
+    expect(rem?.kind).toBe('deadline')
+    expect(rem?.date).toBe('2026-08-16')
+  })
+
   it('leaves no day without a plan', () => {
     for (const day of trip.days) {
       expect(day.activityIds.length, `day ${day.dayNumber} has no activities`).toBeGreaterThan(0)

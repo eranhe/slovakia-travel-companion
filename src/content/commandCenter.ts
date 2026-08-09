@@ -229,6 +229,13 @@ export async function buildCommandCenter(): Promise<CommandCenterSnapshot> {
     titleEn: 'Complete online flight check-in when available',
     titleHe: 'להשלים צ׳ק־אין אונליין לטיסה כשנפתח',
   })
+  if (todayIso < '2026-08-27') {
+    tasks.push({
+      id: 'task-kaizen-written',
+      titleEn: 'Get written Kaizen early-return approval (Wallet → Copy email)',
+      titleHe: 'לקבל אישור כתוב מ-Kaizen להחזרה מוקדמת (ארנק ← העתק מייל)',
+    })
+  }
 
   return {
     checkedAt: new Date().toISOString(),

@@ -669,6 +669,99 @@ export const packingSections: PackingSection[] = [
       },
     ],
   },
+  {
+    id: 'sec-car-pickup-handbag',
+    titleEn: 'Car-desk handbag (17 Aug pickup)',
+    titleHe: 'תיק יד לדלפק הרכב (איסוף 17/8)',
+    subtitleEn: 'Physical docs only — digital licence is rejected',
+    subtitleHe: 'מסמכים פיזיים בלבד — רישיון דיגיטלי לא מתקבל',
+    items: [
+      {
+        id: 'car-passports',
+        labelEn: 'Passports — main driver + any extra drivers',
+        labelHe: 'דרכונים — נהג ראשי + כל נהג נוסף',
+      },
+      {
+        id: 'car-licence-il',
+        labelEn: 'Israeli physical driving licence (valid)',
+        labelHe: 'רישיון נהיגה ישראלי פיזי ותקף',
+      },
+      {
+        id: 'car-licence-intl',
+        labelEn: 'International driving permit',
+        labelHe: 'רישיון נהיגה בינלאומי',
+      },
+      {
+        id: 'car-voucher',
+        labelEn: 'Rentalcars voucher 751370640 + Kaizen 540586 (phone + offline screenshot)',
+        labelHe: 'שובר Rentalcars 751370640 + Kaizen 540586 (בטלפון + צילום מסך אופליין)',
+      },
+      {
+        id: 'car-credit',
+        labelEn: 'Physical credit card in main driver’s name (≥ EUR 1,000 limit + PIN)',
+        labelHe: 'כרטיס אשראי פיזי על שם הנהג הראשי (מסגרת ≥ 1,000€ + קוד סודי)',
+      },
+      {
+        id: 'car-return-flight',
+        labelEn: 'Return-flight confirmation + written early-return approval',
+        labelHe: 'אישור טיסת חזרה + אישור כתוב להחזרה מוקדמת',
+      },
+      {
+        id: 'car-photos',
+        labelEn: 'Phone ready to video/photo the car before loading bags',
+        labelHe: 'טלפון מוכן לוידאו/תמונות של הרכב לפני העמסת מזוודות',
+      },
+    ],
+  },
+  {
+    id: 'sec-car-return-eve',
+    titleEn: 'Car return evening checklist (27 Aug)',
+    titleHe: 'צ׳קליסט ערב החזרת רכב (27/8)',
+    subtitleEn: 'After Energylandia · before/at P1',
+    subtitleHe: 'אחרי אנרג׳ילנדיה · לפני/ב-P1',
+    items: [
+      {
+        id: 'ret-fuel',
+        labelEn: 'Refuel to contract level + keep receipt',
+        labelHe: 'לתדלק לפי החוזה + לשמור קבלה',
+      },
+      {
+        id: 'ret-clean',
+        labelEn: 'Remove trash / unusual dirt',
+        labelHe: 'להוציא אשפה / לכלוך חריג',
+      },
+      {
+        id: 'ret-sweep',
+        labelEn: 'Check glovebox, door pockets, under seats, trunk',
+        labelHe: 'לבדוק תא כפפות, כיסי דלתות, מתחת למושבים, תא מטען',
+      },
+      {
+        id: 'ret-docs-out',
+        labelEn: 'Passports, meds, chargers, hand bags out before Hilton drop',
+        labelHe: 'להוציא דרכונים, תרופות, מטענים ותיקי יד לפני הורדה בהילטון',
+      },
+      {
+        id: 'ret-photo-fuel',
+        labelEn: 'Photo fuel gauge + odometer after refuel',
+        labelHe: 'לצלם מד דלק + קילומטראז׳ אחרי תדלוק',
+      },
+      {
+        id: 'ret-p1',
+        labelEn: 'Navigate to Parking P1 (50.070980, 19.800088) · Sector E · Level 5.5',
+        labelHe: 'ניווט ל-Parking P1 (50.070980, 19.800088) · Sector E · Level 5.5',
+      },
+      {
+        id: 'ret-ticket',
+        labelEn: 'Keep parking ticket — hand in with keys at Kaizen',
+        labelHe: 'לשמור כרטיס חניה — למסור עם המפתחות ב-Kaizen',
+      },
+      {
+        id: 'ret-receipt',
+        labelEn: 'Ask for return confirmation · photo empty trunk · walk covered bridge to Hilton',
+        labelHe: 'לבקש אישור החזרה · לצלם תא מטען ריק · הליכה במעבר מקורה להילטון',
+      },
+    ],
+  },
 ]
 
 export const dayBagPlans: DayBagPlan[] = [
@@ -676,8 +769,8 @@ export const dayBagPlans: DayBagPlan[] = [
     "date": "2026-08-17",
     "activityEn": "Arrival — flight, car desk, supermarket, Maladinovo",
     "activityHe": "הגעה — טיסה, דלפק רכב, סופר, מלאדינובו",
-    "bagEn": "Documents bag (passports, boarding, rental 751370640, Maladinovo PIN 0910, PassportCard) + water multipacks after supermarket",
-    "bagHe": "תיק מסמכים (דרכונים, עלייה, רכב 751370640, PIN מלאדינובו 0910, PassportCard) + שישיות מים אחרי הסופר"
+    "bagEn": "Documents bag (passports, boarding, rental 751370640 + Kaizen 540586, physical + intl licences, EUR 1000 card, early-return letter, Maladinovo PIN 0910, PassportCard) + Packing car-desk handbag list",
+    "bagHe": "תיק מסמכים (דרכונים, עלייה, רכב 751370640 + Kaizen 540586, רישיון פיזי+בינלאומי, כרטיס 1000€, אישור החזרה מוקדמת, PIN מלאדינובו 0910, PassportCard) + רשימת תיק יד לדלפק בציוד"
   },
   {
     "date": "2026-08-18",
@@ -753,8 +846,8 @@ export const dayBagPlans: DayBagPlan[] = [
     "date": "2026-08-28",
     "activityEn": "Departure — room sweep, fuel, car return, LY5120",
     "activityHe": "חזרה — בדיקת חדר, תדלוק, החזרת רכב, LY5120",
-    "bagEn": "Documents bag only — passports, boarding passes, rental return voucher 751370640, PassportCard; chargers in cabin bag",
-    "bagHe": "תיק מסמכים בלבד — דרכונים, כרטיסי עלייה, שובר החזרת רכב 751370640, PassportCard; מטענים בתיק היד"
+    "bagEn": "Documents bag — passports×4, boarding passes, car-return protocol + fuel receipt, PassportCard; chargers in cabin bag",
+    "bagHe": "תיק מסמכים — 4 דרכונים, כרטיסי עלייה, פרוטוקול החזרת רכב + קבלת תדלוק, PassportCard; מטענים בתיק היד"
   }
 ]
 

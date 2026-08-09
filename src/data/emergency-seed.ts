@@ -43,6 +43,38 @@ export const emergencyNumbers: EmergencyNumber[] = [
     noteEn: 'Confirm locally in the Tatras; 112 always works',
     noteHe: 'לאשר מקומית בטטרה; 112 תמיד עובד',
   },
+  {
+    id: 'kaizen-airport',
+    labelEn: 'Kaizen Rent — Kraków Airport desk',
+    labelHe: 'Kaizen Rent — דלפק נמל התעופה קרקוב',
+    number: '+48 881 212 968',
+    noteEn: 'Pickup / return · also email balice.rent@kaizenrent.pl',
+    noteHe: 'איסוף / החזרה · גם מייל balice.rent@kaizenrent.pl',
+  },
+  {
+    id: 'kaizen-hub',
+    labelEn: 'Kaizen Rent — general hub',
+    labelHe: 'Kaizen Rent — מוקד כללי',
+    number: '+48 76 727 99 99',
+    noteEn: 'Call if LY5119 is significantly delayed',
+    noteHe: 'להתקשר אם LY5119 מתעכבת משמעותית',
+  },
+  {
+    id: 'hilton-krk',
+    labelEn: 'Hilton Garden Inn Kraków Airport',
+    labelHe: 'Hilton Garden Inn נמל תעופה קרקוב',
+    number: '+48 12 340 00 00',
+    noteEn: 'Confirmation 6756.877.990 · PIN 8081',
+    noteHe: 'אישור 6756.877.990 · PIN 8081',
+  },
+  {
+    id: 'rentalcars-il',
+    labelEn: 'Rentalcars Israel',
+    labelHe: 'Rentalcars ישראל',
+    number: '03-372-2087',
+    noteEn: 'Booking 751370640',
+    noteHe: 'הזמנה 751370640',
+  },
 ]
 
 export const insuranceSnapshot = {
@@ -181,17 +213,26 @@ export const destinationTips = [
     titleEn: 'Arrival day (17 Aug)',
     titleHe: 'יום הגעה (17/8)',
     bodyEn:
-      'TLV by ~04:00 · car desk checklist (border/fuel/vignette + photos) · supermarket · Maladinovo PIN 0910 · soft lake only if energy remains · four day-bags + screenshots that evening.',
+      'TLV by ~04:00 · pocket card Arrivals→+1→Kaizen→P1 Sector E L5.5 · written Travel Permit + early-return + fuel/vignette · car photos · supermarket · Maladinovo PIN 0910 · soft lake only if energy remains.',
     bodyHe:
-      'נתב״ג בסביבות 04:00 · צ׳קליסט דלפק רכב (גבול/דלק/vignette + תמונות) · סופר · PIN מלאדינובו 0910 · אגם רק אם נשאר כוח · ערב: ארבעה תיקי יום + צילומי מסך.',
+      'נתב״ג בסביבות 04:00 · כרטיס כיס Arrivals←+1←Kaizen←P1 Sector E L5.5 · Travel Permit + החזרה מוקדמת + דלק/vignette בכתב · תמונות רכב · סופר · PIN מלאדינובו 0910 · אגם רק אם נשאר כוח.',
   },
   {
     id: 'tip-departure',
     titleEn: 'Departure day (28 Aug)',
     titleHe: 'יום חזרה (28/8)',
     bodyEn:
-      'Room sweep → Hilton checkout → refuel → return car 751370640 early → security by ~07:20 → LY5120 09:50. Boarding passes offline from the night before.',
+      'Car already returned evening 27 Aug. Room sweep → Hilton checkout ~06:15–06:30 → covered bridge walk → security by ~07:00 → LY5120 09:50. Keep return protocol + fuel receipt + boarding passes offline.',
     bodyHe:
-      'בדיקת חדר → צ׳ק-אאוט הילטון → תדלוק → החזרת רכב 751370640 מוקדם → בידוק בסביבות 07:20 → LY5120 ב-09:50. כרטיסי עלייה אופליין מהערב הקודם.',
+      'הרכב כבר הוחזר בערב 27/8. בדיקת חדר → צ׳ק-אאוט הילטון ~06:15–06:30 → הליכה בגשר המקורה → בידוק עד ~07:00 → LY5120 09:50. לשמור פרוטוקול החזרה + קבלת תדלוק + כרטיסי עלייה אופליין.',
+  },
+  {
+    id: 'tip-zdiar-fan',
+    titleEn: 'Hot room in Ždiar',
+    titleHe: 'חדר חם בז׳דיאר',
+    bodyEn:
+      'Ask reception first. Then call Konzum (+421 52 449 81 50) or SINTRA (+421 52 449 81 44). Best bet: NAY Poprad (~32 min, +421 850 111 444) — PLANEO as backup. See Trip contingencies on Day 5.',
+    bodyHe:
+      'קודם לשאול בקבלה. אחר כך להתקשר ל-Konzum (+421 52 449 81 50) או SINTRA (+421 52 449 81 44). הכי אמין: NAY פופרד (~32 דק׳, +421 850 111 444) — PLANEO כגיבוי. ראו תוכניות גיבוי ביום 5 במסלול.',
   },
 ] as const
