@@ -52,6 +52,18 @@ describe('dedicated trip seed', () => {
     expect(rem?.date).toBe('2026-08-16')
   })
 
+  it('opens copied source PDFs as full wallet documents', () => {
+    expect(trip.documents.length).toBeGreaterThan(0)
+    for (const doc of trip.documents) {
+      expect(doc.fileUrl, `${doc.id} is missing its source document`).toMatch(
+        /^docs\/originals\/.+\.pdf$/,
+      )
+    }
+    expect(trip.documents.find((doc) => doc.id === 'doc-flight')?.summaryUrl).toBe(
+      'docs/flight-elal.html',
+    )
+  })
+
   it('leaves no day without a plan', () => {
     for (const day of trip.days) {
       expect(day.activityIds.length, `day ${day.dayNumber} has no activities`).toBeGreaterThan(0)

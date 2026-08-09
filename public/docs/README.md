@@ -1,6 +1,8 @@
 # Wallet documents
 
-Printable HTML cards (use browser Print → Save as PDF).
+`originals/` contains copied source PDFs used by the Wallet's “Full original
+document” buttons. The HTML files below are printable summary cards (use
+browser Print → Save as PDF).
 
 - flight-elal.html
 - car-rental.html

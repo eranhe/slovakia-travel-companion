@@ -80,6 +80,8 @@ export const DocumentMetaSchema = z.object({
   note: z.string().optional(),
   /** Relative (under BASE_URL) or absolute URL to a full PDF / printable doc. */
   fileUrl: z.string().optional(),
+  /** Optional printable summary card; fileUrl is reserved for the original document. */
+  summaryUrl: z.string().optional(),
   /** Value to encode as a QR code (defaults to bookingRef when omitted). */
   qrValue: z.string().optional(),
   /** External booking / portal link. */

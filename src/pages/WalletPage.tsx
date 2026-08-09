@@ -109,12 +109,22 @@ export function WalletPage() {
                       ) : null}
                       {doc.fileUrl ? (
                         <a
-                          className="btn btn-ghost"
+                          className="btn btn-primary"
                           href={resolveDocUrl(doc.fileUrl)}
                           target="_blank"
                           rel="noreferrer"
                         >
-                          {isHe ? 'מסמך מלא' : 'Full document'}
+                          {isHe ? 'מסמך מקור מלא' : 'Full original document'}
+                        </a>
+                      ) : null}
+                      {doc.summaryUrl ? (
+                        <a
+                          className="btn btn-ghost"
+                          href={resolveDocUrl(doc.summaryUrl)}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {isHe ? 'סיכום להדפסה' : 'Printable summary'}
                         </a>
                       ) : null}
                       {doc.externalUrl ? (
