@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { CategoryBadge } from '@/components/CategoryBadge'
 import { HeroImage, Thumb } from '@/components/Illustration'
 import { PageHeader } from '@/components/PageHeader'
 import { PlaceCard } from '@/components/PlaceCard'
@@ -9,6 +10,7 @@ import {
   type MorningBriefing,
 } from '@/content/morningBriefing'
 import { useApp } from '@/providers/AppProvider'
+import { openWazeForPlaceId } from '@/navigation/openPlaceWaze'
 import { getPlacesForDay } from '@/places/PlaceRepository'
 import { getDayItinerary, ensureItineraryState } from '@/itinerary/ItineraryRepository'
 import { planKindLabel } from '@/itinerary/impactPreview'
@@ -204,6 +206,9 @@ export function TodayPage() {
               const end = 'endTime' in act ? act.endTime : undefined
               const category = 'category' in act ? act.category : undefined
               const imageId = 'imageId' in act ? act.imageId : undefined
+              const placeId = 'placeId' in act ? act.placeId : undefined
+              const website =
+                placeId != null ? places.find((p) => p.id === placeId)?.websiteUrl : undefined
               return (
                 <li key={act.id} className={optional ? 'schedule-optional' : undefined}>
                   <span className="schedule-time">
@@ -212,11 +217,28 @@ export function TodayPage() {
                   <Thumb imageId={imageId ?? categoryImageId(category)} alt="" size="sm" />
                   <span className="schedule-body">
                     <span className="schedule-name">{isHe ? act.nameHe : act.nameEn}</span>
+                    {category ? <CategoryBadge category={category} isHe={isHe} /> : null}
                     {optional ? (
                       <span className="status-pill pill-optional">
                         {isHe ? 'אופציונלי' : 'Optional'}
                       </span>
                     ) : null}
+                    <span className="schedule-actions">
+                      {placeId ? (
+                        <button
+                          type="button"
+                          className="btn btn-ghost"
+                          onClick={() => void openWazeForPlaceId(placeId)}
+                        >
+                          Waze
+                        </button>
+                      ) : null}
+                      {website ? (
+                        <a className="btn btn-ghost" href={website} target="_blank" rel="noreferrer">
+                          {isHe ? 'אתר' : 'Site'}
+                        </a>
+                      ) : null}
+                    </span>
                   </span>
                 </li>
               )
@@ -247,11 +269,9 @@ export function TodayPage() {
 
       {places.length > 0 ? (
         <div className="card-grid">
-          {places
-            .filter((place) => !place.privateLocation || place.category === 'attraction')
-            .map((place) => (
-              <PlaceCard key={place.id} place={place} visitDate={currentDay?.date} />
-            ))}
+          {places.map((place) => (
+            <PlaceCard key={place.id} place={place} visitDate={currentDay?.date} />
+          ))}
         </div>
       ) : (
         <article className="surface-card">

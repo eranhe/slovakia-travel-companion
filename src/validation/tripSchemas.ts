@@ -78,6 +78,12 @@ export const DocumentMetaSchema = z.object({
   /** Reserved for a future document viewer. */
   hasBlob: z.boolean().default(false),
   note: z.string().optional(),
+  /** Relative (under BASE_URL) or absolute URL to a full PDF / printable doc. */
+  fileUrl: z.string().optional(),
+  /** Value to encode as a QR code (defaults to bookingRef when omitted). */
+  qrValue: z.string().optional(),
+  /** External booking / portal link. */
+  externalUrl: z.string().url().optional(),
 })
 
 export const TripProfileSchema = z.object({

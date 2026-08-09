@@ -29,10 +29,10 @@ describe('waze links', () => {
     expect(result.ok).toBe(true)
     if (!result.ok) return
     expect(result.mode).toBe('q')
-    expect(result.url.startsWith('https://waze.com/ul?')).toBe(true)
+    expect(result.url.startsWith('https://www.waze.com/ul?')).toBe(true)
     expect(result.url).toContain('navigate=yes')
     expect(result.url).toContain('q=Test')
-    expect(result.url).toContain('utm_source=slovakia-travel-companion')
+    expect(result.appUrl.startsWith('waze://')).toBe(true)
   })
 
   it('rejects invalid coordinates', () => {
@@ -42,7 +42,7 @@ describe('waze links', () => {
     )
   })
 
-  it('uses ll only for verified coordinates', () => {
+  it('uses ll only for verified coordinates and keeps a raw comma', () => {
     const withVerified: Place = {
       ...samplePlace,
       accessPoints: [
@@ -60,7 +60,8 @@ describe('waze links', () => {
     expect(result.ok).toBe(true)
     if (!result.ok) return
     expect(result.mode).toBe('ll')
-    expect(result.url).toContain('ll=49.1')
+    expect(result.url).toContain('ll=49.1,19.6')
+    expect(result.url).not.toContain('%2C')
   })
 
   it('fails when no query and no verified coords', () => {

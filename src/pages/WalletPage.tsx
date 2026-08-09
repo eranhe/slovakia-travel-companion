@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { PageHeader } from '@/components/PageHeader'
+import { QrCanvas } from '@/components/QrCanvas'
 import { useApp } from '@/providers/AppProvider'
 import { getDocumentIndex } from '@/trip/TripRepository'
 import type { DocumentMeta } from '@/validation/tripSchemas'
@@ -15,11 +16,18 @@ const CATEGORY_LABELS: Record<string, { en: string; he: string }> = {
 
 const CATEGORY_ORDER = ['flight', 'transport', 'accommodation', 'attraction', 'insurance', 'other']
 
+function resolveDocUrl(pathOrUrl: string): string {
+  if (/^https?:\/\//i.test(pathOrUrl)) return pathOrUrl
+  const base = import.meta.env.BASE_URL || '/'
+  return `${base}${pathOrUrl.replace(/^\//, '')}`
+}
+
 export function WalletPage() {
   const { preferences } = useApp()
   const isHe = preferences.locale === 'he'
   const [docs, setDocs] = useState<DocumentMeta[]>([])
   const [codeDoc, setCodeDoc] = useState<DocumentMeta | null>(null)
+  const [qrDoc, setQrDoc] = useState<DocumentMeta | null>(null)
 
   useEffect(() => {
     void getDocumentIndex().then(setDocs)
@@ -42,8 +50,8 @@ export function WalletPage() {
       <PageHeader
         titleEn="Wallet"
         titleHe="ארנק"
-        subtitleEn="Tickets, reservations, and important codes."
-        subtitleHe="כרטיסים, הזמנות וקודים חשובים."
+        subtitleEn="Tickets, reservations, QR codes, and printable docs."
+        subtitleHe="כרטיסים, הזמנות, קודי QR ומסמכים להדפסה."
       />
 
       {groups.map((group) => {
@@ -52,27 +60,65 @@ export function WalletPage() {
           <div key={group.category} className="wallet-group">
             <h2 className="wallet-group-title">{isHe ? label.he : label.en}</h2>
             <div className="card-grid">
-              {group.items.map((doc) => (
-                <article key={doc.id} className="surface-card wallet-card">
-                  <h3>{doc.title}</h3>
-                  <p className="muted small">
-                    {doc.dayNumber != null ? (isHe ? `יום ${doc.dayNumber}` : `Day ${doc.dayNumber}`) : ''}
-                  </p>
-                  {doc.bookingRef ? (
-                    <>
+              {group.items.map((doc) => {
+                const qrValue = doc.qrValue ?? doc.bookingRef
+                return (
+                  <article key={doc.id} className="surface-card wallet-card">
+                    <h3>{doc.title}</h3>
+                    <p className="muted small">
+                      {doc.dayNumber != null
+                        ? isHe
+                          ? `יום ${doc.dayNumber}`
+                          : `Day ${doc.dayNumber}`
+                        : ''}
+                    </p>
+                    {doc.bookingRef ? (
                       <p className="booking-code-inline">{doc.bookingRef}</p>
-                      <button
-                        type="button"
-                        className="btn btn-primary"
-                        onClick={() => setCodeDoc(doc)}
-                      >
-                        {isHe ? 'הצג קוד בגדול' : 'Show large code'}
-                      </button>
-                    </>
-                  ) : null}
-                  {doc.note ? <p className="wallet-note">{doc.note}</p> : null}
-                </article>
-              ))}
+                    ) : null}
+                    <div className="settings-row" style={{ marginTop: '0.5rem', flexWrap: 'wrap' }}>
+                      {doc.bookingRef ? (
+                        <button
+                          type="button"
+                          className="btn btn-primary"
+                          onClick={() => setCodeDoc(doc)}
+                        >
+                          {isHe ? 'קוד בגדול' : 'Large code'}
+                        </button>
+                      ) : null}
+                      {qrValue ? (
+                        <button
+                          type="button"
+                          className="btn btn-secondary"
+                          onClick={() => setQrDoc(doc)}
+                        >
+                          {isHe ? 'הצג QR' : 'Show QR'}
+                        </button>
+                      ) : null}
+                      {doc.fileUrl ? (
+                        <a
+                          className="btn btn-ghost"
+                          href={resolveDocUrl(doc.fileUrl)}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {isHe ? 'מסמך מלא' : 'Full document'}
+                        </a>
+                      ) : null}
+                      {doc.externalUrl ? (
+                        <a
+                          className="btn btn-ghost"
+                          href={doc.externalUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {isHe ? 'אתר הזמנה' : 'Booking site'}
+                        </a>
+                      ) : null}
+                    </div>
+                    {doc.note ? <p className="wallet-note">{doc.note}</p> : null}
+                  </article>
+                )
+              })}
             </div>
           </div>
         )
@@ -85,6 +131,22 @@ export function WalletPage() {
             <p className="qr-code">{codeDoc.bookingRef}</p>
             {codeDoc.note ? <p className="wallet-note">{codeDoc.note}</p> : null}
             <button type="button" className="btn btn-primary" onClick={() => setCodeDoc(null)}>
+              {isHe ? 'סגור' : 'Close'}
+            </button>
+          </div>
+        </div>
+      ) : null}
+
+      {qrDoc ? (
+        <div className="qr-overlay" role="dialog" aria-modal="true">
+          <div className="qr-card">
+            <h2>{qrDoc.title}</h2>
+            <QrCanvas
+              value={qrDoc.qrValue ?? qrDoc.bookingRef ?? qrDoc.title}
+              label={qrDoc.qrValue ?? qrDoc.bookingRef}
+            />
+            {qrDoc.note ? <p className="wallet-note">{qrDoc.note}</p> : null}
+            <button type="button" className="btn btn-primary" onClick={() => setQrDoc(null)}>
               {isHe ? 'סגור' : 'Close'}
             </button>
           </div>

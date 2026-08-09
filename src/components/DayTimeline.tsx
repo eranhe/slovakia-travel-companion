@@ -1,6 +1,10 @@
+import { useState } from 'react'
+import { CategoryBadge } from '@/components/CategoryBadge'
 import { Thumb } from '@/components/Illustration'
 import { planKindLabel } from '@/itinerary/impactPreview'
 import { categoryImageId } from '@/media/images'
+import { openWazeForPlaceId } from '@/navigation/openPlaceWaze'
+import { getPlaceByIdSync } from '@/places/PlaceRepository'
 import type { ContingencyActivity, DayItineraryState, PlanKind } from '@/types/itinerary'
 import type { ActivityStub } from '@/validation/tripSchemas'
 
@@ -8,14 +12,6 @@ type TimelineItem = ActivityStub | ContingencyActivity
 
 function isMainActivity(item: TimelineItem): item is ActivityStub {
   return 'dayNumber' in item && 'status' in item
-}
-
-const CATEGORY_LABEL: Record<string, { en: string; he: string }> = {
-  attraction: { en: 'Attraction', he: 'אטרקציה' },
-  transport: { en: 'Transport', he: 'תחבורה' },
-  food: { en: 'Food', he: 'אוכל' },
-  accommodation: { en: 'Lodging', he: 'לינה' },
-  other: { en: 'Admin', he: 'ניהול' },
 }
 
 const STATUS_LABEL: Record<string, { en: string; he: string }> = {
@@ -29,6 +25,54 @@ function timeRange(item: TimelineItem): string | null {
   const end = 'endTime' in item ? item.endTime : undefined
   if (start && end) return `${start}–${end}`
   return start ?? null
+}
+
+/** Waze + website + on-demand place details for a schedule row. */
+function PlaceRowActions({ placeId, isHe }: { placeId?: string; isHe: boolean }) {
+  const [open, setOpen] = useState(false)
+  const place = getPlaceByIdSync(placeId)
+  if (!place) return null
+
+  const summary = isHe ? place.summaryHe : place.summaryEn
+  const hasDetails = Boolean(summary || place.addressEn)
+
+  return (
+    <div className="timeline-place">
+      <div className="settings-row" style={{ flexWrap: 'wrap', gap: '0.35rem' }}>
+        <button
+          type="button"
+          className="btn btn-ghost"
+          onClick={() => void openWazeForPlaceId(place.id)}
+        >
+          Waze
+        </button>
+        {place.websiteUrl ? (
+          <a className="btn btn-ghost" href={place.websiteUrl} target="_blank" rel="noreferrer">
+            {isHe ? 'אתר המקום' : 'Website'}
+          </a>
+        ) : null}
+        {hasDetails ? (
+          <button type="button" className="btn btn-ghost" onClick={() => setOpen((v) => !v)}>
+            {open ? (isHe ? 'הסתר פרטים' : 'Hide details') : isHe ? 'על המקום' : 'About place'}
+          </button>
+        ) : null}
+      </div>
+      {open ? (
+        <div className="timeline-place-details">
+          <strong>{isHe ? place.nameHe : place.nameEn}</strong>
+          {summary ? <p className="muted small">{summary}</p> : null}
+          {place.addressEn ? (
+            <p className="muted small">{isHe && place.addressHe ? place.addressHe : place.addressEn}</p>
+          ) : null}
+          {place.websiteUrl ? (
+            <a href={place.websiteUrl} target="_blank" rel="noreferrer">
+              {place.websiteUrl.replace(/^https?:\/\//, '').replace(/\/$/, '')}
+            </a>
+          ) : null}
+        </div>
+      ) : null}
+    </div>
+  )
 }
 
 interface DayTimelineProps {
@@ -66,6 +110,7 @@ export function DayTimeline({ isHe, day, items, onMove, canReorder }: DayTimelin
             const id = item.id
             const main = isMainActivity(item) ? item : null
             const range = timeRange(item)
+            const placeId = 'placeId' in item ? item.placeId : undefined
             const travel =
               'travelDurationMinutes' in item && item.travelDurationMinutes
                 ? item.travelDurationMinutes
@@ -119,7 +164,6 @@ export function DayTimeline({ isHe, day, items, onMove, canReorder }: DayTimelin
                   <p className="muted small">
                     {[
                       range,
-                      main?.category ? CATEGORY_LABEL[main.category]?.[locale] : null,
                       main?.bookingRef ? `#${main.bookingRef}` : null,
                       travel != null
                         ? isHe
@@ -136,7 +180,13 @@ export function DayTimeline({ isHe, day, items, onMove, canReorder }: DayTimelin
                       .filter(Boolean)
                       .join(' · ')}
                   </p>
+                  {main?.category ? (
+                    <div style={{ marginTop: '0.25rem' }}>
+                      <CategoryBadge category={main.category} isHe={isHe} />
+                    </div>
+                  ) : null}
                   {description ? <p className="timeline-note">{description}</p> : null}
+                  <PlaceRowActions placeId={placeId ?? undefined} isHe={isHe} />
                   {canReorder && onMove ? (
                     <div className="timeline-actions">
                       <button

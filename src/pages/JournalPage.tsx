@@ -125,6 +125,7 @@ export function JournalPage() {
 
       let imported = 0
       let duplicates = 0
+      const newIds: string[] = []
       for (const file of Array.from(fileList)) {
         const result = await importPhotoFile(file, {
           dayNumber: day?.dayNumber,
@@ -132,13 +133,28 @@ export function JournalPage() {
           coordinates: coords,
         })
         if (result.duplicate) duplicates += 1
-        else imported += 1
+        else {
+          imported += 1
+          newIds.push(result.photo.id)
+        }
       }
       await refreshPhotos()
+      if (newIds.length && entry) {
+        const photoIds = [...new Set([...(entry.photoIds ?? []), ...newIds])]
+        const next: JournalEntry = {
+          ...entry,
+          photoIds,
+          dayNumber: day?.dayNumber,
+          status: entry.status === 'completed' ? entry.status : 'draft',
+          updatedAt: new Date().toISOString(),
+        }
+        upsertJournalEntry(next)
+        setEntry(next)
+      }
       setMessage(
         isHe
-          ? `נוספו ${imported} תמונות${duplicates ? ` · ${duplicates} כפולות דולגו` : ''}`
-          : `Added ${imported} photo(s)${duplicates ? ` · skipped ${duplicates} duplicate(s)` : ''}`,
+          ? `נוספו ${imported} תמונות לטיוטה${duplicates ? ` · ${duplicates} כפולות דולגו` : ''}`
+          : `Added ${imported} photo(s) to draft${duplicates ? ` · skipped ${duplicates} duplicate(s)` : ''}`,
       )
     } catch (err) {
       setMessage(err instanceof Error ? err.message : String(err))

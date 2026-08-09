@@ -21,12 +21,17 @@ describe('dedicated trip seed', () => {
   it('gives both travel days real activities', () => {
     const arrival = trip.activities.filter((act) => act.dayNumber === 0)
     const departure = trip.activities.filter((act) => act.dayNumber === 11)
+    const eve = trip.activities.filter((act) => act.dayNumber === 10)
     expect(arrival.map((act) => act.id)).toContain('act-flight-out')
     expect(arrival.map((act) => act.id)).toContain('act-car-pickup')
+    expect(arrival.map((act) => act.id)).toContain('act-supermarket')
     expect(arrival.map((act) => act.id)).toContain('act-maladinovo-checkin')
+    expect(eve.map((act) => act.id)).toContain('act-refuel-return')
+    expect(eve.map((act) => act.id)).toContain('act-hilton-checkin')
+    expect(eve.map((act) => act.id)).toContain('act-birthday-treat')
     expect(departure.map((act) => act.id)).toContain('act-flight-home')
-    expect(departure.map((act) => act.id)).toContain('act-refuel-return')
     expect(departure.map((act) => act.id)).toContain('act-security-boarding')
+    expect(departure.map((act) => act.id)).not.toContain('act-refuel-return')
   })
 
   it('keeps arrival and departure booking refs in Wallet', () => {

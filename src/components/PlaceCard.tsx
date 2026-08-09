@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react'
+import { CategoryBadge } from '@/components/CategoryBadge'
 import { Thumb } from '@/components/Illustration'
 import { categoryImageId } from '@/media/images'
 import type { AccessPoint, Place, WeatherSnapshot } from '@/types/place'
 import { buildWazeLink, openWaze, osmSearchUrl } from '@/navigation/waze'
 import { fetchPlaceWeather, weatherCodeLabel } from '@/weather/openMeteo'
 import { useApp } from '@/providers/AppProvider'
+import { useEffect, useState } from 'react'
 
 interface PlaceCardProps {
   place: Place
@@ -20,6 +21,7 @@ export function PlaceCard({ place, visitDate }: PlaceCardProps) {
   const [weather, setWeather] = useState<WeatherSnapshot | null>(null)
   const [weatherError, setWeatherError] = useState<string | null>(null)
   const [weatherBusy, setWeatherBusy] = useState(false)
+  const [expanded, setExpanded] = useState(false)
 
   useEffect(() => {
     setSelectedAp(place.accessPoints.find((point) => point.isDefaultNav) ?? place.accessPoints[0])
@@ -56,22 +58,45 @@ export function PlaceCard({ place, visitDate }: PlaceCardProps) {
 
   const dayWeather = weather?.daily.find((day) => day.date === visitDate) ?? weather?.daily[0]
   const mapQuery = selectedAp?.wazeQuery || place.addressEn || place.nameEn
+  const summary = isHe ? place.summaryHe : place.summaryEn
 
   return (
-    <article className="surface-card place-card">
+    <article className={`surface-card place-card place-card-${place.category}`}>
       <div className="place-card-header">
         <Thumb imageId={place.imageId ?? categoryImageId(place.category)} alt="" />
         <div>
-          <h2>{isHe ? place.nameHe : place.nameEn}</h2>
-          <p className="muted small">
-            {place.category}
-            {place.privateLocation ? (isHe ? ' · מיקום פרטי' : ' · private location') : ''}
-          </p>
+          <h2>
+            {place.websiteUrl ? (
+              <a href={place.websiteUrl} target="_blank" rel="noreferrer" className="place-title-link">
+                {isHe ? place.nameHe : place.nameEn}
+              </a>
+            ) : (
+              (isHe ? place.nameHe : place.nameEn)
+            )}
+          </h2>
+          <CategoryBadge category={place.category} isHe={isHe} />
+          {place.privateLocation ? (
+            <p className="muted small">{isHe ? 'מיקום פרטי' : 'Private location'}</p>
+          ) : null}
         </div>
         {place.privateLocation ? <span className="private-badge">{isHe ? 'פרטי' : 'Private'}</span> : null}
       </div>
 
-      {place.addressEn ? <p className="muted">{isHe && place.addressHe ? place.addressHe : place.addressEn}</p> : null}
+      {place.addressEn ? (
+        <p className="muted">{isHe && place.addressHe ? place.addressHe : place.addressEn}</p>
+      ) : null}
+
+      {summary ? (
+        <div className="place-summary">
+          <p>{expanded || summary.length < 160 ? summary : `${summary.slice(0, 150)}…`}</p>
+          {summary.length >= 160 ? (
+            <button type="button" className="btn btn-ghost" onClick={() => setExpanded((v) => !v)}>
+              {expanded ? (isHe ? 'פחות' : 'Less') : isHe ? 'עוד פרטים' : 'More details'}
+            </button>
+          ) : null}
+        </div>
+      ) : null}
+
       {place.notes ? <p className="muted small">{place.notes}</p> : null}
 
       {place.accessPoints.length > 0 ? (
@@ -97,15 +122,25 @@ export function PlaceCard({ place, visitDate }: PlaceCardProps) {
         <button type="button" className="btn btn-primary" onClick={handleWaze}>
           {isHe ? 'פתח ב-Waze' : 'Open in Waze'}
         </button>
-        <a className="btn btn-secondary" href={osmSearchUrl(mapQuery)} target="_blank" rel="noreferrer">
-          {isHe ? 'מפה פנימית (OSM)' : 'Internal map (OSM)'}
+        {place.websiteUrl ? (
+          <a className="btn btn-secondary" href={place.websiteUrl} target="_blank" rel="noreferrer">
+            {isHe ? 'אתר המקום' : 'Place website'}
+          </a>
+        ) : null}
+        <a className="btn btn-ghost" href={osmSearchUrl(mapQuery)} target="_blank" rel="noreferrer">
+          {isHe ? 'מפה (OSM)' : 'Map (OSM)'}
         </a>
       </div>
 
       <div className="weather-block">
         <div className="settings-row">
           <h3>{isHe ? 'מזג אוויר' : 'Weather'}</h3>
-          <button type="button" className="btn btn-secondary" disabled={weatherBusy} onClick={() => void loadWeather()}>
+          <button
+            type="button"
+            className="btn btn-secondary"
+            disabled={weatherBusy}
+            onClick={() => void loadWeather()}
+          >
             {weatherBusy ? (isHe ? 'טוען…' : 'Loading…') : isHe ? 'טען תחזית' : 'Load forecast'}
           </button>
         </div>
@@ -129,15 +164,6 @@ export function PlaceCard({ place, visitDate }: PlaceCardProps) {
                 {dayWeather.date}: {dayWeather.tempMinC ?? '—'}° / {dayWeather.tempMaxC ?? '—'}° ·{' '}
                 {weatherCodeLabel(dayWeather.weatherCode)} ·{' '}
                 {isHe ? 'גשם' : 'rain'} {dayWeather.precipitationProbabilityMax ?? '—'}%
-              </p>
-            ) : null}
-            {weather.hourlyNearVisit && weather.hourlyNearVisit.length > 0 ? (
-              <p className="muted small">
-                {isHe ? 'שעות ביום הביקור (מדגם):' : 'Visit-day hours (sample):'}{' '}
-                {weather.hourlyNearVisit
-                  .filter((_, index) => index % 3 === 0)
-                  .map((row) => `${row.time.slice(11, 16)} ${row.tempC ?? '—'}°`)
-                  .join(' · ')}
               </p>
             ) : null}
             <p className="muted small">

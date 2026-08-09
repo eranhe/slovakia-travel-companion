@@ -6,7 +6,7 @@ import { useApp } from '@/providers/AppProvider'
 
 export function SettingsPage() {
   const navigate = useNavigate()
-  const { preferences, logout, setLocale } = useApp()
+  const { preferences, logout, setLocale, setSkin } = useApp()
   const isHe = preferences.locale === 'he'
   const [credits, setCredits] = useState<PhotoCredit[]>([])
   const [showCredits, setShowCredits] = useState(false)
@@ -37,6 +37,31 @@ export function SettingsPage() {
             </button>
             <button type="button" className="btn btn-secondary" onClick={() => setLocale('en')}>
               English
+            </button>
+          </div>
+        </article>
+
+        <article className="surface-card">
+          <h2>{isHe ? 'מראה (Skin)' : 'Look (Skin)'}</h2>
+          <p className="muted small">
+            {isHe
+              ? 'כהה הוא ברירת המחדל. בהיר משתמש ברקע בהיר יותר ובתמונות עם הבהרה עדינה.'
+              : 'Dark is the default. Light uses a brighter background and softly brightened photos.'}
+          </p>
+          <div className="settings-row" style={{ marginTop: '0.5rem' }}>
+            <button
+              type="button"
+              className={`btn ${preferences.skin === 'dark' ? 'btn-primary' : 'btn-secondary'}`}
+              onClick={() => setSkin('dark')}
+            >
+              {isHe ? 'כהה' : 'Dark'}
+            </button>
+            <button
+              type="button"
+              className={`btn ${preferences.skin === 'light' ? 'btn-primary' : 'btn-secondary'}`}
+              onClick={() => setSkin('light')}
+            >
+              {isHe ? 'בהיר' : 'Light'}
             </button>
           </div>
         </article>

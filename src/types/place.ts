@@ -55,6 +55,11 @@ export const PlaceSchema = z.object({
   accessPoints: z.array(AccessPointSchema).default([]),
   /** Illustration id resolved through `@/media/images`. */
   imageId: z.string().optional(),
+  /** Official / useful website for the place (opens in a new tab). */
+  websiteUrl: z.string().url().optional(),
+  /** Short blurb for quick reading beyond the name. */
+  summaryEn: z.string().optional(),
+  summaryHe: z.string().optional(),
   /** City-level point for forecasts only — never treated as a precise Waze pin unless verified. */
   forecastPoint: CoordinatesSchema.optional(),
   privateLocation: z.boolean().default(false),

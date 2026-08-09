@@ -624,7 +624,51 @@ export const packingSections: PackingSection[] = [
         "noteHe": "רכיבה יחידנית רק מגיל 12 — משקל משולב עד 130 ק״ג"
       }
     ]
-  }
+  },
+  {
+    id: 'sec-supermarket-d0',
+    titleEn: 'Day-1 supermarket list (17 Aug)',
+    titleHe: 'רשימת קניות בסופר — יום הגעה (17/8)',
+    subtitleEn: 'Lidl / Billa / Tesco stop before Maladinovo',
+    subtitleHe: 'עצירת לידל / Billa / Tesco לפני מלאדינובו',
+    items: [
+      {
+        id: 'shop-water',
+        labelEn: 'Water multipacks (4–6 L+)',
+        labelHe: 'שישיות מים (4–6 ליטר+)',
+      },
+      {
+        id: 'shop-breakfast',
+        labelEn: 'Breakfast basics — bread, cheese, yogurt, fruit, butter',
+        labelHe: 'מצרכי בוקר — לחם, גבינה, יוגורט, פרי, חמאה',
+      },
+      {
+        id: 'shop-snacks',
+        labelEn: 'Trail snacks — nuts, bars, crackers',
+        labelHe: 'חטיפים למסלולים — אגוזים, חטיפי אנרגיה, קרקרים',
+      },
+      {
+        id: 'shop-wet-bags',
+        labelEn: 'Wet-clothes / zip bags',
+        labelHe: 'שקיות לבגדים רטובים / שקיות ZIP',
+      },
+      {
+        id: 'shop-kids',
+        labelEn: 'Kids treats + juice boxes',
+        labelHe: 'פינוקים לילדים + מיצים קטנים',
+      },
+      {
+        id: 'shop-picnic',
+        labelEn: 'Paper plates / cups / wet wipes (cheap picnic kit)',
+        labelHe: 'צלחות/כוסות חד־פעמי · מגבונים (ערכה זולה לפיקניק)',
+      },
+      {
+        id: 'shop-sunscreen',
+        labelEn: 'Sunscreen top-up if needed',
+        labelHe: 'השלמת קרם הגנה אם חסר',
+      },
+    ],
+  },
 ]
 
 export const dayBagPlans: DayBagPlan[] = [

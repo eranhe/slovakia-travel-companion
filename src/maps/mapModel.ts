@@ -32,6 +32,7 @@ export interface MapMarker {
   addressEn?: string
   privateLocation: boolean
   wazeUrl?: string
+  websiteUrl?: string
   noteEn?: string
   noteHe?: string
 }
@@ -71,6 +72,7 @@ export function markerFromPlace(
     addressEn: place.addressEn,
     privateLocation: place.privateLocation,
     wazeUrl: waze.ok ? waze.url : undefined,
+    websiteUrl: place.websiteUrl,
     noteEn: point.note ?? 'Approximate map point — not a verified entrance pin.',
     noteHe: point.note ?? 'נקודה משוערת במפה — לא פינ כניסה מאומת.',
   }

@@ -302,6 +302,16 @@ export function MapsPage() {
                 {isHe ? 'פתח ב-Waze' : 'Open in Waze'}
               </a>
             ) : null}
+            {selected.websiteUrl ? (
+              <a
+                className="btn btn-secondary"
+                href={selected.websiteUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {isHe ? 'אתר המקום' : 'Website'}
+              </a>
+            ) : null}
             {selected.placeId ? (
               <button
                 type="button"
