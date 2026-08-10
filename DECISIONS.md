@@ -31,9 +31,32 @@
   car pickup and return, and the first-evening Liptovská Mara stop — not trip-level metadata.
 - Optional calendar entries are kept and flagged `isOptional` rather than dropped, so the app shows
   the same plan the calendar does.
-- Mutually exclusive entries share a `choiceGroup` and render as "pick one" (Dino vs Vrátna on day 2,
-  Suchá Belá vs the easy valley walk on day 4, three-way Gubałówka / Zakopane festival / Chochołów
-  village on day 8, and the day 5 / 7 / 9 evening add-ons).
+- Mutually exclusive entries share a `choiceGroup` and render as "pick one" (Dino vs Vrátna as a day 1
+  swap, the day 4 split between staying at Maladinovo and a flat Podlesok morning, three-way Gubałówka /
+  Zakopane festival / Chochołów village on day 8, and the day 5 / 7 / 9 evening add-ons).
+
+## Calendar refresh, 10 Aug 2026
+
+The refreshed `.ics` exports moved several days. The sync was curated, not mechanical, because the
+export is internally inconsistent (stale all-day overview, wrong flight wall-clock times, duplicate
+22 Aug check-out times, a wrong Ždiar address, Route 66 tagged as Terchová).
+
+- **Applied:** Chopok → 19 Aug (07:15 GO/NO-GO, 07:45 depart, 08:30 lifts, descend by 12:15), followed by
+  Route 66 lunch and a full Liptovská Mara afternoon with an optional karting split; Jánošíkove Diery →
+  20 Aug with a hard 13:00 stop before the paid Bešeňová ticket (15:15–20:00); Suchá Belá → early
+  21 Aug (leave 06:10, in the gorge 07:40) with the Mom + Rotem choice modelled as two separate options;
+  22 Aug canonicalised on the 07:00 chain (wake 06:15, check-out 06:40, first cabins 08:30, Ždiar 451
+  from 15:00); AquaCity Poprad added as the 22 and 24 Aug storm branch.
+- **Rejected:** the calendar's 08:45 arrival and 08:50 departure times (booking says LY5119 07:00→09:45,
+  LY5120 09:50→14:15), the duplicate 09:00 check-out event, the Ždiar "67 716" address, the stale
+  28 Aug car-return event (the car is returned on the evening of 27 Aug), and Dino/Vrátna as a
+  Tatralandia afternoon add-on (1h20 away — kept as a swap and as the Bešeňová-closed fallback).
+- **Reframed:** the Dobšinská ice cave is no longer a fixed stop; it is the rain plan for the Chopok day
+  and for a washed-out 21 Aug.
+- Everything derived from the schedule was updated with it: day titles and notes, place `dayNumbers` /
+  `activityIds`, new place records (Route 66, Monaco Karting, Suchá Belá, TANAP museum, AquaCity Poprad,
+  Tricklandia), contingencies for days 2–5, 7 and 8, decision/prep reminders, day-bag plans and packing
+  section subtitles, emergency gorge/lift tips, and three new Slovak phrases.
 - Pre-trip prep, the Hilton free-cancellation deadline, and both online check-ins live in a separate
   `reminders` array so they surface without pretending to be itinerary activities.
 - `src/data/dedicated-trip.test.ts` enforces the cross-references: every `activityIds` entry resolves,

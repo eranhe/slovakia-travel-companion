@@ -141,8 +141,8 @@ export const packingSections: PackingSection[] = [
     "id": "sec-1",
     "titleEn": "Mountain bag",
     "titleHe": "תיק הרים",
-    "subtitleEn": "Chopok · Skalnate · Bachledka · Hrebienok days",
-    "subtitleHe": "20/8 Chopok · 22/8 Skalnaté pleso · 24/8 Bachledka · 26/8 Hrebienok",
+    "subtitleEn": "19/8 Chopok · 22/8 Skalnaté pleso · 24/8 Bachledka · 26/8 Hrebienok",
+    "subtitleHe": "19/8 חופוק · 22/8 סקאלנטה פלסו · 24/8 בחלדקה · 26/8 הרביינוק",
     "items": [
       {
         "id": "pack-1-0",
@@ -194,8 +194,8 @@ export const packingSections: PackingSection[] = [
     "id": "sec-2",
     "titleEn": "Canyons & caves bag",
     "titleHe": "תיק קניונים ומערות",
-    "subtitleEn": "Diery · Dobsinska + Sucha Bela · Belianska",
-    "subtitleHe": "19/8 Diery · 21/8 Dobšinská + Suchá Belá · 26/8 Belianska",
+    "subtitleEn": "20/8 Diery · 21/8 Suchá Belá · 26/8 Belianska · rain plan: Dobšinská ice cave",
+    "subtitleHe": "20/8 דיירי · 21/8 סוחה בלה · 26/8 בליאנסקה · תוכנית גשם: מערת הקרח דובשינסקה",
     "items": [
       {
         "id": "pack-2-0",
@@ -268,8 +268,8 @@ export const packingSections: PackingSection[] = [
     "id": "sec-3",
     "titleEn": "Water bag",
     "titleHe": "תיק מים",
-    "subtitleEn": "Water parks, rafting, Termy, Energylandia",
-    "subtitleHe": "18/8 Tatralandia · 20/8 Bešeňová · 23/8 רפטינג · 25/8 Termy · 27/8 Energylandia",
+    "subtitleEn": "18/8 Tatralandia · 19/8 Liptovská Mara · 20/8 Bešeňová · 23/8 rafting · 25/8 Termy · 27/8 Energylandia",
+    "subtitleHe": "18/8 טטרלנדיה · 19/8 ליפטובסקה מארה · 20/8 בשנובה · 23/8 רפטינג · 25/8 טרמות · 27/8 אנרג׳ילנדיה",
     "items": [
       {
         "id": "pack-3-0",
@@ -774,38 +774,38 @@ export const dayBagPlans: DayBagPlan[] = [
   },
   {
     "date": "2026-08-18",
-    "activityEn": "Tatralandia — יום מלא",
-    "activityHe": "Tatralandia — יום מלא",
-    "bagEn": "Water",
-    "bagHe": "מים"
+    "activityEn": "Tatralandia — full day (park opens 09:00)",
+    "activityHe": "טטרלנדיה — יום מלא (הפארק נפתח 09:00)",
+    "bagEn": "Water bag + Gopass PINs; evening weather call for Chopok",
+    "bagHe": "תיק מים + קודי Gopass; בערב החלטת מזג אוויר לחופוק"
   },
   {
     "date": "2026-08-19",
-    "activityEn": "Jánošíkove Diery + אטרקציה אחת",
-    "activityHe": "Jánošíkove Diery + אטרקציה אחת",
-    "bagEn": "Canyons",
-    "bagHe": "קניונים"
+    "activityEn": "Chopok (lifts 08:30) → lunch → Liptovská Mara",
+    "activityHe": "חופוק (רכבלים 08:30) → צהריים → ליפטובסקה מארה",
+    "bagEn": "Mountain bag (fleece + windbreaker for everyone) + swimsuits for the lake; warm cave layer if the plan flips to the ice cave",
+    "bagHe": "תיק הרים (פליז + מעיל רוח לכולם) + בגדי ים לאגם; שכבה חמה למערה אם התוכנית מתהפכת למערת הקרח"
   },
   {
     "date": "2026-08-20",
-    "activityEn": "Chopok בבוקר, Bešeňová אחה״צ",
-    "activityHe": "Chopok בבוקר, Bešeňová אחה״צ",
-    "bagEn": "Mountain + water",
-    "bagHe": "הרים + מים"
+    "activityEn": "Jánošíkove Diery morning → Bešeňová from ~15:15",
+    "activityHe": "יאנושיקובה דיירי בבוקר → בשנובה מ-15:15",
+    "bagEn": "Canyon bag + water bag ready in the car (swimsuits on top, bag for wet trail clothes)",
+    "bagHe": "תיק קניונים + תיק מים מוכן ברכב (בגדי ים בשכבה העליונה, שקית לבגדי מסלול רטובים)"
   },
   {
     "date": "2026-08-21",
-    "activityEn": "Dobšinská Ice Cave + Suchá Belá",
-    "activityHe": "Dobšinská Ice Cave + Suchá Belá",
-    "bagEn": "Canyons + warm layer",
-    "bagHe": "קניונים + שכבה חמה"
+    "activityEn": "Suchá Belá — leave 06:10, in the gorge 07:40",
+    "activityHe": "סוחה בלה — יציאה 06:10, בקניון 07:40",
+    "bagEn": "Canyon bag: 1.5–2 L water per person, packed breakfast, spare socks, hands free (backpack only)",
+    "bagHe": "תיק קניונים: 1.5–2 ליטר מים לאדם, ארוחת בוקר ארוזה, גרביים להחלפה, ידיים פנויות (תיק גב בלבד)"
   },
   {
     "date": "2026-08-22",
-    "activityEn": "מעבר, רכבלים, Mountain Cart",
-    "activityHe": "מעבר, רכבלים, Mountain Cart",
-    "bagEn": "Mountain",
-    "bagHe": "הרים"
+    "activityEn": "Check-out 06:40 → Lomnica lifts → Mountain Cart → Ždiar 451",
+    "activityHe": "צ׳ק-אאוט 06:40 → רכבלים בלומניצה → מאונטן קארט → ז׳דיאר 451",
+    "bagEn": "Mountain bag + packed breakfast + rain-branch bag (museum/cave/AquaCity); €50 cash for the Ždiar deposit",
+    "bagHe": "תיק הרים + ארוחת בוקר ארוזה + תיק לתרחיש גשם (מוזיאון/מערה/אקוואסיטי); 50€ במזומן לפיקדון בז׳דיאר"
   },
   {
     "date": "2026-08-23",
@@ -816,10 +816,10 @@ export const dayBagPlans: DayBagPlan[] = [
   },
   {
     "date": "2026-08-24",
-    "activityEn": "Bachledka — יום מלא",
-    "activityHe": "Bachledka — יום מלא",
-    "bagEn": "Mountain + mosquito repellent",
-    "bagHe": "הרים + דוחה יתושים"
+    "activityEn": "Bachledka treetop walk (ticket valid today only)",
+    "activityHe": "בחלדקה — שביל צמרות (הכרטיס תקף להיום בלבד)",
+    "bagEn": "Mountain bag + rain jackets + mosquito repellent; water bag in the car in case the day moves to AquaCity Poprad",
+    "bagHe": "תיק הרים + מעילי גשם + דוחה יתושים; תיק מים ברכב אם היום עובר ל-AquaCity פופרד"
   },
   {
     "date": "2026-08-25",

@@ -19,6 +19,8 @@ export const DayRecordSchema = z.object({
   baseLocationHe: z.string(),
   activityIds: z.array(z.string()).default([]),
   notes: z.string().optional(),
+  /** Hebrew version of `notes`; falls back to `notes` when absent. */
+  notesHe: z.string().optional(),
   /** Where the family sleeps at the end of this day. */
   lodgingPlaceId: z.string().optional(),
   /** Illustration id resolved through `@/media/images`. */
@@ -69,6 +71,8 @@ export const TripReminderSchema = z.object({
 export const DocumentMetaSchema = z.object({
   id: z.string(),
   title: z.string(),
+  /** Hebrew version of `title`; falls back to `title` when absent. */
+  titleHe: z.string().optional(),
   category: z.string(),
   mimeType: z.string(),
   sourceFileId: z.string().optional(),
@@ -78,6 +82,8 @@ export const DocumentMetaSchema = z.object({
   /** Reserved for a future document viewer. */
   hasBlob: z.boolean().default(false),
   note: z.string().optional(),
+  /** Hebrew version of `note`; falls back to `note` when absent. */
+  noteHe: z.string().optional(),
   /** Relative (under BASE_URL) or absolute URL to a full PDF / printable doc. */
   fileUrl: z.string().optional(),
   /** Optional printable summary card; fileUrl is reserved for the original document. */

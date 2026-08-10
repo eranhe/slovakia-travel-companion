@@ -65,6 +65,8 @@ export const PlaceSchema = z.object({
   privateLocation: z.boolean().default(false),
   indoorOutdoor: z.enum(['indoor', 'outdoor', 'mixed', 'unknown']).default('unknown'),
   notes: z.string().optional(),
+  /** Hebrew version of `notes`; falls back to `notes` when absent. */
+  notesHe: z.string().optional(),
 })
 
 export type CoordStatus = z.infer<typeof CoordStatusSchema>

@@ -7,6 +7,22 @@ import { fetchPlaceWeather, weatherCodeLabel } from '@/weather/openMeteo'
 import { useApp } from '@/providers/AppProvider'
 import { useEffect, useState } from 'react'
 
+const COORD_STATUS_HE: Record<string, string> = {
+  missing: 'חסרה',
+  'approximate-city': 'ברמת עיר — לתחזית בלבד',
+  approximate: 'משוערת — לתחזית בלבד',
+  verified: 'מאומתת',
+}
+
+const ACCESS_POINT_KIND_HE: Record<AccessPoint['kind'], string> = {
+  entrance: 'כניסה',
+  parking: 'חניה',
+  trailhead: 'תחילת מסלול',
+  dropoff: 'הורדה',
+  station: 'תחנה',
+  general: 'כללי',
+}
+
 interface PlaceCardProps {
   place: Place
   visitDate?: string
@@ -59,6 +75,7 @@ export function PlaceCard({ place, visitDate }: PlaceCardProps) {
   const dayWeather = weather?.daily.find((day) => day.date === visitDate) ?? weather?.daily[0]
   const mapQuery = selectedAp?.wazeQuery || place.addressEn || place.nameEn
   const summary = isHe ? place.summaryHe : place.summaryEn
+  const notes = isHe ? (place.notesHe ?? place.notes) : (place.notes ?? place.notesHe)
 
   return (
     <article className={`surface-card place-card place-card-${place.category}`}>
@@ -97,7 +114,7 @@ export function PlaceCard({ place, visitDate }: PlaceCardProps) {
         </div>
       ) : null}
 
-      {place.notes ? <p className="muted small">{place.notes}</p> : null}
+      {notes ? <p className="muted small">{notes}</p> : null}
 
       {place.accessPoints.length > 0 ? (
         <label className="ap-select">
@@ -111,7 +128,8 @@ export function PlaceCard({ place, visitDate }: PlaceCardProps) {
           >
             {place.accessPoints.map((point) => (
               <option key={point.id} value={point.id}>
-                {isHe ? point.labelHe : point.labelEn} ({point.kind})
+                {isHe ? point.labelHe : point.labelEn} (
+                {isHe ? ACCESS_POINT_KIND_HE[point.kind] : point.kind})
               </option>
             ))}
           </select>
@@ -146,8 +164,10 @@ export function PlaceCard({ place, visitDate }: PlaceCardProps) {
         </div>
         {place.forecastPoint ? (
           <p className="muted small">
-            {isHe ? 'נקודת תחזית:' : 'Forecast point:'} {place.forecastPoint.status}
-            {place.forecastPoint.note ? ` — ${place.forecastPoint.note}` : ''}
+            {isHe ? 'נקודת תחזית:' : 'Forecast point:'}{' '}
+            {isHe
+              ? (COORD_STATUS_HE[place.forecastPoint.status] ?? place.forecastPoint.status)
+              : `${place.forecastPoint.status}${place.forecastPoint.note ? ` — ${place.forecastPoint.note}` : ''}`}
           </p>
         ) : (
           <p className="muted small">{isHe ? 'אין נקודת תחזית.' : 'No forecast point.'}</p>

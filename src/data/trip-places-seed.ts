@@ -54,6 +54,8 @@ export const tripPlacesSeed: Place[] = [
     imageId: 'place-airport',
     notes:
       'Pickup: Arrivals → Level +1 → Rent a Car → Kaizen → P1 Sector E Level 5.5. Return evening 27 Aug after Hilton drop-off. Kaizen +48 881 212 968 / +48 76 727 99 99 · balice.rent@kaizenrent.pl.',
+    notesHe:
+      'איסוף: Arrivals ← מפלס +1 ← Rent a Car ← Kaizen ← חניון P1 Sector E Level 5.5. החזרה בערב 27/8 אחרי הורדת המזוודות בהילטון. Kaizen ‎+48 881 212 968‎ / ‎+48 76 727 99 99‎ · balice.rent@kaizenrent.pl.',
     forecastPoint: {
       lat: 50.0777,
       lng: 19.7848,
@@ -93,15 +95,20 @@ export const tripPlacesSeed: Place[] = [
     nameHe: 'ליפטובסקה מארה',
     category: 'attraction',
     websiteUrl: 'https://www.visitliptov.sk/',
-    summaryEn: 'Soft-landing lakeside walk / ice cream / optional SUP.',
-    summaryHe: 'הליכת נחיתה ליד האגם / גלידה / סאפ אופציונלי.',
+    summaryEn:
+      'Slovakia’s largest reservoir, ~10 min from Maladinovo. Shore walks, swimming and hourly SUP rental. Visited twice: a soft landing on 17 Aug and a full afternoon on 19 Aug after Chopok.',
+    summaryHe:
+      'המאגר הגדול בסלובקיה, ~10 דק׳ ממלאדינובו. הליכות על השפה, שחייה והשכרת סאפ לפי שעה. מבקרים פעמיים: נחיתה רכה ב-17/8 ואחה״צ מלא ב-19/8 אחרי חופוק.',
     addressEn: 'Liptovská Mara reservoir, Slovakia',
-    dayNumbers: [0],
-    activityIds: ['act-liptovska-mara'],
+    dayNumbers: [0, 2],
+    activityIds: ['act-liptovska-mara', 'act-mara-afternoon'],
     indoorOutdoor: 'outdoor',
     privateLocation: false,
     imageId: 'place-liptovska-mara',
-    notes: 'Shallow, warm shoreline — the easiest first-evening option with the kids.',
+    notes:
+      'Shallow, warm shoreline — the easiest evening option with the kids. Exposed to wind and lightning: off the water at the first thunder.',
+    notesHe:
+      'שפה רדודה וחמימה — אופציית הערב הקלה ביותר עם הילדים. חשוף לרוח ולברקים: יוצאים מהמים ברעם הראשון.',
     forecastPoint: {
       lat: 49.1,
       lng: 19.545,
@@ -161,7 +168,7 @@ export const tripPlacesSeed: Place[] = [
     ],
   },
 
-  // ── Day 2 · 19 Aug ────────────────────────────────────────────────────────
+  // ── Day 3 · 20 Aug — canyon morning ───────────────────────────────────────
   {
     id: 'place-janosikove-diery',
     nameEn: 'Jánošíkove Diery',
@@ -171,12 +178,13 @@ export const tripPlacesSeed: Place[] = [
     summaryEn: 'Ladder-and-waterfall gorge walk in the Malá Fatra — good for active kids.',
     summaryHe: 'מסלול קניון עם סולמות ומפלים במלה פטרה — מצוין לילדים פעילים.',
     addressEn: 'Hotel Diery, Biely Potok 664, Terchová, Slovakia',
-    dayNumbers: [2],
+    dayNumbers: [3],
     activityIds: ['act-diery-drive', 'act-janosikove-diery'],
     indoorOutdoor: 'outdoor',
     privateLocation: false,
     imageId: 'place-janosikove-diery',
     notes: 'Parking fills before 08:00 in August — the early start is the plan, not a preference.',
+    notesHe: 'החניון מתמלא לפני 08:00 באוגוסט — היציאה המוקדמת היא התוכנית, לא העדפה.',
     forecastPoint: {
       lat: 49.25,
       lng: 19.0333,
@@ -211,7 +219,7 @@ export const tripPlacesSeed: Place[] = [
     summaryEn: 'Terchová village — Jánošík statue, food and services near the gorges.',
     summaryHe: 'הכפר טרחובה — פסל יאנושיק, אוכל ושירותים ליד הקניונים.',
     addressEn: 'Terchová, Slovakia',
-    dayNumbers: [2],
+    dayNumbers: [3],
     activityIds: ['act-terchova-lunch'],
     indoorOutdoor: 'mixed',
     privateLocation: false,
@@ -241,12 +249,15 @@ export const tripPlacesSeed: Place[] = [
     summaryEn: 'Vrátna dolina / Dino Adventure Park base — cable car and family fun.',
     summaryHe: 'עמק ורטנה / פארק הרפתקאות דינו — רכבל וכיף משפחתי.',
     addressEn: 'Vrátna dolina, Terchová, Slovakia',
-    dayNumbers: [2],
+    dayNumbers: [1, 3],
     activityIds: ['act-dino-adventure', 'act-vratna-park'],
     indoorOutdoor: 'outdoor',
     privateLocation: false,
     imageId: 'place-adventure-park',
-    notes: 'Two competing afternoon options in the same valley — decide at lunch, not before.',
+    notes:
+      'Two competing options in the same valley, ~1h20 from Liptov. Realistic only as a swap (18 Aug) or bolted onto the Terchová day (20 Aug) — never as an add-on after a water park.',
+    notesHe:
+      'שתי אפשרויות מתחרות באותו עמק, ~שעה ו-20 מליפטוב. ריאלי רק כהחלפה (18/8) או כתוספת ליום טרחובה (20/8) — לא כתוספת אחרי פארק מים.',
     forecastPoint: {
       lat: 49.2167,
       lng: 19.0333,
@@ -273,22 +284,25 @@ export const tripPlacesSeed: Place[] = [
     ],
   },
 
-  // ── Day 3 · 20 Aug ────────────────────────────────────────────────────────
+  // ── Day 2 · 19 Aug — mountain day ─────────────────────────────────────────
   {
     id: 'place-chopok',
     nameEn: 'Chopok / Jasná',
     nameHe: 'חופוק / יאסנה',
     category: 'attraction',
     websiteUrl: 'https://www.jasna.sk/',
-    summaryEn: 'Cable cars / alpine day in Jasná.',
-    summaryHe: 'רכבלים / יום אלפיני ביאסנה.',
+    summaryEn:
+      'Alpine day above Demänovská dolina: cable cars from Biela Púť to Priehyba and on to Chopok (2,024 m), Slide Park on the way down, Vrbické pleso boardwalk at the bottom. Moved to 19 Aug in the 10 Aug calendar refresh.',
+    summaryHe:
+      'יום אלפיני מעל דמנובסקה דולינה: רכבלים מ-Biela Púť ל-Priehyba וממשיכים לחופוק (2,024 מ׳), סלייד פארק בירידה, ושביל העץ בוורביצקה פלסו למטה. הועבר ל-19/8 בעדכון היומן מ-10/8.',
     addressEn: 'Jasná – Biela Púť, Demänovská Dolina, Slovakia',
-    dayNumbers: [3],
-    activityIds: ['act-chopok'],
+    dayNumbers: [2],
+    activityIds: ['act-chopok-drive', 'act-chopok'],
     indoorOutdoor: 'outdoor',
     privateLocation: false,
     imageId: 'place-chopok',
     notes: 'Summit is exposed at ~2,000 m — wind closes the top cable car more often than rain.',
+    notesHe: 'הפסגה חשופה בגובה ~2,000 מ׳ — רוח סוגרת את הרכבל העליון יותר מגשם.',
     forecastPoint: {
       lat: 48.9433,
       lng: 19.5892,
@@ -315,6 +329,72 @@ export const tripPlacesSeed: Place[] = [
     ],
   },
   {
+    id: 'place-route66',
+    nameEn: 'Route 66 Restaurant',
+    nameHe: 'מסעדת Route 66',
+    category: 'food',
+    websiteUrl: 'https://www.route66restaurant.sk/',
+    summaryEn:
+      'American-diner style restaurant in Liptovský Mikuláš — burgers, ribs, big portions, kid-friendly. On the way back from Jasná, ~15 min from Maladinovo. (The calendar note that places it in Terchová is wrong.)',
+    summaryHe:
+      'מסעדה בסטייל דיינר אמריקאי בליפטובסקי מיקולאש — המבורגרים, צלעות, מנות גדולות, מתאים לילדים. על הדרך חזרה מיאסנה, ~15 דק׳ ממלאדינובו. (ההערה ביומן שממקמת אותה בטרחובה שגויה.)',
+    addressEn: 'Liptovský Mikuláš, Slovakia',
+    dayNumbers: [2],
+    activityIds: ['act-liptov-lunch'],
+    indoorOutdoor: 'mixed',
+    privateLocation: false,
+    forecastPoint: {
+      lat: 49.0847,
+      lng: 19.6194,
+      status: 'approximate-city',
+      note: 'Liptovský Mikuláš town — forecast only.',
+    },
+    accessPoints: [
+      {
+        id: 'ap-route66-entrance',
+        kind: 'entrance',
+        labelEn: 'Restaurant (search)',
+        labelHe: 'המסעדה (חיפוש)',
+        wazeQuery: 'Route 66 Restaurant Liptovsky Mikulas',
+        isDefaultNav: true,
+      },
+    ],
+  },
+  {
+    id: 'place-karting-monaco',
+    nameEn: 'Monaco Karting Aréna',
+    nameHe: 'זירת קארטינג מונקו',
+    category: 'attraction',
+    websiteUrl: 'https://www.monacokarting.sk/',
+    summaryEn:
+      'Outdoor karting track near Liptovský Mikuláš, ~10 min from Liptovská Mara. Optional 19 Aug split for Eran & Omer. Junior karts usually start at 10–12 years / ~140 cm — call before promising Rotem a ride. Closed on a wet track.',
+    summaryHe:
+      'מסלול קארטינג חוץ ליד ליפטובסקי מיקולאש, ~10 דק׳ מליפטובסקה מארה. פיצול אופציונלי ב-19/8 לערן ועומר. קארט ג׳וניור בדרך כלל מגיל 10–12 / ~140 ס״מ — להתקשר לפני שמבטיחים סיבוב לרותם. סגור על מסלול רטוב.',
+    addressEn: 'Liptovský Mikuláš area, Slovakia',
+    dayNumbers: [2],
+    activityIds: ['act-karting-monaco'],
+    indoorOutdoor: 'mixed',
+    privateLocation: false,
+    forecastPoint: {
+      lat: 49.0906,
+      lng: 19.5875,
+      status: 'approximate-city',
+      note: 'Liptovský Mikuláš / Mara area — forecast only.',
+    },
+    accessPoints: [
+      {
+        id: 'ap-karting-entrance',
+        kind: 'entrance',
+        labelEn: 'Karting track (search)',
+        labelHe: 'מסלול הקארטינג (חיפוש)',
+        wazeQuery: 'Monaco Karting Liptovsky Mikulas',
+        isDefaultNav: true,
+      },
+    ],
+  },
+
+  // ── Day 3 · 20 Aug — thermal afternoon ────────────────────────────────────
+  {
     id: 'place-besenova',
     nameEn: 'Vodný park Bešeňová',
     nameHe: 'פארק המים בשנובה',
@@ -324,7 +404,7 @@ export const tripPlacesSeed: Place[] = [
     summaryHe: 'פארק טרמלי — Gopass Aqua ב-20/8.',
     addressEn: 'Bešeňová 136, Slovakia',
     dayNumbers: [3],
-    activityIds: ['act-besenova'],
+    activityIds: ['act-besenova-drive', 'act-besenova'],
     indoorOutdoor: 'mixed',
     privateLocation: false,
     imageId: 'place-besenova',
@@ -346,22 +426,27 @@ export const tripPlacesSeed: Place[] = [
     ],
   },
 
-  // ── Day 4 · 21 Aug ────────────────────────────────────────────────────────
+  // ── Day 2 · 19 Aug — rain alternative ─────────────────────────────────────
   {
     id: 'place-ice-cave',
     nameEn: 'Dobšinská Ice Cave',
     nameHe: 'מערת הקרח דובשינסקה',
     category: 'attraction',
     websiteUrl: 'https://www.ssj.sk/en',
-    summaryEn: 'Dobšiná Ice Cave — UNESCO cave; cold inside, bring warm layers. Arrive early.',
-    summaryHe: 'מערת הקרח דובשינה — מערת אונסק״ו; קר בפנים, לקחת שכבות חמות. להגיע מוקדם.',
+    summaryEn:
+      'UNESCO ice cave near Stratená, ~1h45 from Maladinovo. Now the rain alternative for the Chopok day (19 Aug) rather than a fixed itinerary stop. Tours run at fixed times — target the 10:00 tour. Around 0 °C inside; fleeces and closed shoes even on a hot day.',
+    summaryHe:
+      'מערת קרח של אונסק״ו ליד סטרטנה, ~שעה ו-45 ממלאדינובו. כיום החלופה לגשם ביום חופוק (19/8) ולא עצירה קבועה בלוז. הסיורים בשעות קבועות — לכוון לסיור 10:00. סביב 0 מעלות בפנים; פליז ונעליים סגורות גם ביום חם.',
     addressEn: 'Dobšinská Ice Cave, Stratená, Slovakia',
-    dayNumbers: [4],
-    activityIds: ['act-ice-cave'],
+    dayNumbers: [2],
+    activityIds: [],
     indoorOutdoor: 'indoor',
     privateLocation: false,
     imageId: 'place-ice-cave',
-    notes: 'Timed entries and a 20-minute uphill walk from the car park to the cave mouth.',
+    notes:
+      'Timed entries and a real 25–40 min uphill walk from the car park to the cave mouth. Leave Maladinovo ~07:15 to make the 10:00 tour.',
+    notesHe:
+      'כניסה בשעות קבועות ועוד 25–40 דק׳ הליכה במעלה מהחניון לפתח המערה. לצאת ממלאדינובו ~07:15 כדי להספיק את סיור 10:00.',
     forecastPoint: {
       lat: 48.8733,
       lng: 20.2997,
@@ -379,21 +464,27 @@ export const tripPlacesSeed: Place[] = [
       },
     ],
   },
+  // ── Day 4 · 21 Aug ────────────────────────────────────────────────────────
   {
     id: 'place-podlesok',
-    nameEn: 'Podlesok / Suchá Belá',
-    nameHe: 'פודלסוק / סוחה בלה',
+    nameEn: 'Podlesok (Hrabušice)',
+    nameHe: 'פודלסוק (הרבושיצה)',
     category: 'attraction',
     websiteUrl: 'https://www.slovenskyraj.sk/',
-    summaryEn: 'Podlesok trailhead — start of Suchá Belá gorge in Slovak Paradise.',
-    summaryHe: 'ראש מסלול פודלסוק — תחילת קניון סוחה בלה בגן העדן הסלובקי.',
+    summaryEn:
+      'Main gateway to Slovenský raj: paid car park, meadow campsite, playground and the Rumanka / Poniklec terraces. Flat riverside trail along the Hornád for anyone skipping the gorge. Gorge entrance is a 10–15 min walk from the car.',
+    summaryHe:
+      'שער הכניסה המרכזי לגן העדן הסלובקי: חניון בתשלום, אחו קמפינג, מגרש משחקים והמרפסות של Rumanka / Poniklec. שביל שטוח לאורך נחל ההורנאד למי שמדלג על הקניון. מהרכב לכניסת הקניון 10–15 דק׳ הליכה.',
     addressEn: 'Podlesok, Hrabušice, Slovenský raj, Slovakia',
     dayNumbers: [4],
-    activityIds: ['act-podlesok-lunch', 'act-sucha-bela', 'act-podlesok-easy'],
+    activityIds: ['act-sucha-bela-drive', 'act-podlesok-wait', 'act-podlesok-lunch'],
     indoorOutdoor: 'outdoor',
     privateLocation: false,
     imageId: 'place-sucha-bela',
-    notes: 'Suchá Belá is one-way and uphill only; the valley loop from Podlesok is the easy option.',
+    notes:
+      'Parking fills early in August. Phone signal is patchy inside the gorge — agree a meeting point and time before the group splits.',
+    notesHe:
+      'החניון מתמלא מוקדם באוגוסט. הקליטה בתוך הקניון חלשה — לסגור נקודת מפגש ושעה לפני שהקבוצה מתפצלת.',
     forecastPoint: {
       lat: 48.9581,
       lng: 20.3839,
@@ -420,6 +511,44 @@ export const tripPlacesSeed: Place[] = [
     ],
   },
 
+  {
+    id: 'place-sucha-bela',
+    nameEn: 'Suchá Belá gorge',
+    nameHe: 'קניון סוחה בלה',
+    category: 'attraction',
+    websiteUrl: 'https://www.slovenskyraj.sk/en/sucha-bela/',
+    summaryEn:
+      'The classic Slovenský raj gorge: one-way only, climbed on fixed ladders, chains and log steps beside waterfalls. Full loop from Podlesok ~8.8 km / ~471 m ascent, 4–5 h with kids. Entrance fee at the gate. Not an easy walk — hands must be free.',
+    summaryHe:
+      'הקניון הקלאסי של גן העדן הסלובקי: חד-כיווני בלבד, מטפסים על סולמות קבועים, שרשראות ומדרגות בולי עץ לצד מפלים. המסלול המלא מפודלסוק ~8.8 ק״מ / ~471 מ׳ טיפוס, 4–5 שעות עם ילדים. דמי כניסה בשער. זה לא טיול קל — הידיים חייבות להיות פנויות.',
+    addressEn: 'Suchá Belá, Hrabušice, Slovenský raj, Slovakia',
+    dayNumbers: [4],
+    activityIds: ['act-sucha-bela'],
+    indoorOutdoor: 'outdoor',
+    privateLocation: false,
+    imageId: 'place-sucha-bela',
+    notes:
+      'Closed or genuinely dangerous after heavy rain. Be inside by 07:40–08:00; if you are not in the gorge by 09:30, do not start — there is no way back down the tall ladders.',
+    notesHe:
+      'סגור או ממש מסוכן אחרי גשם כבד. להיות בפנים ב-07:40–08:00; אם לא נכנסתם עד 09:30 — לא מתחילים, אין דרך חזרה במורד הסולמות הגבוהים.',
+    forecastPoint: {
+      lat: 48.9556,
+      lng: 20.3722,
+      status: 'approximate-city',
+      note: 'Suchá Belá / Podlesok area — forecast only.',
+    },
+    accessPoints: [
+      {
+        id: 'ap-sucha-bela-entrance',
+        kind: 'trailhead',
+        labelEn: 'Gorge entrance via Podlesok (search)',
+        labelHe: 'כניסת הקניון דרך פודלסוק (חיפוש)',
+        wazeQuery: 'Sucha Bela Podlesok',
+        isDefaultNav: true,
+      },
+    ],
+  },
+
   // ── Day 5 · 22 Aug ────────────────────────────────────────────────────────
   {
     id: 'place-tatranska-lomnica',
@@ -436,6 +565,7 @@ export const tripPlacesSeed: Place[] = [
     privateLocation: false,
     imageId: 'place-skalnate-pleso',
     notes: 'Book the cable car slot on arrival — mid-morning departures sell out first.',
+    notesHe: 'לקנות את שעת הרכבל מיד בהגעה — העליות של אמצע הבוקר נגמרות ראשונות.',
     forecastPoint: {
       lat: 49.1656,
       lng: 20.2833,
@@ -476,6 +606,7 @@ export const tripPlacesSeed: Place[] = [
     privateLocation: false,
     imageId: 'place-mountain-cart',
     notes: 'Carts start at the Štart mid-station and finish back at the lower station.',
+    notesHe: 'הקארטים מתחילים בתחנת הביניים Štart ומסתיימים בחזרה בתחנה התחתונה.',
     forecastPoint: {
       lat: 49.1722,
       lng: 20.2711,
@@ -489,6 +620,103 @@ export const tripPlacesSeed: Place[] = [
         labelEn: 'Štart mid-station (search)',
         labelHe: 'תחנת ביניים שטארט (חיפוש)',
         wazeQuery: 'Start Tatranska Lomnica',
+        isDefaultNav: true,
+      },
+    ],
+  },
+
+  {
+    id: 'place-tanap-museum',
+    nameEn: 'TANAP Museum (Tatranská Lomnica)',
+    nameHe: 'מוזיאון TANAP (טטרנסקה לומניצה)',
+    category: 'attraction',
+    websiteUrl: 'https://www.tanap.sk/',
+    summaryEn:
+      'Indoor Tatra National Park museum in Tatranská Lomnica village — nature, wildlife and mountaineering history. The default wet-weather stop when the Lomnica cable cars stop running.',
+    summaryHe:
+      'מוזיאון הפארק הלאומי של הטטרה בכפר טטרנסקה לומניצה, בפנים — טבע, חיות והיסטוריה של טיפוס הרים. עצירת ברירת המחדל ליום גשום כשהרכבלים בלומניצה נעצרים.',
+    addressEn: 'Tatranská Lomnica, Vysoké Tatry, Slovakia',
+    dayNumbers: [5],
+    activityIds: [],
+    indoorOutdoor: 'indoor',
+    privateLocation: false,
+    forecastPoint: {
+      lat: 49.1656,
+      lng: 20.2822,
+      status: 'approximate-city',
+      note: 'Tatranská Lomnica village — forecast only.',
+    },
+    accessPoints: [
+      {
+        id: 'ap-tanap-entrance',
+        kind: 'entrance',
+        labelEn: 'Museum entrance (search)',
+        labelHe: 'כניסה למוזיאון (חיפוש)',
+        wazeQuery: 'Muzeum TANAP Tatranska Lomnica',
+        isDefaultNav: true,
+      },
+    ],
+  },
+  {
+    id: 'place-aquacity-poprad',
+    nameEn: 'AquaCity Poprad',
+    nameHe: 'אקוואסיטי פופרד',
+    category: 'attraction',
+    websiteUrl: 'https://www.aquacity.sk/en/',
+    summaryEn:
+      'Large thermal and water park in Poprad, open daily 09:00–20:00, ~35–40 min from Ždiar. The storm-day backup for both the Lomnica transfer day (22 Aug) and Bachledka (24 Aug). Tickets on the door — nothing to book in advance.',
+    summaryHe:
+      'פארק מים ומרחצאות תרמיים גדול בפופרד, פתוח כל יום 09:00–20:00, ~35–40 דק׳ מז׳דיאר. הגיבוי ליום סוער גם ביום המעבר ללומניצה (22/8) וגם בבחלדקה (24/8). כרטיסים בקופה — אין מה להזמין מראש.',
+    addressEn: 'Športová 1397/1, Poprad, Slovakia',
+    dayNumbers: [5, 7],
+    activityIds: [],
+    indoorOutdoor: 'mixed',
+    privateLocation: false,
+    forecastPoint: {
+      lat: 49.0525,
+      lng: 20.2903,
+      status: 'approximate-city',
+      note: 'Poprad town — forecast only.',
+    },
+    accessPoints: [
+      {
+        id: 'ap-aquacity-entrance',
+        kind: 'entrance',
+        labelEn: 'Main entrance (search)',
+        labelHe: 'כניסה ראשית (חיפוש)',
+        wazeQuery: 'AquaCity Poprad',
+        isDefaultNav: true,
+      },
+    ],
+  },
+  {
+    id: 'place-tricklandia',
+    nameEn: 'Tricklandia (Starý Smokovec)',
+    nameHe: 'טריקלנדיה (סטארי סמוקובץ)',
+    category: 'attraction',
+    websiteUrl: 'https://www.tricklandia.sk/en/',
+    summaryEn:
+      'Indoor optical-illusion gallery and mirror maze in Starý Smokovec, ~30 min from Ždiar. A 1–2 hour rain filler the kids actually enjoy; photos are the whole point.',
+    summaryHe:
+      'גלריית אשליות אופטיות ומבוך מראות בפנים בסטארי סמוקובץ, ~30 דק׳ מז׳דיאר. מילוי של שעה-שעתיים ביום גשום שהילדים דווקא נהנים ממנו; כל העניין הוא הצילומים.',
+    addressEn: 'Starý Smokovec, Vysoké Tatry, Slovakia',
+    dayNumbers: [5],
+    activityIds: [],
+    indoorOutdoor: 'indoor',
+    privateLocation: false,
+    forecastPoint: {
+      lat: 49.1394,
+      lng: 20.2178,
+      status: 'approximate-city',
+      note: 'Starý Smokovec village — forecast only.',
+    },
+    accessPoints: [
+      {
+        id: 'ap-tricklandia-entrance',
+        kind: 'entrance',
+        labelEn: 'Gallery entrance (search)',
+        labelHe: 'כניסה לגלריה (חיפוש)',
+        wazeQuery: 'Tricklandia Stary Smokovec',
         isDefaultNav: true,
       },
     ],
@@ -510,6 +738,7 @@ export const tripPlacesSeed: Place[] = [
     privateLocation: false,
     imageId: 'place-dunajec',
     notes: 'Confirm the exact meeting point from the booking the evening before.',
+    notesHe: 'לאשר את נקודת המפגש המדויקת מההזמנה בערב שלפני.',
     forecastPoint: {
       lat: 49.391,
       lng: 20.411,
@@ -655,6 +884,7 @@ export const tripPlacesSeed: Place[] = [
     privateLocation: false,
     imageId: 'place-zakopane',
     notes: 'Park once near Krupówki and walk — driving between spots in Zakopane is slower.',
+    notesHe: 'לחנות פעם אחת ליד קרופובקי וללכת ברגל — נסיעה בין נקודות בזקופנה איטית יותר.',
     forecastPoint: {
       lat: 49.2992,
       lng: 19.9496,
@@ -697,6 +927,7 @@ export const tripPlacesSeed: Place[] = [
     privateLocation: false,
     imageId: 'place-belianska-cave',
     notes: 'Steep 20-minute approach path plus ~800 steps inside; about 6 °C year-round.',
+    notesHe: 'שביל גישה תלול של ~20 דק׳ ועוד ~800 מדרגות בפנים; כ-6 מעלות כל השנה.',
     forecastPoint: {
       lat: 49.2261,
       lng: 20.3103,
@@ -729,6 +960,7 @@ export const tripPlacesSeed: Place[] = [
     privateLocation: false,
     imageId: 'place-hrebienok',
     notes: 'Funicular from Starý Smokovec, then a flat 20-minute forest path to the waterfalls.',
+    notesHe: 'רכבל הכבלים מסטארי סמוקובץ, ואז שביל יער שטוח של 20 דק׳ עד המפלים.',
     forecastPoint: {
       lat: 49.1428,
       lng: 20.22,
@@ -830,11 +1062,13 @@ export const tripPlacesSeed: Place[] = [
     nameHe: 'מלון מלאדינובו',
     category: 'accommodation',
     addressEn: 'Pri Zátoke 66/6, Liptovský Mikuláš',
-    dayNumbers: [0, 1, 2, 3, 4],
+    dayNumbers: [0, 1, 2, 3, 4, 5],
     activityIds: [
       'act-maladinovo-checkin',
       'act-weather-call-d1',
       'act-arrival-evening-prep',
+      'act-weather-call-d2',
+      'act-maladinovo-easy-day',
       'act-return-maladinovo',
       'act-checkout-maladinovo',
     ],
@@ -843,10 +1077,11 @@ export const tripPlacesSeed: Place[] = [
     imageId: 'place-resort',
     websiteUrl: 'https://www.maladinovo.sk/',
     summaryEn:
-      'Lakeside resort base for nights 17–21 Aug. Check-in PIN 0910 · free parking · soft-landing evening only (no packed attractions).',
+      'Lakeside resort base for nights 17–21 Aug. Check-in PIN 0910 · free parking · breakfast served from 07:30 (too late for the 21 and 22 Aug early starts — pack food the night before). Rooms free until 10:00 on check-out day.',
     summaryHe:
-      'בסיס ליד האגם בלילות 17–21/8. PIN צ׳ק-אין 0910 · חניה חינם · ערב נחיתה רכה בלבד (בלי אטרקציות דחוסות).',
+      'בסיס ליד האגם בלילות 17–21/8. PIN צ׳ק-אין 0910 · חניה חינם · ארוחת בוקר מ-07:30 (מאוחר מדי ליציאות המוקדמות ב-21 וב-22/8 — לארוז אוכל בערב שלפני). החדרים פנויים עד 10:00 ביום הצ׳ק-אאוט.',
     notes: 'Private accommodation — keep out of share exports.',
+    notesHe: 'לינה פרטית — לא לכלול בשיתופים וייצוא.',
     forecastPoint: {
       lat: 49.0903,
       lng: 19.612,
@@ -870,15 +1105,20 @@ export const tripPlacesSeed: Place[] = [
     nameHe: 'Mountain Resort Residences ז׳דיאר',
     category: 'accommodation',
     websiteUrl: 'https://www.booking.com/',
-    summaryEn: 'Mountain base in Ždiar 451 — PIN 3196 · breakfast included.',
-    summaryHe: 'בסיס הרים בז׳דיאר 451 — PIN 3196 · ארוחת בוקר כלולה.',
+    summaryEn:
+      'Mountain base for nights 22–26 Aug. Ždiar 451 · confirmation 6595.212.538 · PIN 3196 · check-in 15:00–19:00, check-out by 10:00 · breakfast included · €50 cash damage deposit on arrival, refunded at check-out. No air-conditioning.',
+    summaryHe:
+      'בסיס הרים ללילות 22–26/8. ז׳דיאר 451 · אישור 6595.212.538 · PIN 3196 · צ׳ק-אין 15:00–19:00, צ׳ק-אאוט עד 10:00 · ארוחת בוקר כלולה · פיקדון 50€ במזומן בהגעה, מוחזר בצ׳ק-אאוט. אין מיזוג.',
     addressEn: 'Ždiar 451, Slovakia',
     dayNumbers: [5, 6, 7, 8, 9, 10],
     activityIds: ['act-zdiar-checkin', 'act-checkout-zdiar'],
     indoorOutdoor: 'unknown',
     privateLocation: true,
     imageId: 'place-zdiar',
-    notes: 'Private accommodation — address from booking; verify pin on arrival day.',
+    notes:
+      'Private accommodation — address is Ždiar 451. The calendar note "67 716, Ždiar" is not a usable address; ignore it in Waze.',
+    notesHe:
+      'לינה פרטית — הכתובת היא Ždiar 451. הרשומה ביומן ״67 716, Ždiar״ אינה כתובת שמישה; להתעלם ממנה ב-Waze.',
     forecastPoint: {
       lat: 49.2712,
       lng: 20.2706,
@@ -911,6 +1151,7 @@ export const tripPlacesSeed: Place[] = [
     privateLocation: true,
     imageId: 'place-resort',
     notes: 'Last free cancellation is 23 Aug — after that the night is non-refundable.',
+    notesHe: 'ביטול חינם אפשרי עד 23/8 — לאחר מכן הלילה ללא החזר.',
     forecastPoint: {
       lat: 50.0777,
       lng: 19.7848,
@@ -941,12 +1182,15 @@ export const tripPlacesSeed: Place[] = [
     summaryHe:
       'מכולת מקומית בז׳דיאר — ייתכן מאוורר קטן / USB. להתקשר לפני יציאה מהמלון; המלאי אינו מאומת.',
     addressEn: 'Ždiar 505 / also listed as Ždiar 472',
+    addressHe: 'Ždiar 505 (מופיע גם כ-Ždiar 472)',
     dayNumbers: [5, 6, 7, 8, 9],
     activityIds: [],
     indoorOutdoor: 'indoor',
     privateLocation: false,
     imageId: 'place-zdiar',
     notes: 'Tel +421 52 449 81 50 · usually Mon–Sat until 18:00. Ask explicitly for stolový / USB ventilátor.',
+    notesHe:
+      'טל׳ ‎+421 52 449 81 50‎ · בדרך כלל א׳–ש׳ עד 18:00. לבקש מפורשות stolový / USB ventilátor.',
     forecastPoint: {
       lat: 49.2712,
       lng: 20.2706,
@@ -978,6 +1222,7 @@ export const tripPlacesSeed: Place[] = [
     privateLocation: false,
     imageId: 'place-zdiar',
     notes: 'Tel +421 52 449 81 44 · Mon–Sat 07:00–18:45 · Sun 13:00–18:45 (local time).',
+    notesHe: 'טל׳ ‎+421 52 449 81 44‎ · א׳–ש׳ 07:00–18:45 · ראשון 13:00–18:45 (שעון מקומי).',
     forecastPoint: {
       lat: 49.2712,
       lng: 20.2706,
@@ -1012,6 +1257,7 @@ export const tripPlacesSeed: Place[] = [
     privateLocation: false,
     imageId: 'place-drive',
     notes: 'Daily 09:00–20:00 local time.',
+    notesHe: 'כל יום 09:00–20:00 שעון מקומי.',
     forecastPoint: {
       lat: 49.055,
       lng: 20.297,
@@ -1044,6 +1290,7 @@ export const tripPlacesSeed: Place[] = [
     privateLocation: false,
     imageId: 'place-drive',
     notes: 'Tel +421 52 321 99 11 · daily 09:00–20:00 local time.',
+    notesHe: 'טל׳ ‎+421 52 321 99 11‎ · כל יום 09:00–20:00 שעון מקומי.',
     forecastPoint: {
       lat: 49.055,
       lng: 20.297,

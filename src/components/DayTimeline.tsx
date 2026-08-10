@@ -20,6 +20,18 @@ const STATUS_LABEL: Record<string, { en: string; he: string }> = {
   tentative: { en: 'Tentative', he: 'לא סופי' },
 }
 
+const INDOOR_LABEL_HE: Record<string, string> = {
+  indoor: 'מקורה',
+  outdoor: 'בחוץ',
+  mixed: 'משולב',
+}
+
+const SENSITIVITY_LABEL_HE: Record<string, string> = {
+  low: 'נמוכה',
+  medium: 'בינונית',
+  high: 'גבוהה',
+}
+
 function timeRange(item: TimelineItem): string | null {
   const start = item.startTime
   const end = 'endTime' in item ? item.endTime : undefined
@@ -170,10 +182,14 @@ export function DayTimeline({ isHe, day, items, onMove, canReorder }: DayTimelin
                           ? `נסיעה ~${travel} דק׳`
                           : `Travel ~${travel} min`
                         : null,
-                      indoor && indoor !== 'unknown' ? indoor : null,
+                      indoor && indoor !== 'unknown'
+                        ? isHe
+                          ? INDOOR_LABEL_HE[indoor]
+                          : indoor
+                        : null,
                       sensitivity && sensitivity !== 'none'
                         ? isHe
-                          ? `רגישות מזג: ${sensitivity}`
+                          ? `רגישות מזג: ${SENSITIVITY_LABEL_HE[sensitivity] ?? sensitivity}`
                           : `Weather: ${sensitivity}`
                         : null,
                     ]

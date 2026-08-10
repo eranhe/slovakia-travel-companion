@@ -209,6 +209,24 @@ export const destinationTips = [
     bodyHe: 'בדרך כלל אין מגבות. למדוד ילדים עם נעליים למגבלות גובה.',
   },
   {
+    id: 'tip-gorges',
+    titleEn: 'Gorge rules (20 & 21 Aug)',
+    titleHe: 'כללי קניונים (20 ו-21/8)',
+    bodyEn:
+      'Suchá Belá and the upper Diery are one-way: ladders, chains and log steps, no turning back. Hands must be free — everything in a backpack. Do not enter Suchá Belá after 09:30, after heavy rain, or if anyone feels unwell. Phone signal is patchy: agree a meeting point and time before splitting up. 1.5–2 L water per person.',
+    bodyHe:
+      'סוחה בלה והדיירי העליון חד-כיווניים: סולמות, שרשראות ומדרגות בולי עץ, אין חזרה. הידיים חייבות להיות פנויות — הכול בתיק גב. לא להיכנס לסוחה בלה אחרי 09:30, אחרי גשם כבד, או אם מישהו לא מרגיש טוב. הקליטה חלשה: לקבוע נקודת מפגש ושעה לפני שמתפצלים. 1.5–2 ליטר מים לאדם.',
+  },
+  {
+    id: 'tip-lifts',
+    titleEn: 'Cable cars & summits',
+    titleHe: 'רכבלים ופסגות',
+    bodyEn:
+      'Wind closes the top cable car more often than rain (Chopok 19 Aug, Skalnaté pleso 22 Aug, Bachledka 24 Aug). Check the cams and the lower-station display before paying, and start descending by 12:00–12:15 — afternoon storms build fast. Summits run 8–10 °C colder than the valley plus wind chill.',
+    bodyHe:
+      'רוח סוגרת את הרכבל העליון יותר מגשם (חופוק 19/8, סקאלנטה פלסו 22/8, בחלדקה 24/8). לבדוק מצלמות ואת לוח התחנה התחתונה לפני התשלום, ולהתחיל לרדת עד 12:00–12:15 — סופות אחה״צ מתפתחות מהר. בפסגות 8–10 מעלות פחות מהעמק ועוד צינת רוח.',
+  },
+  {
     id: 'tip-arrival',
     titleEn: 'Arrival day (17 Aug)',
     titleHe: 'יום הגעה (17/8)',

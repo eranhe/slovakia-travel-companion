@@ -3,6 +3,7 @@ import { PageHeader } from '@/components/PageHeader'
 import { QrCanvas } from '@/components/QrCanvas'
 import { useApp } from '@/providers/AppProvider'
 import { getDocumentIndex } from '@/trip/TripRepository'
+import { dayLabel } from '@/trip/tripDays'
 import type { DocumentMeta } from '@/validation/tripSchemas'
 
 const CATEGORY_LABELS: Record<string, { en: string; he: string }> = {
@@ -15,6 +16,14 @@ const CATEGORY_LABELS: Record<string, { en: string; he: string }> = {
 }
 
 const CATEGORY_ORDER = ['flight', 'transport', 'accommodation', 'attraction', 'insurance', 'other']
+
+function docTitle(doc: DocumentMeta, isHe: boolean): string {
+  return isHe ? (doc.titleHe ?? doc.title) : doc.title
+}
+
+function docNote(doc: DocumentMeta, isHe: boolean): string | undefined {
+  return isHe ? (doc.noteHe ?? doc.note) : (doc.note ?? doc.noteHe)
+}
 
 function resolveDocUrl(pathOrUrl: string): string {
   if (/^https?:\/\//i.test(pathOrUrl)) return pathOrUrl
@@ -77,13 +86,9 @@ export function WalletPage() {
                 const qrValue = doc.qrValue ?? doc.bookingRef
                 return (
                   <article key={doc.id} className="surface-card wallet-card">
-                    <h3>{doc.title}</h3>
+                    <h3>{docTitle(doc, isHe)}</h3>
                     <p className="muted small">
-                      {doc.dayNumber != null
-                        ? isHe
-                          ? `יום ${doc.dayNumber}`
-                          : `Day ${doc.dayNumber}`
-                        : ''}
+                      {doc.dayNumber != null ? dayLabel(doc.dayNumber, isHe ? 'he' : 'en') : ''}
                     </p>
                     {doc.bookingRef ? (
                       <p className="booking-code-inline">{doc.bookingRef}</p>
@@ -153,7 +158,9 @@ export function WalletPage() {
                         </button>
                       ) : null}
                     </div>
-                    {doc.note ? <p className="wallet-note">{doc.note}</p> : null}
+                    {docNote(doc, isHe) ? (
+                      <p className="wallet-note">{docNote(doc, isHe)}</p>
+                    ) : null}
                   </article>
                 )
               })}
@@ -165,9 +172,11 @@ export function WalletPage() {
       {codeDoc?.bookingRef ? (
         <div className="qr-overlay" role="dialog" aria-modal="true">
           <div className="qr-card">
-            <h2>{codeDoc.title}</h2>
+            <h2>{docTitle(codeDoc, isHe)}</h2>
             <p className="qr-code">{codeDoc.bookingRef}</p>
-            {codeDoc.note ? <p className="wallet-note">{codeDoc.note}</p> : null}
+            {docNote(codeDoc, isHe) ? (
+              <p className="wallet-note">{docNote(codeDoc, isHe)}</p>
+            ) : null}
             <button type="button" className="btn btn-primary" onClick={() => setCodeDoc(null)}>
               {isHe ? 'סגור' : 'Close'}
             </button>
@@ -178,12 +187,12 @@ export function WalletPage() {
       {qrDoc ? (
         <div className="qr-overlay" role="dialog" aria-modal="true">
           <div className="qr-card">
-            <h2>{qrDoc.title}</h2>
+            <h2>{docTitle(qrDoc, isHe)}</h2>
             <QrCanvas
               value={qrDoc.qrValue ?? qrDoc.bookingRef ?? qrDoc.title}
               label={qrDoc.qrValue ?? qrDoc.bookingRef}
             />
-            {qrDoc.note ? <p className="wallet-note">{qrDoc.note}</p> : null}
+            {docNote(qrDoc, isHe) ? <p className="wallet-note">{docNote(qrDoc, isHe)}</p> : null}
             <button type="button" className="btn btn-primary" onClick={() => setQrDoc(null)}>
               {isHe ? 'סגור' : 'Close'}
             </button>

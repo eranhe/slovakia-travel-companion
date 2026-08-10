@@ -157,7 +157,11 @@ export function TripPage() {
             overlayTitle={isHe ? day.titleHe : day.titleEn}
             overlaySubtitle={isHe ? day.baseLocationHe : day.baseLocationEn}
           />
-          {day.notes ? <p style={{ marginTop: '0.5rem' }}>{day.notes}</p> : null}
+          {day.notes || day.notesHe ? (
+            <p style={{ marginTop: '0.5rem' }}>
+              {isHe ? (day.notesHe ?? day.notes) : (day.notes ?? day.notesHe)}
+            </p>
+          ) : null}
 
           {dayReminders.length > 0 ? (
             <ul className="reminder-list">
