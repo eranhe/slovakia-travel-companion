@@ -124,9 +124,9 @@ export const dedicatedTripData = {
       lodgingPlaceId: 'place-maladinovo',
       imageId: 'place-sucha-bela',
       notes:
-        'Earliest start of the trip: wake 05:45, leave 06:10, in the gorge by ~07:40 before the ladder queues. Resort breakfast only starts 07:30 — prepare food the night before. One-way gorge, ~8.8 km loop, ~471 m ascent, 4–5 h with kids. Revital & Rotem decide in advance: resort day at Maladinovo or the flat Podlesok area. Back ~15:15 to pack for tomorrow’s early transfer.',
+        'Earliest start of the trip: wake 05:45, leave 06:10, in the gorge by ~07:40 before the ladder queues. Resort breakfast only starts 07:30 — prepare food the night before. One-way gorge, ~8.8 km loop, ~471 m ascent, 4–5 h with kids. Revital & Rotem decide in advance: resort day at Maladinovo or the flat Podlesok area. Back ~15:15 — consider laundry, then pack for tomorrow’s early transfer.',
       notesHe:
-        'ההתחלה המוקדמת בטיול: השכמה 05:45, יציאה 06:10, בקניון עד ~07:40 לפני התורים בסולמות. ארוחת הבוקר בריזורט מתחילה רק ב-07:30 — להכין אוכל מהערב. הקניון חד-כיווני, מסלול ~8.8 ק״מ, ~471 מ׳ טיפוס, 4–5 שעות עם ילדים. רויטל ורותם מחליטות מראש: יום בריזורט במלאדינובו או האזור השטוח בפודלסוק. חוזרים ~15:15 כדי לארוז למעבר המוקדם של מחר.',
+        'ההתחלה המוקדמת בטיול: השכמה 05:45, יציאה 06:10, בקניון עד ~07:40 לפני התורים בסולמות. ארוחת הבוקר בריזורט מתחילה רק ב-07:30 — להכין אוכל מהערב. הקניון חד-כיווני, מסלול ~8.8 ק״מ, ~471 מ׳ טיפוס, 4–5 שעות עם ילדים. רויטל ורותם מחליטות מראש: יום בריזורט במלאדינובו או האזור השטוח בפודלסוק. חוזרים ~15:15 — לשקול כביסה, ואז לארוז למעבר המוקדם של מחר.',
       activityIds: [
         'act-sucha-bela-drive',
         'act-maladinovo-easy-day',
@@ -926,9 +926,9 @@ export const dedicatedTripData = {
       weatherSensitivity: 'low',
       imageId: 'place-drive',
       descriptionEn:
-        'Back by ~15:15 — a real afternoon at the resort for once. Last night in Liptov: pack tonight and prepare breakfast to go, because check-out tomorrow is 06:40.',
+        'Back by ~15:15 — a real afternoon at the resort for once. Last night in Liptov: consider a laundry run (apartment machine, or self-service at Štefánikova 1509/6 ~10 min), then pack tonight and prepare breakfast to go — check-out tomorrow is 06:40.',
       descriptionHe:
-        'חזרה עד ~15:15 — לשם שינוי אחה״צ אמיתי בריזורט. הלילה האחרון בליפטוב: לארוז הערב ולהכין ארוחת בוקר לדרך, כי הצ׳ק-אאוט מחר ב-06:40.',
+        'חזרה עד ~15:15 — לשם שינוי אחה״צ אמיתי בריזורט. הלילה האחרון בליפטוב: לשקול כביסה (מכונה בדירה, או מכבסה עצמית ב-Štefánikova 1509/6 ~10 דק׳), ואז לארוז הערב ולהכין ארוחת בוקר לדרך — הצ׳ק-אאוט מחר ב-06:40.',
     },
 
     // ── Day 5 · 22 Aug ──────────────────────────────────────────────────────
@@ -1851,6 +1851,19 @@ export const dedicatedTripData = {
         'Only start if dry, no storms, everyone feels good and you have water, food, layers and an offline map. Suchá Belá is one-way — you cannot turn back at the tall ladders. Otherwise take Tomášovský výhľad or the flat Podlesok meadow.',
       detailHe:
         'מתחילים רק אם יבש, בלי סופות, כולם מרגישים טוב ויש מים, אוכל, שכבות ומפה אופליין. סוחה בלה חד-כיווני — אין חזרה בסולמות הגבוהים. אחרת Tomášovský výhľad או אחו פודלסוק השטוח.',
+    },
+    {
+      id: 'rem-maladinovo-laundry',
+      date: '2026-08-21',
+      time: '15:30',
+      kind: 'prep',
+      dayNumber: 4,
+      titleEn: 'Last night at Maladinovo — consider laundry before packing',
+      titleHe: 'הלילה האחרון במלאדינובו — לשקול כביסה לפני האריזה',
+      detailEn:
+        'After the Suchá Belá return (~15:15): wash trail socks and wet layers if needed. Apartment has a machine; backup self-service laundry ~10 min away at Štefánikova 1509/6. Then pack + breakfast-to-go for the 06:40 check-out.',
+      detailHe:
+        'אחרי החזרה מסוחה בלה (~15:15): לכבס גרבי מסלול ושכבות רטובות אם צריך. יש מכונה בדירה; גיבוי — מכבסה עצמית ~10 דק׳ ב-Štefánikova 1509/6. אחר כך אריזה + ארוחת בוקר לדרך לצ׳ק-אאוט 06:40.',
     },
     {
       id: 'rem-checkout-early-lomnica',
