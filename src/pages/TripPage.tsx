@@ -8,7 +8,6 @@ import {
   activatePlan,
   ensureItineraryState,
   getDayItinerary,
-  moveActivity,
   previewPlanActivation,
   restoreOriginalOrder,
   undoLastRevision,
@@ -85,7 +84,6 @@ export function TripPage() {
   }, [autoSelected, profile, days])
 
   const day = days.find((item) => item.dayNumber === selectedDay) ?? days[0]
-  const canReorder = dayState?.activePlanKind === 'main'
   const dayReminders = day ? reminders.filter((item) => item.date === day.date) : []
 
   if (!isOpen) {
@@ -184,12 +182,6 @@ export function TripPage() {
               isHe={isHe}
               day={dayState}
               items={activeItems}
-              canReorder={Boolean(canReorder)}
-              onMove={(activityId, direction) => {
-                void moveActivity(selectedDay, activityId, direction).then(() =>
-                  reloadDay(selectedDay),
-                )
-              }}
             />
           ) : null}
         </article>

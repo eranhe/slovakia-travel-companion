@@ -91,11 +91,9 @@ interface DayTimelineProps {
   isHe: boolean
   day: DayItineraryState
   items: TimelineItem[]
-  onMove?: (activityId: string, direction: 'up' | 'down') => void
-  canReorder: boolean
 }
 
-export function DayTimeline({ isHe, day, items, onMove, canReorder }: DayTimelineProps) {
+export function DayTimeline({ isHe, day, items }: DayTimelineProps) {
   const locale = isHe ? 'he' : 'en'
   const planLabel = planKindLabel(day.activePlanKind as PlanKind, locale)
 
@@ -203,28 +201,6 @@ export function DayTimeline({ isHe, day, items, onMove, canReorder }: DayTimelin
                   ) : null}
                   {description ? <p className="timeline-note">{description}</p> : null}
                   <PlaceRowActions placeId={placeId ?? undefined} isHe={isHe} />
-                  {canReorder && onMove ? (
-                    <div className="timeline-actions">
-                      <button
-                        type="button"
-                        className="btn btn-ghost"
-                        disabled={index === 0}
-                        onClick={() => onMove(id, 'up')}
-                        aria-label={isHe ? 'הזז למעלה' : 'Move up'}
-                      >
-                        {isHe ? '▲ למעלה' : '▲ Up'}
-                      </button>
-                      <button
-                        type="button"
-                        className="btn btn-ghost"
-                        disabled={index === items.length - 1}
-                        onClick={() => onMove(id, 'down')}
-                        aria-label={isHe ? 'הזז למטה' : 'Move down'}
-                      >
-                        {isHe ? '▼ למטה' : '▼ Down'}
-                      </button>
-                    </div>
-                  ) : null}
                 </div>
               </li>
             )

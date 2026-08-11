@@ -35,7 +35,10 @@ export default defineConfig(({ mode }) => {
           ],
         },
         workbox: {
-          globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,woff2}'],
+          globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,woff2,pdf}'],
+          // Opening a PDF in a new tab is a navigation request. Keep document
+          // URLs out of the SPA fallback so they are served as actual files.
+          navigateFallbackDenylist: [/\/docs\//],
           // The illustration set alone is ~1.3 MB; keep room for it in precache.
           maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
         },

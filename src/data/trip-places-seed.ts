@@ -1020,7 +1020,42 @@ export const tripPlacesSeed: Place[] = [
     ],
   },
 
-  // ── Arrival supermarket ───────────────────────────────────────────────────
+  // ── Arrival lunch, supermarkets & dinner ──────────────────────────────────
+  {
+    id: 'place-bacowka-chyzne',
+    nameEn: 'Bacówka Chyżne',
+    nameHe: 'Bacówka צ׳יז׳נה',
+    category: 'food',
+    websiteUrl: 'https://bacowkachyzne.pl/index.html',
+    summaryEn:
+      'Family Polish restaurant directly on E77 near the Slovak border — a practical lunch stop between Kraków Airport and Liptov, with regional dishes and parking.',
+    summaryHe:
+      'מסעדה פולנית משפחתית ממש על E77 ליד גבול סלובקיה — עצירת צהריים נוחה בין נמל התעופה קרקוב לליפטוב, עם אוכל אזורי וחניה.',
+    addressEn: 'Chyżne 293, 34-481 Chyżne, Poland',
+    dayNumbers: [0],
+    activityIds: ['act-arrival-drive', 'act-arrival-lunch'],
+    indoorOutdoor: 'indoor',
+    privateLocation: false,
+    imageId: 'place-drive',
+    notes: 'Call +48 18 265 24 21 if the flight or car pickup is delayed.',
+    notesHe: 'אם הטיסה או איסוף הרכב מתעכבים, להתקשר: ‎+48 18 265 24 21‎.',
+    forecastPoint: {
+      lat: 49.426,
+      lng: 19.669,
+      status: 'approximate-city',
+      note: 'Chyżne border area — forecast only.',
+    },
+    accessPoints: [
+      {
+        id: 'ap-bacowka-chyzne',
+        kind: 'parking',
+        labelEn: 'Restaurant parking',
+        labelHe: 'חניית המסעדה',
+        wazeQuery: 'Bacowka Chyzne 293',
+        isDefaultNav: true,
+      },
+    ],
+  },
   {
     id: 'place-supermarket-liptov',
     nameEn: 'Lidl · Liptovský Mikuláš',
@@ -1028,7 +1063,7 @@ export const tripPlacesSeed: Place[] = [
     category: 'food',
     addressEn: 'Lidl, Liptovský Mikuláš',
     dayNumbers: [0],
-    activityIds: ['act-supermarket'],
+    activityIds: ['act-arrival-drive-liptov', 'act-supermarket'],
     indoorOutdoor: 'indoor',
     privateLocation: false,
     imageId: 'place-drive',
@@ -1050,6 +1085,74 @@ export const tripPlacesSeed: Place[] = [
         labelEn: 'Lidl Liptovský Mikuláš',
         labelHe: 'לידל ליפטובסקי מיקולאש',
         wazeQuery: 'Lidl Liptovsky Mikulas',
+        isDefaultNav: true,
+      },
+    ],
+  },
+  {
+    id: 'place-tesco-liptov',
+    nameEn: 'Tesco Hypermarket · Liptovský Mikuláš',
+    nameHe: 'טסקו היפרמרקט · ליפטובסקי מיקולאש',
+    category: 'food',
+    websiteUrl: 'https://tesco.sk/obchody',
+    summaryEn:
+      'Full-size Tesco alternative to Lidl for the arrival stock-up. Open daily 06:00–22:00 under the currently published hours; holiday hours may differ.',
+    summaryHe:
+      'חלופת טסקו גדולה ללידל לקניות ההגעה. לפי השעות המפורסמות כעת פתוח כל יום 06:00–22:00; בחגים ייתכנו שינויים.',
+    addressEn: 'Kamenné pole 4447/2, 031 01 Liptovský Mikuláš, Slovakia',
+    dayNumbers: [0],
+    activityIds: ['act-supermarket-tesco'],
+    indoorOutdoor: 'indoor',
+    privateLocation: false,
+    imageId: 'place-drive',
+    forecastPoint: {
+      lat: 49.078,
+      lng: 19.604,
+      status: 'approximate-city',
+      note: 'Liptovský Mikuláš — forecast only.',
+    },
+    accessPoints: [
+      {
+        id: 'ap-tesco-liptov',
+        kind: 'parking',
+        labelEn: 'Tesco Hypermarket parking',
+        labelHe: 'חניית טסקו היפרמרקט',
+        wazeQuery: 'Tesco Hypermarket Kamenne pole 4447/2 Liptovsky Mikulas',
+        isDefaultNav: true,
+      },
+    ],
+  },
+  {
+    id: 'place-bernard-pub-maladinovo',
+    nameEn: 'Bernard Pub Maladinovo',
+    nameHe: 'Bernard Pub מלאדינובו',
+    category: 'food',
+    websiteUrl: 'https://www.maladinovo.sk/bernard-pub-maladinovo',
+    summaryEn:
+      'First-night dinner inside Maladinovo Resort, with a children’s corner, outdoor terrace and playground. The kitchen currently lists dinner service from 17:00 to 21:00.',
+    summaryHe:
+      'ארוחת ערב ללילה הראשון בתוך ריזורט מלאדינובו, עם פינת ילדים, טרסה חיצונית ומגרש משחקים. המטבח מפרסם כרגע שירות ערב בין 17:00 ל-21:00.',
+    addressEn: 'Pri Zátoke 66/6, Liptovský Mikuláš, Slovakia',
+    dayNumbers: [0],
+    activityIds: ['act-arrival-dinner'],
+    indoorOutdoor: 'mixed',
+    privateLocation: false,
+    imageId: 'place-resort',
+    notes: 'Private events can change the hours; check before arrival. +421 914 170 170.',
+    notesHe: 'אירוע פרטי עשוי לשנות את השעות; לבדוק לפני ההגעה. ‎+421 914 170 170‎.',
+    forecastPoint: {
+      lat: 49.0903,
+      lng: 19.612,
+      status: 'approximate-city',
+      note: 'Liptov area forecast only.',
+    },
+    accessPoints: [
+      {
+        id: 'ap-bernard-pub-maladinovo',
+        kind: 'entrance',
+        labelEn: 'Restaurant at Maladinovo Resort',
+        labelHe: 'המסעדה בריזורט מלאדינובו',
+        wazeQuery: 'Bernard Pub Maladinovo',
         isDefaultNav: true,
       },
     ],

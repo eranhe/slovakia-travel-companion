@@ -767,8 +767,8 @@ export const packingSections: PackingSection[] = [
 export const dayBagPlans: DayBagPlan[] = [
   {
     "date": "2026-08-17",
-    "activityEn": "Arrival — flight, car desk, supermarket, Maladinovo",
-    "activityHe": "הגעה — טיסה, דלפק רכב, סופר, מלאדינובו",
+    "activityEn": "Arrival — flight, car desk, Chyżne lunch, Lidl/Tesco, Maladinovo dinner",
+    "activityHe": "הגעה — טיסה, דלפק רכב, צהריים בצ׳יז׳נה, לידל/טסקו, ערב במלאדינובו",
     "bagEn": "Documents bag (passports, boarding, rental 751370640 + Kaizen 540586, physical + intl licences, EUR 1000 card, early-return letter, Maladinovo PIN 0910, PassportCard) + Packing car-desk handbag list",
     "bagHe": "תיק מסמכים (דרכונים, עלייה, רכב 751370640 + Kaizen 540586, רישיון פיזי+בינלאומי, כרטיס 1000€, אישור החזרה מוקדמת, PIN מלאדינובו 0910, PassportCard) + רשימת תיק יד לדלפק בציוד"
   },

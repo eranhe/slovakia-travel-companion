@@ -72,7 +72,11 @@ export const contingencySeed: ContingencyPlan[] = [
     titleHe: 'עיכוב בדלפק הרכב · לשמור על הצ׳ק-אין',
     summaryEn: 'Photograph damage, keep the voucher, and message Maladinovo with a new ETA.',
     summaryHe: 'לצלם נזקים, לשמור את השובר, ולעדכן את מלאדינובו בשעת הגעה חדשה.',
-    replacesActivityIds: ['act-liptovska-mara', 'act-arrival-evening-prep'],
+    replacesActivityIds: [
+      'act-arrival-lunch',
+      'act-liptovska-mara',
+      'act-arrival-evening-prep',
+    ],
     activities: [
       {
         id: 'alt-d0-transport-direct',
