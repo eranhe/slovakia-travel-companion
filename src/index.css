@@ -429,6 +429,73 @@ a.btn {
   border-top: 1px solid var(--border);
 }
 
+.nearby-services {
+  margin: 0.85rem 0;
+  padding: 0.75rem 0 0;
+  border-top: 1px solid var(--border);
+}
+
+.nearby-services h3 {
+  margin: 0 0 0.2rem;
+  font-size: 1rem;
+}
+
+.nearby-services-list {
+  list-style: none;
+  margin: 0.5rem 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.nearby-services-list li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+}
+
+.nearby-services-list li:last-child {
+  border-bottom: none;
+}
+
+.nearby-service-main {
+  flex: 1 1 12rem;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.nearby-service-main strong {
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.nearby-service-kind {
+  display: inline-block;
+  margin-inline-end: 0.4rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.85em;
+}
+
+.nearby-service-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.nearby-service-actions .btn {
+  padding: 0.25rem 0.55rem;
+  font-size: 0.85rem;
+}
+
 .weather-block h3 {
   margin: 0;
   font-size: 1rem;

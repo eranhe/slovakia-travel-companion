@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { PageHeader } from '@/components/PageHeader'
 import { PlaceCard } from '@/components/PlaceCard'
 import { useApp } from '@/providers/AppProvider'
@@ -12,6 +13,8 @@ export function PlacesPage() {
   const { preferences, sessionMode } = useApp()
   const isHe = preferences.locale === 'he'
   const isOpen = sessionMode === 'open'
+  const [searchParams] = useSearchParams()
+  const focusId = searchParams.get('focus')
 
   const [places, setPlaces] = useState<Place[]>([])
   const [days, setDays] = useState<DayRecord[]>([])
@@ -31,6 +34,12 @@ export function PlacesPage() {
     if (filterDay === 'all') return places
     return places.filter((place) => place.dayNumbers.includes(filterDay))
   }, [places, filterDay])
+
+  useEffect(() => {
+    if (!focusId || visible.length === 0) return
+    const el = document.getElementById(focusId)
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }, [visible, focusId])
 
   if (!isOpen) {
     return (

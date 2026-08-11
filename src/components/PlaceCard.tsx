@@ -1,11 +1,17 @@
 import { CategoryBadge } from '@/components/CategoryBadge'
 import { Thumb } from '@/components/Illustration'
+import {
+  getNearbyServicesForPlace,
+  NEARBY_SERVICE_KIND_LABEL,
+  type NearbyService,
+} from '@/data/nearby-services-seed'
 import { categoryImageId } from '@/media/images'
 import type { AccessPoint, Place, WeatherSnapshot } from '@/types/place'
-import { buildWazeLink, openWaze, osmSearchUrl } from '@/navigation/waze'
+import { buildWazeLink, buildWazeSearchLink, openWaze, osmSearchUrl } from '@/navigation/waze'
 import { fetchPlaceWeather, weatherCodeLabel } from '@/weather/openMeteo'
 import { useApp } from '@/providers/AppProvider'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const COORD_STATUS_HE: Record<string, string> = {
   missing: 'חסרה',
@@ -31,6 +37,7 @@ interface PlaceCardProps {
 export function PlaceCard({ place, visitDate }: PlaceCardProps) {
   const { preferences } = useApp()
   const isHe = preferences.locale === 'he'
+  const nearbyServices = getNearbyServicesForPlace(place.id)
   const [selectedAp, setSelectedAp] = useState<AccessPoint | undefined>(
     place.accessPoints.find((point) => point.isDefaultNav) ?? place.accessPoints[0],
   )
@@ -38,9 +45,11 @@ export function PlaceCard({ place, visitDate }: PlaceCardProps) {
   const [weatherError, setWeatherError] = useState<string | null>(null)
   const [weatherBusy, setWeatherBusy] = useState(false)
   const [expanded, setExpanded] = useState(false)
+  const [servicesExpanded, setServicesExpanded] = useState(false)
 
   useEffect(() => {
     setSelectedAp(place.accessPoints.find((point) => point.isDefaultNav) ?? place.accessPoints[0])
+    setServicesExpanded(false)
   }, [place])
 
   async function loadWeather() {
@@ -72,13 +81,29 @@ export function PlaceCard({ place, visitDate }: PlaceCardProps) {
     openWaze(result)
   }
 
+  function handleServiceWaze(service: NearbyService) {
+    const result = buildWazeSearchLink(service.wazeQuery, {
+      navigate: true,
+      label: isHe ? service.nameHe : service.nameEn,
+    })
+    if (!result.ok) {
+      setWeatherError(result.error)
+      return
+    }
+    openWaze(result)
+  }
+
   const dayWeather = weather?.daily.find((day) => day.date === visitDate) ?? weather?.daily[0]
   const mapQuery = selectedAp?.wazeQuery || place.addressEn || place.nameEn
   const summary = isHe ? place.summaryHe : place.summaryEn
   const notes = isHe ? (place.notesHe ?? place.notes) : (place.notes ?? place.notesHe)
+  const visibleServices = servicesExpanded ? nearbyServices : nearbyServices.slice(0, 4)
 
   return (
-    <article className={`surface-card place-card place-card-${place.category}`}>
+    <article
+      id={place.id}
+      className={`surface-card place-card place-card-${place.category}`}
+    >
       <div className="place-card-header">
         <Thumb imageId={place.imageId ?? categoryImageId(place.category)} alt="" />
         <div>
@@ -115,6 +140,76 @@ export function PlaceCard({ place, visitDate }: PlaceCardProps) {
       ) : null}
 
       {notes ? <p className="muted small">{notes}</p> : null}
+
+      {nearbyServices.length > 0 ? (
+        <div className="nearby-services">
+          <h3>{isHe ? 'שירותים ליד הלינה' : 'Services near lodging'}</h3>
+          <p className="muted small">
+            {isHe
+              ? 'מרחקים משוערים · בחירום אמיתי להתקשר ל-112 קודם'
+              : 'Approximate distances · for life emergencies call 112 first'}
+          </p>
+          <ul className="nearby-services-list">
+            {visibleServices.map((service) => {
+              const kindLabel = isHe
+                ? NEARBY_SERVICE_KIND_LABEL[service.kind].he
+                : NEARBY_SERVICE_KIND_LABEL[service.kind].en
+              const note = isHe ? service.noteHe : service.noteEn
+              return (
+                <li key={service.id}>
+                  <div className="nearby-service-main">
+                    <strong>
+                      <span className="nearby-service-kind">{kindLabel}</span>
+                      {isHe ? service.nameHe : service.nameEn}
+                    </strong>
+                    <span className="muted small">
+                      {isHe ? service.distanceHe : service.distanceEn}
+                    </span>
+                    {note ? <p className="muted small">{note}</p> : null}
+                  </div>
+                  <div className="nearby-service-actions">
+                    <button
+                      type="button"
+                      className="btn btn-secondary"
+                      onClick={() => handleServiceWaze(service)}
+                    >
+                      Waze
+                    </button>
+                    {service.phone ? (
+                      <a className="btn btn-ghost" href={`tel:${service.phone}`}>
+                        {isHe ? 'התקשר' : 'Call'}
+                      </a>
+                    ) : null}
+                    {service.relatedPlaceId ? (
+                      <Link
+                        className="btn btn-ghost"
+                        to={`/places?focus=${encodeURIComponent(service.relatedPlaceId)}`}
+                      >
+                        {isHe ? 'מקום' : 'Place'}
+                      </Link>
+                    ) : null}
+                  </div>
+                </li>
+              )
+            })}
+          </ul>
+          {nearbyServices.length > 4 ? (
+            <button
+              type="button"
+              className="btn btn-ghost"
+              onClick={() => setServicesExpanded((v) => !v)}
+            >
+              {servicesExpanded
+                ? isHe
+                  ? 'פחות שירותים'
+                  : 'Fewer services'
+                : isHe
+                  ? `עוד ${nearbyServices.length - 4} שירותים`
+                  : `${nearbyServices.length - 4} more services`}
+            </button>
+          ) : null}
+        </div>
+      ) : null}
 
       {place.accessPoints.length > 0 ? (
         <label className="ap-select">

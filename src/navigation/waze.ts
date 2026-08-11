@@ -83,6 +83,29 @@ export function buildWazeLink(options: {
   }
 }
 
+/** Build a Waze search link from a free-text query (no Place / access point needed). */
+export function buildWazeSearchLink(
+  query: string,
+  options?: { navigate?: boolean; label?: string },
+): WazeLinkResult {
+  const trimmed = query.trim()
+  if (!trimmed) {
+    return { ok: false, error: 'Missing Waze search query.' }
+  }
+  const navigate = options?.navigate ?? true
+  const encoded = encodeURIComponent(trimmed)
+  const web = appendNavigate(`${WAZE_WEB}?q=${encoded}`, navigate)
+  const app = appendNavigate(`${WAZE_APP}?q=${encoded}`, navigate)
+  return {
+    ok: true,
+    url: web,
+    appUrl: app,
+    mode: 'q',
+    label: options?.label ?? trimmed,
+    privateLocation: false,
+  }
+}
+
 /**
  * Try the native `waze://` scheme first (mobile), then fall back to HTTPS.
  * Both open in a new tab/window so desktop browsers still reach the web client.

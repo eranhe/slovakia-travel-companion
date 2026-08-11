@@ -245,6 +245,15 @@ export const destinationTips = [
       'הרכב כבר הוחזר בערב 27/8. בדיקת חדר → צ׳ק-אאוט הילטון ~06:15–06:30 → הליכה בגשר המקורה → בידוק עד ~07:00 → LY5120 09:50. לשמור פרוטוקול החזרה + קבלת תדלוק + כרטיסי עלייה אופליין.',
   },
   {
+    id: 'tip-nearby-services',
+    titleEn: 'Services near lodging',
+    titleHe: 'שירותים ליד הלינה',
+    bodyEn:
+      'Supermarket, fuel, ATM, pharmacy, laundry and hospital pins live on the Maladinovo and Ždiar lodging cards (Places / Trip day). Call 112 first if life may be at risk.',
+    bodyHe:
+      'סופר, דלק, כספומט, בית מרקחת, מכבסה ובית חולים — על כרטיסי הלינה של מלאדינובו וז׳דיאר (מקומות / יום במסלול). אם יש סכנת חיים — קודם 112.',
+  },
+  {
     id: 'tip-zdiar-fan',
     titleEn: 'Hot room in Ždiar',
     titleHe: 'חדר חם בז׳דיאר',
