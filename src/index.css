@@ -525,6 +525,9 @@ a.btn {
     padding: 1.25rem;
     border-right: 1px solid var(--border);
     background: rgba(10, 15, 28, 0.9);
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
   }
 
   [dir='rtl'] .desktop-nav {
@@ -543,20 +546,49 @@ a.btn {
     font-size: 0.85rem;
   }
 
-  .desktop-nav-links {
+  .desktop-nav-scroll {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding-inline-end: 0.15rem;
+  }
+
+  .desktop-nav-section {
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
+    padding-top: 0.35rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .desktop-nav-section-label {
+    margin: 0;
+    padding: 0.35rem 0.75rem 0.1rem;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .desktop-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
   }
 
   .desktop-nav-link {
     display: flex;
     align-items: center;
     gap: 0.6rem;
-    padding: 0.6rem 0.75rem;
+    padding: 0.5rem 0.75rem;
     border-radius: 10px;
     color: var(--text-muted);
     text-decoration: none;
+    font-size: 0.95rem;
   }
 
   .desktop-nav-link.active {
@@ -565,7 +597,8 @@ a.btn {
   }
 
   .desktop-nav-session {
-    margin-top: auto;
+    margin-top: 0;
+    flex-shrink: 0;
     color: var(--text-muted);
     font-size: 0.85rem;
   }

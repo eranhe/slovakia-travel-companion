@@ -5,6 +5,14 @@ import { useApp } from '@/providers/AppProvider'
 
 const links = [
   {
+    to: '/places',
+    imageId: 'place-resort',
+    titleEn: 'Places',
+    titleHe: 'מקומות',
+    bodyEn: 'Place cards with Waze, forecasts, and the services near each lodging.',
+    bodyHe: 'כרטיסי מקום עם Waze, תחזיות ושירותים ליד כל לינה.',
+  },
+  {
     to: '/journal',
     imageId: 'place-liptovska-mara',
     titleEn: 'Journal & photos',
@@ -63,8 +71,8 @@ export function GuidePage() {
       <PageHeader
         titleEn="Guide"
         titleHe="מדריך"
-        subtitleEn="Journal, maps, packing, phrases, and emergency."
-        subtitleHe="יומן, מפות, ציוד, משפטים וחירום."
+        subtitleEn="Places, journal, maps, packing, phrases, and emergency."
+        subtitleHe="מקומות, יומן, מפות, ציוד, משפטים וחירום."
       />
       <div className="card-grid">
         {links.map((link) => (
