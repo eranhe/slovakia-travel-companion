@@ -1,13 +1,13 @@
 import { NavLink } from 'react-router-dom'
-import { primaryNav } from '@/config/navigation'
+import { mobileNav } from '@/config/navigation'
 import { useApp } from '@/providers/AppProvider'
 
 export function MobileNav() {
   const { preferences } = useApp()
 
   return (
-    <nav className="mobile-nav" aria-label="Primary">
-      {primaryNav.map((item) => {
+    <nav className="mobile-nav" aria-label={preferences.locale === 'he' ? 'ניווט ראשי' : 'Primary'}>
+      {mobileNav.map((item) => {
         const label = preferences.locale === 'he' ? item.labelHe : item.labelEn
         return (
           <NavLink

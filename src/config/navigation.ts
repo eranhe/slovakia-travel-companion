@@ -7,6 +7,23 @@ export const primaryNav: NavItem[] = [
   { path: '/settings', labelEn: 'Settings', labelHe: 'הגדרות', icon: '⚙' },
 ]
 
+/** Guide hub — shown in the mobile bottom bar (desktop has the full guideNav list). */
+export const guideHubNav: NavItem = {
+  path: '/guide',
+  labelEn: 'Guide',
+  labelHe: 'מדריך',
+  icon: '📖',
+}
+
+/** Mobile bottom bar: primary destinations + Guide hub before Settings. */
+export const mobileNav: NavItem[] = [
+  primaryNav[0],
+  primaryNav[1],
+  primaryNav[2],
+  guideHubNav,
+  primaryNav[3],
+]
+
 /** Direct links to every Guide destination — shown in the desktop side nav. */
 export const guideNav: NavItem[] = [
   { path: '/places', labelEn: 'Places', labelHe: 'מקומות', icon: '📍' },
