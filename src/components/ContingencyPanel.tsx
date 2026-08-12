@@ -13,6 +13,7 @@ interface ContingencyPanelProps {
   onConfirmActivate: (kind: PlanKind) => Promise<void>
   onRestoreOriginal: () => Promise<void>
   onUndo: () => Promise<void>
+  embedded?: boolean
 }
 
 export function ContingencyPanel({
@@ -25,6 +26,7 @@ export function ContingencyPanel({
   onConfirmActivate,
   onRestoreOriginal,
   onUndo,
+  embedded = false,
 }: ContingencyPanelProps) {
   const [selectedKind, setSelectedKind] = useState<PlanKind | null>(null)
   const [preview, setPreview] = useState<ImpactPreview | null>(null)
@@ -67,7 +69,7 @@ export function ContingencyPanel({
   }
 
   return (
-    <article className="surface-card contingency-panel">
+    <article className={`${embedded ? '' : 'surface-card '}contingency-panel`}>
       <h3>{isHe ? 'תוכניות גיבוי' : 'Contingency plans'}</h3>
       <p className="muted small">
         {isHe

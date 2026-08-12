@@ -13,6 +13,7 @@ import {
   undoLastRevision,
 } from '@/itinerary/ItineraryRepository'
 import { useApp } from '@/providers/AppProvider'
+import { loadCompletedActivityIds, toggleCompletedActivity } from '@/maps/visitStore'
 import { getPlacesForDay } from '@/places/PlaceRepository'
 import { getReminders, getTripDays, getTripProfile } from '@/trip/TripRepository'
 import { dayCode, dayLabel, todayIsoInTimezone } from '@/trip/tripDays'
@@ -47,6 +48,9 @@ export function TripPage() {
   const [contingencies, setContingencies] = useState<ContingencyPlan[]>([])
   const [revisions, setRevisions] = useState<RevisionEntry[]>([])
   const [reminders, setReminders] = useState<TripReminder[]>([])
+  const [completedIds, setCompletedIds] = useState<Set<string>>(() =>
+    loadCompletedActivityIds(),
+  )
 
   const reloadDay = useCallback(async (dayNumber: number) => {
     await ensureItineraryState()
@@ -182,6 +186,10 @@ export function TripPage() {
               isHe={isHe}
               day={dayState}
               items={activeItems}
+              completedIds={completedIds}
+              onToggleCompleted={(activityId) =>
+                setCompletedIds(toggleCompletedActivity(activityId))
+              }
             />
           ) : null}
         </article>

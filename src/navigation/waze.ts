@@ -126,3 +126,8 @@ export function openWaze(result: Extract<WazeLinkResult, { ok: true }>): void {
 export function osmSearchUrl(query: string): string {
   return `https://www.openstreetmap.org/search?query=${encodeURIComponent(query)}`
 }
+
+/** Google Maps search URL for users who do not navigate with Waze. */
+export function googleMapsSearchUrl(query: string): string {
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`
+}

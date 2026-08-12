@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { ActivityCompletionButton } from '@/components/ActivityCompletionButton'
 import { CategoryBadge } from '@/components/CategoryBadge'
 import { Thumb } from '@/components/Illustration'
 import { planKindLabel } from '@/itinerary/impactPreview'
 import { categoryImageId } from '@/media/images'
 import { openWazeForPlaceId } from '@/navigation/openPlaceWaze'
+import { googleMapsSearchUrl } from '@/navigation/waze'
 import { getPlaceByIdSync } from '@/places/PlaceRepository'
 import type { ContingencyActivity, DayItineraryState, PlanKind } from '@/types/itinerary'
 import type { ActivityStub } from '@/validation/tripSchemas'
@@ -42,11 +44,24 @@ function timeRange(item: TimelineItem): string | null {
 /** Waze + website + on-demand place details for a schedule row. */
 function PlaceRowActions({ placeId, isHe }: { placeId?: string; isHe: boolean }) {
   const [open, setOpen] = useState(false)
+  const [copied, setCopied] = useState(false)
   const place = getPlaceByIdSync(placeId)
   if (!place) return null
 
   const summary = isHe ? place.summaryHe : place.summaryEn
   const hasDetails = Boolean(summary || place.addressEn)
+  const mapQuery = place.addressEn ?? place.nameEn
+  const copyValue = (isHe ? place.addressHe : place.addressEn) ?? place.addressEn ?? mapQuery
+
+  async function copyAddress() {
+    try {
+      await navigator.clipboard.writeText(copyValue)
+      setCopied(true)
+      window.setTimeout(() => setCopied(false), 2000)
+    } catch {
+      window.prompt(isHe ? 'העתיקו את הכתובת:' : 'Copy this address:', copyValue)
+    }
+  }
 
   return (
     <div className="timeline-place">
@@ -57,6 +72,17 @@ function PlaceRowActions({ placeId, isHe }: { placeId?: string; isHe: boolean })
           onClick={() => void openWazeForPlaceId(place.id)}
         >
           Waze
+        </button>
+        <a
+          className="btn btn-ghost"
+          href={googleMapsSearchUrl(mapQuery)}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Google Maps
+        </a>
+        <button type="button" className="btn btn-ghost" onClick={() => void copyAddress()}>
+          {copied ? (isHe ? 'הועתק' : 'Copied') : isHe ? 'העתק כתובת' : 'Copy address'}
         </button>
         {place.websiteUrl ? (
           <a className="btn btn-ghost" href={place.websiteUrl} target="_blank" rel="noreferrer">
@@ -91,9 +117,17 @@ interface DayTimelineProps {
   isHe: boolean
   day: DayItineraryState
   items: TimelineItem[]
+  completedIds?: Set<string>
+  onToggleCompleted?: (activityId: string) => void
 }
 
-export function DayTimeline({ isHe, day, items }: DayTimelineProps) {
+export function DayTimeline({
+  isHe,
+  day,
+  items,
+  completedIds = new Set(),
+  onToggleCompleted,
+}: DayTimelineProps) {
   const locale = isHe ? 'he' : 'en'
   const planLabel = planKindLabel(day.activePlanKind as PlanKind, locale)
 
@@ -135,6 +169,7 @@ export function DayTimeline({ isHe, day, items }: DayTimelineProps) {
               ? (item.descriptionHe ?? ('suitabilityReasonHe' in item ? item.suitabilityReasonHe : undefined))
               : (item.descriptionEn ?? ('suitabilityReasonEn' in item ? item.suitabilityReasonEn : undefined))
             const isOptional = main?.isOptional === true
+            const completed = completedIds.has(id)
             const inChoice = main?.choiceGroup
               ? (choiceCounts.get(main.choiceGroup) ?? 0) > 1
               : false
@@ -142,7 +177,7 @@ export function DayTimeline({ isHe, day, items }: DayTimelineProps) {
             return (
               <li
                 key={id}
-                className={`timeline-item${isOptional ? ' timeline-item-optional' : ''}`}
+                className={`timeline-item${isOptional ? ' timeline-item-optional' : ''}${completed ? ' timeline-item-completed' : ''}`}
               >
                 <div className="timeline-marker" aria-hidden>
                   {range ? range.slice(0, 5) : index + 1}
@@ -200,6 +235,14 @@ export function DayTimeline({ isHe, day, items }: DayTimelineProps) {
                     </div>
                   ) : null}
                   {description ? <p className="timeline-note">{description}</p> : null}
+                  {onToggleCompleted ? (
+                    <ActivityCompletionButton
+                      completed={completed}
+                      isHe={isHe}
+                      compact
+                      onToggle={() => onToggleCompleted(id)}
+                    />
+                  ) : null}
                   <PlaceRowActions placeId={placeId ?? undefined} isHe={isHe} />
                 </div>
               </li>

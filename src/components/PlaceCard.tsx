@@ -7,7 +7,13 @@ import {
 } from '@/data/nearby-services-seed'
 import { categoryImageId } from '@/media/images'
 import type { AccessPoint, Place, WeatherSnapshot } from '@/types/place'
-import { buildWazeLink, buildWazeSearchLink, openWaze, osmSearchUrl } from '@/navigation/waze'
+import {
+  buildWazeLink,
+  buildWazeSearchLink,
+  googleMapsSearchUrl,
+  openWaze,
+  osmSearchUrl,
+} from '@/navigation/waze'
 import { fetchPlaceWeather, weatherCodeLabel } from '@/weather/openMeteo'
 import { useApp } from '@/providers/AppProvider'
 import { useEffect, useState } from 'react'
@@ -46,6 +52,7 @@ export function PlaceCard({ place, visitDate }: PlaceCardProps) {
   const [weatherBusy, setWeatherBusy] = useState(false)
   const [expanded, setExpanded] = useState(false)
   const [servicesExpanded, setServicesExpanded] = useState(false)
+  const [addressCopied, setAddressCopied] = useState(false)
 
   useEffect(() => {
     setSelectedAp(place.accessPoints.find((point) => point.isDefaultNav) ?? place.accessPoints[0])
@@ -91,6 +98,21 @@ export function PlaceCard({ place, visitDate }: PlaceCardProps) {
       return
     }
     openWaze(result)
+  }
+
+  async function copyAddress() {
+    const address =
+      (isHe ? place.addressHe : place.addressEn) ??
+      place.addressEn ??
+      selectedAp?.wazeQuery ??
+      place.nameEn
+    try {
+      await navigator.clipboard.writeText(address)
+      setAddressCopied(true)
+      window.setTimeout(() => setAddressCopied(false), 2000)
+    } catch {
+      window.prompt(isHe ? 'העתיקו את הכתובת:' : 'Copy this address:', address)
+    }
   }
 
   const dayWeather = weather?.daily.find((day) => day.date === visitDate) ?? weather?.daily[0]
@@ -243,6 +265,17 @@ export function PlaceCard({ place, visitDate }: PlaceCardProps) {
         <a className="btn btn-ghost" href={osmSearchUrl(mapQuery)} target="_blank" rel="noreferrer">
           {isHe ? 'מפה (OSM)' : 'Map (OSM)'}
         </a>
+        <a
+          className="btn btn-ghost"
+          href={googleMapsSearchUrl(mapQuery)}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Google Maps
+        </a>
+        <button type="button" className="btn btn-ghost" onClick={() => void copyAddress()}>
+          {addressCopied ? (isHe ? 'הועתק' : 'Copied') : isHe ? 'העתק כתובת' : 'Copy address'}
+        </button>
       </div>
 
       <div className="weather-block">

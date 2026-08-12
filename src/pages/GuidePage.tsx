@@ -5,6 +5,14 @@ import { useApp } from '@/providers/AppProvider'
 
 const links = [
   {
+    to: '/essential',
+    imageId: 'place-resort',
+    titleEn: 'Essential now',
+    titleHe: 'חיוני עכשיו',
+    bodyEn: 'Current lodging, 112, car, and insurance on one short screen.',
+    bodyHe: 'הלינה הפעילה, 112, רכב וביטוח במסך קצר אחד.',
+  },
+  {
     to: '/places',
     imageId: 'place-resort',
     titleEn: 'Places',
@@ -60,6 +68,14 @@ const links = [
     bodyEn: '112, mountain rescue, insurance pointers, scenarios.',
     bodyHe: '112, חילוץ הררי, ביטוח ותרחישים.',
   },
+  {
+    to: '/settings',
+    imageId: 'hero-tatras',
+    titleEn: 'Settings',
+    titleHe: 'הגדרות',
+    bodyEn: 'Language, visual skin, Tomorrow Check, and app information.',
+    bodyHe: 'שפה, ערכת תצוגה, בדיקת מחר ומידע על האפליקציה.',
+  },
 ] as const
 
 export function GuidePage() {
@@ -71,8 +87,8 @@ export function GuidePage() {
       <PageHeader
         titleEn="Guide"
         titleHe="מדריך"
-        subtitleEn="Places, journal, maps, packing, phrases, and emergency."
-        subtitleHe="מקומות, יומן, מפות, ציוד, משפטים וחירום."
+        subtitleEn="Places, journal, maps, packing, phrases, emergency, and settings."
+        subtitleHe="מקומות, יומן, מפות, ציוד, משפטים, חירום והגדרות."
       />
       <div className="card-grid">
         {links.map((link) => (

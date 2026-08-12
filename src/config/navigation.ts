@@ -15,17 +15,18 @@ export const guideHubNav: NavItem = {
   icon: '📖',
 }
 
-/** Mobile bottom bar: primary destinations + Guide hub before Settings. */
+/** Mobile bottom bar: day-of destinations + Guide hub + one-tap Emergency. */
 export const mobileNav: NavItem[] = [
   primaryNav[0],
   primaryNav[1],
   primaryNav[2],
   guideHubNav,
-  primaryNav[3],
+  { path: '/emergency', labelEn: 'Emergency', labelHe: 'חירום', icon: '🆘' },
 ]
 
 /** Direct links to every Guide destination — shown in the desktop side nav. */
 export const guideNav: NavItem[] = [
+  { path: '/essential', labelEn: 'Essential', labelHe: 'חיוני', icon: '★' },
   { path: '/places', labelEn: 'Places', labelHe: 'מקומות', icon: '📍' },
   { path: '/journal', labelEn: 'Journal', labelHe: 'יומן', icon: '📷' },
   { path: '/maps', labelEn: 'Maps', labelHe: 'מפות', icon: '🧭' },

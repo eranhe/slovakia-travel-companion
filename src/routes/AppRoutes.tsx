@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import { AppShell } from '@/components/AppShell'
 import { CommandCenterPage } from '@/pages/CommandCenterPage'
 import { EmergencyPage } from '@/pages/EmergencyPage'
+import { EssentialPage } from '@/pages/EssentialPage'
 import { GuidePage } from '@/pages/GuidePage'
 import { JournalPage } from '@/pages/JournalPage'
 import { MapsPage } from '@/pages/MapsPage'
@@ -36,6 +37,7 @@ function ProtectedRoutes() {
         <Route path="/packing" element={<PackingPage />} />
         <Route path="/phrases" element={<PhrasebookPage />} />
         <Route path="/emergency" element={<EmergencyPage />} />
+        <Route path="/essential" element={<EssentialPage />} />
         <Route path="/maps" element={<MapsPage />} />
         <Route path="/journal" element={<JournalPage />} />
         <Route path="/settings" element={<SettingsPage />} />

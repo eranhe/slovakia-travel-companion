@@ -127,6 +127,7 @@ body {
   border: 1px solid transparent;
   border-radius: 10px;
   padding: 0.65rem 1rem;
+  min-height: 44px;
   font-weight: 600;
   cursor: pointer;
 }
@@ -185,7 +186,9 @@ body {
   gap: 0.15rem;
   color: var(--text-muted);
   text-decoration: none;
-  font-size: 0.62rem;
+  min-height: 52px;
+  justify-content: center;
+  font-size: 0.72rem;
   padding: 0.35rem 0.1rem;
   border-radius: 8px;
 }
@@ -197,6 +200,44 @@ body {
 
 .mobile-nav-icon {
   font-size: 1rem;
+}
+
+html[data-skin='light'] .mobile-nav {
+  background: rgba(247, 250, 252, 0.97);
+}
+
+.essential-quick-bar {
+  position: sticky;
+  top: 0.5rem;
+  z-index: 20;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+  pointer-events: none;
+}
+
+.essential-quick-bar .btn {
+  min-height: 40px;
+  padding: 0.45rem 0.75rem;
+  pointer-events: auto;
+  backdrop-filter: blur(8px);
+}
+
+.essential-112 {
+  background: var(--danger);
+  color: #fff;
+}
+
+.essential-emergency {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.essential-emergency h2 {
+  margin: 0;
 }
 
 .unlock-page {
@@ -655,6 +696,35 @@ a.btn {
   align-items: start;
 }
 
+.timeline-item-completed {
+  opacity: 0.65;
+}
+
+.timeline-item-completed .timeline-title-row strong {
+  text-decoration: line-through;
+}
+
+.activity-completion {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: transparent;
+  color: var(--text-muted);
+  border-color: var(--border);
+}
+
+.activity-completion.completed {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(20, 184, 166, 0.12);
+}
+
+.activity-completion.compact {
+  min-height: 38px;
+  padding: 0.3rem 0.55rem;
+  font-size: 0.8rem;
+}
+
 .timeline-marker {
   min-width: 3.1rem;
   padding: 0.2rem 0.35rem;
@@ -684,6 +754,20 @@ a.btn {
 
 .contingency-panel h3 {
   margin-top: 0;
+}
+
+.quick-contingency > summary,
+.today-more-tools > summary {
+  cursor: pointer;
+  font-weight: 700;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.quick-contingency[open] > summary,
+.today-more-tools[open] > summary {
+  margin-bottom: 0.75rem;
 }
 
 .contingency-chips {
@@ -1145,6 +1229,52 @@ a.btn {
 
 /* ── Schedule / reminders ────────────────────────────────────────────────── */
 
+.next-activity-card {
+  border-color: var(--accent);
+  background:
+    linear-gradient(135deg, rgba(20, 184, 166, 0.14), transparent 55%),
+    var(--surface);
+}
+
+.next-activity-kicker {
+  margin: 0 0 0.35rem;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.next-activity-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.next-activity-content h2,
+.next-activity-time {
+  margin: 0;
+}
+
+.next-activity-time {
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  direction: ltr;
+  color: var(--accent);
+}
+
+.next-activity-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.today-more-tools {
+  margin-top: 0.5rem;
+}
+
 .schedule-list {
   list-style: none;
   margin: 0.75rem 0 0;
@@ -1158,6 +1288,21 @@ a.btn {
   display: flex;
   align-items: center;
   gap: 0.6rem;
+}
+
+.schedule-list li.schedule-current {
+  padding: 0.5rem;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  background: rgba(20, 184, 166, 0.08);
+}
+
+.schedule-list li.schedule-completed {
+  opacity: 0.62;
+}
+
+.schedule-completed .schedule-name {
+  text-decoration: line-through;
 }
 
 .schedule-time {
@@ -1176,6 +1321,20 @@ a.btn {
   align-items: center;
   gap: 0.4rem;
   flex: 1;
+}
+
+.activity-facts {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.activity-facts span {
+  padding: 0.18rem 0.4rem;
+  border-radius: 999px;
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  font-size: 0.72rem;
 }
 
 .schedule-optional .schedule-name,
@@ -1321,8 +1480,65 @@ a.btn {
 }
 
 .schedule-actions .btn {
-  padding: 0.15rem 0.45rem;
-  font-size: 0.75rem;
+  min-height: 38px;
+  padding: 0.3rem 0.55rem;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 560px) {
+  .next-activity-content {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .next-activity-actions .btn {
+    flex: 1;
+  }
+
+  .schedule-list li {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .schedule-time {
+    min-width: 4.8rem;
+  }
+}
+
+@media print {
+  .desktop-nav,
+  .mobile-nav,
+  .app-backdrop,
+  .essential-quick-bar,
+  .tomorrow-check-banner,
+  .recap-banner,
+  .btn,
+  .today-more-tools {
+    display: none !important;
+  }
+
+  body,
+  :root {
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  .app-content {
+    max-width: none;
+    padding: 0;
+  }
+
+  .surface-card {
+    break-inside: avoid;
+    background: #fff;
+    color: #111;
+    border-color: #bbb;
+  }
+
+  .muted,
+  .page-subtitle {
+    color: #444;
+  }
 }
 
 .place-title-link {

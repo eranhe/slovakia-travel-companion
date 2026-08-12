@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom'
 import { DesktopNav } from '@/components/DesktopNav'
+import { EssentialQuickBar } from '@/components/EssentialQuickBar'
 import { MobileNav } from '@/components/MobileNav'
 import { RecapBanner } from '@/components/RecapBanner'
 import { TomorrowCheckBanner } from '@/components/TomorrowCheckBanner'
@@ -23,6 +24,7 @@ export function AppShell() {
       <DesktopNav />
       <div className="app-main">
         <main className="app-content">
+          <EssentialQuickBar />
           <TomorrowCheckBanner />
           <RecapBanner />
           <Outlet />
