@@ -23,6 +23,8 @@ describe('dedicated trip seed', () => {
     const departure = trip.activities.filter((act) => act.dayNumber === 11)
     const eve = trip.activities.filter((act) => act.dayNumber === 10)
     expect(arrival.map((act) => act.id)).toContain('act-flight-out')
+    expect(arrival.map((act) => act.id)).toContain('act-tlv-cash-withdraw')
+    expect(arrival.map((act) => act.id)).toContain('act-eznamka')
     expect(arrival.map((act) => act.id)).toContain('act-car-pickup')
     expect(arrival.map((act) => act.id)).toContain('act-supermarket')
     expect(arrival.map((act) => act.id)).toContain('act-maladinovo-checkin')
@@ -40,6 +42,34 @@ describe('dedicated trip seed', () => {
     expect(refs).toContain('751370640')
     expect(refs).toContain('6299.313.025')
     expect(refs).toContain('6756.877.990')
+  })
+
+  it('links boarding, cash receipts, and ticket PDFs in Wallet', () => {
+    expect(trip.documents.find((doc) => doc.id === 'doc-boarding-outbound')?.fileUrl).toBe(
+      'docs/originals/boarding-pass-outbound.pdf',
+    )
+    expect(trip.documents.find((doc) => doc.id === 'doc-tlv-cash')?.fileUrl).toBe(
+      'docs/originals/tlv-cash-withdrawal.pdf',
+    )
+    expect(trip.documents.find((doc) => doc.id === 'doc-bachledka')?.fileUrl).toBe(
+      'docs/originals/bachledka-tickets.pdf',
+    )
+    expect(trip.documents.find((doc) => doc.id === 'doc-chocholow')?.fileUrl).toBe(
+      'docs/originals/chocholow-tickets.pdf',
+    )
+    expect(trip.activities.find((act) => act.id === 'act-flight-out')?.documentIds).toEqual([
+      'doc-flight',
+      'doc-boarding-outbound',
+    ])
+    expect(trip.activities.find((act) => act.id === 'act-bachledka')?.documentIds).toEqual([
+      'doc-bachledka',
+    ])
+    expect(trip.activities.find((act) => act.id === 'act-chocholow')?.documentIds).toEqual([
+      'doc-chocholow',
+    ])
+    expect(trip.activities.find((act) => act.id === 'act-eznamka')?.externalUrl).toBe(
+      'https://eznamka.sk',
+    )
   })
 
   it('includes Kaizen early-return email draft and critical reminder', () => {

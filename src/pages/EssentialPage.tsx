@@ -111,6 +111,17 @@ export function EssentialPage() {
             </Link>
           </article>
         ) : null}
+        <article className="surface-card">
+          <h2>{isHe ? 'e-vignette סלובקית' : 'Slovak e-vignette'}</h2>
+          <p className="muted small">
+            {isHe
+              ? 'יום הגעה 17/8 — לקנות רק באתר הרשמי אם לא כלול בהשכרה, לפני כבישים מהירים בסלובקיה.'
+              : 'Arrival day 17 Aug — buy only on the official site if not included with the rental, before Slovak motorways.'}
+          </p>
+          <a className="btn btn-primary" href="https://eznamka.sk" target="_blank" rel="noreferrer">
+            eznamka.sk
+          </a>
+        </article>
         {snapshot?.insurance ? (
           <article className="surface-card">
             <h2>{isHe ? 'ביטוח' : 'Insurance'}</h2>

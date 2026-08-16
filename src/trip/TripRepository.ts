@@ -42,6 +42,16 @@ export async function getDocumentIndex(): Promise<DocumentMeta[]> {
   return structuredClone(currentTrip.documents)
 }
 
+export function getDocumentByIdSync(id: string): DocumentMeta | undefined {
+  return currentTrip.documents.find((doc) => doc.id === id)
+}
+
+export function getDocumentsByIdsSync(ids: string[]): DocumentMeta[] {
+  return ids
+    .map((id) => currentTrip.documents.find((doc) => doc.id === id))
+    .filter((doc): doc is DocumentMeta => Boolean(doc))
+}
+
 export async function getReminders(): Promise<TripReminder[]> {
   return structuredClone(currentTrip.reminders)
 }

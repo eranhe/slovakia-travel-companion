@@ -9,14 +9,20 @@
     h1 { font-size: 1.4rem; }
     .code { font-size: 1.6rem; font-weight: 700; letter-spacing: 0.04em; }
     .note { white-space: pre-wrap; background: #f4f7fb; padding: 1rem; border-radius: 8px; }
-    @media print { a { display: none; } }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1rem 0; }
+    .actions a { padding: 0.55rem 0.9rem; border-radius: 8px; background: #1d4f91; color: #fff; text-decoration: none; }
+    @media print { .noprint { display: none; } }
   </style>
 </head>
 <body>
-  <p><a href="javascript:window.print()">הדפס / שמור כ-PDF</a></p>
+  <p class="noprint"><a href="javascript:window.print()">הדפס / שמור כ-PDF</a></p>
   <h1>Flights TLV ⇆ Kraków (El Al)</h1>
   <p class="code">CPUFIH</p>
   <div class="note">Ayala booking 242265888 · phone ID CPUFIH. Out: LY5119, 17 Aug 07:00 TLV → 09:45 KRK. Home: LY5120, 28 Aug 09:50 KRK → 14:15 TLV. FLEX fare: 23kg checked + 8kg cabin, changeable. 4 passengers.</div>
+  <div class="actions noprint">
+    <a href="originals/boarding-pass-outbound.pdf" target="_blank" rel="noreferrer">כרטיסי עלייה · TLV→KRK</a>
+    <a href="originals/flights-booking.pdf" target="_blank" rel="noreferrer">מסמך הזמנת טיסות</a>
+  </div>
   <p style="margin-top:2rem;color:#667">Slovakia Travel Companion · offline document card</p>
 </body>
 </html>

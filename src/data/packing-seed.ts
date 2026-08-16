@@ -629,8 +629,8 @@ export const packingSections: PackingSection[] = [
     id: 'sec-supermarket-d0',
     titleEn: 'Day-1 supermarket list (17 Aug)',
     titleHe: 'רשימת קניות בסופר — יום הגעה (17/8)',
-    subtitleEn: 'Lidl / Billa / Tesco stop before Maladinovo',
-    subtitleHe: 'עצירת לידל / Billa / Tesco לפני מלאדינובו',
+    subtitleEn: 'Lidl / Billa / Tesco stop before Maladinovo — food + room kit',
+    subtitleHe: 'עצירת לידל / Billa / Tesco לפני מלאדינובו — אוכל + מצרכים לחדר',
     items: [
       {
         id: 'shop-water',
@@ -643,14 +643,54 @@ export const packingSections: PackingSection[] = [
         labelHe: 'מצרכי בוקר — לחם, גבינה, יוגורט, פרי, חמאה',
       },
       {
+        id: 'shop-milk-coffee',
+        labelEn: 'Milk + coffee/tea + sugar',
+        labelHe: 'חלב + קפה/תה + סוכר',
+      },
+      {
+        id: 'shop-eggs-spread',
+        labelEn: 'Eggs + hummus / cold cuts for easy dinners',
+        labelHe: 'ביצים + חומוס / נקניקים לארוחות קלות',
+      },
+      {
         id: 'shop-snacks',
         labelEn: 'Trail snacks — nuts, bars, crackers',
         labelHe: 'חטיפים למסלולים — אגוזים, חטיפי אנרגיה, קרקרים',
       },
       {
+        id: 'shop-fruit-veg',
+        labelEn: 'Easy fruit & veg (apples, cucumbers, cherry tomatoes)',
+        labelHe: 'ירקות ופירות קלים (תפוחים, מלפפונים, עגבניות שרי)',
+      },
+      {
         id: 'shop-wet-bags',
         labelEn: 'Wet-clothes / zip bags',
         labelHe: 'שקיות לבגדים רטובים / שקיות ZIP',
+      },
+      {
+        id: 'shop-trash',
+        labelEn: 'Trash bags + paper towels',
+        labelHe: 'שקיות אשפה + מגבות נייר',
+      },
+      {
+        id: 'shop-dishwashing',
+        labelEn: 'Dish soap + sponge (room kitchenette)',
+        labelHe: 'סבון כלים + ספוג (למטבחון בחדר)',
+      },
+      {
+        id: 'shop-toilet',
+        labelEn: 'Toilet paper + wet wipes top-up',
+        labelHe: 'נייר טואלט + השלמת מגבונים',
+      },
+      {
+        id: 'shop-laundry',
+        labelEn: 'Travel laundry detergent / stain wipe',
+        labelHe: 'אבקת כביסה לנסיעות / מגבת כתמים',
+      },
+      {
+        id: 'shop-salt-oil',
+        labelEn: 'Salt, oil, and a small ketchup/mayo if useful',
+        labelHe: 'מלח, שמן, וקטשופ/מיונז קטן אם שימושי',
       },
       {
         id: 'shop-kids',
@@ -659,8 +699,8 @@ export const packingSections: PackingSection[] = [
       },
       {
         id: 'shop-picnic',
-        labelEn: 'Paper plates / cups / wet wipes (cheap picnic kit)',
-        labelHe: 'צלחות/כוסות חד־פעמי · מגבונים (ערכה זולה לפיקניק)',
+        labelEn: 'Paper plates / cups / cutlery (cheap picnic kit)',
+        labelHe: 'צלחות/כוסות/סכו״ם חד־פעמי (ערכה זולה לפיקניק)',
       },
       {
         id: 'shop-sunscreen',

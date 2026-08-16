@@ -34,12 +34,14 @@ export const dedicatedTripData = {
       lodgingPlaceId: 'place-maladinovo',
       imageId: 'place-airport',
       notes:
-        'Soft-landing day — do not pack attractions. Order: flight → car desk → lunch at Bacówka Chyżne near the border → Lidl or Tesco stock-up → Maladinovo check-in → optional lake → dinner at Bernard Pub → four day-bags + weather call for 18 Aug.',
+        'Soft-landing day — do not pack attractions. Order: Bank Hapoalim desk cash (300 PLN + 200 EUR, already ordered) → flight → car desk → confirm/buy e-vignette on eznamka.sk if needed → lunch at Bacówka Chyżne near the border → Lidl or Tesco stock-up (room supplies) → Maladinovo check-in → optional lake → dinner at Bernard Pub → four day-bags + weather call for 18 Aug.',
       notesHe:
-        'יום נחיתה רכה — לא דוחסים אטרקציות. הסדר: טיסה → דלפק רכב → ארוחת צהריים ב-Bacówka Chyżne ליד הגבול → קניות בלידל או בטסקו → צ׳ק-אין במלאדינובו → אגם אם נשאר כוח → ארוחת ערב ב-Bernard Pub → ארבעה תיקי יום + החלטת מזג אוויר ל-18/8.',
+        'יום נחיתה רכה — לא דוחסים אטרקציות. הסדר: משיכת מט״ח בדלפק בנק הפועלים בנתב״ג (300 זלוטי + 200€, כבר הוזמן) → טיסה → דלפק רכב → לאשר/לקנות e-vignette ב-eznamka.sk אם צריך → ארוחת צהריים ב-Bacówka Chyżne ליד הגבול → קניות בלידל או בטסקו (גם לחדר) → צ׳ק-אין במלאדינובו → אגם אם נשאר כוח → ארוחת ערב ב-Bernard Pub → ארבעה תיקי יום + החלטת מזג אוויר ל-18/8.',
       activityIds: [
+        'act-tlv-cash-withdraw',
         'act-flight-out',
         'act-car-pickup',
+        'act-eznamka',
         'act-arrival-drive',
         'act-arrival-lunch',
         'act-arrival-drive-liptov',
@@ -267,6 +269,27 @@ export const dedicatedTripData = {
   activities: [
     // ── Day 0 · 17 Aug — arrival ────────────────────────────────────────────
     {
+      id: 'act-tlv-cash-withdraw',
+      dayNumber: 0,
+      nameEn: 'Cash pickup — Bank Hapoalim desk (TLV)',
+      nameHe: 'משיכת מט״ח — דלפק בנק הפועלים (נתב״ג)',
+      startTime: '04:15',
+      endTime: '04:45',
+      status: 'confirmed',
+      category: 'other',
+      flexibility: 'fixed',
+      placeId: 'place-tlv-airport',
+      placeName: 'Ben Gurion Airport (TLV)',
+      indoorOutdoor: 'indoor',
+      weatherSensitivity: 'none',
+      imageId: 'place-airport',
+      documentIds: ['doc-tlv-cash'],
+      descriptionEn:
+        'Collect ordered FX at the Bank Hapoalim / Fly Money desk before security: 300 PLN + 200 EUR. Receipts in Wallet (refs in the PDF). Do this on the way in — desks open early for outbound flights.',
+      descriptionHe:
+        'לגבות מט״ח שהוזמן בדלפק בנק הפועלים / Fly Money לפני הבידוק: 300 זלוטי + 200€. האסמכתאות בארנק (במסמך ה-PDF). לעשות בדרך פנימה — הדלפקים נפתחים מוקדם לטיסות יוצאות.',
+    },
+    {
       id: 'act-flight-out',
       dayNumber: 0,
       nameEn: 'Flight TLV → Kraków (LY5119)',
@@ -279,13 +302,14 @@ export const dedicatedTripData = {
       placeId: 'place-tlv-airport',
       placeName: 'Ben Gurion Airport (TLV)',
       bookingRef: 'CPUFIH',
+      documentIds: ['doc-flight', 'doc-boarding-outbound'],
       indoorOutdoor: 'indoor',
       weatherSensitivity: 'none',
       imageId: 'place-airport',
       descriptionEn:
-        'Be at TLV by ~04:00 (3h before). Booking CPUFIH / Ayala 242265888. FLEX: 23 kg checked + 8 kg cabin each.',
+        'Be at TLV by ~04:00 (3h before). Booking CPUFIH / Ayala 242265888. FLEX: 23 kg checked + 8 kg cabin each. Open boarding passes from Wallet / the link below on the activity.',
       descriptionHe:
-        'להיות בנתב״ג בסביבות 04:00 (3 שעות לפני). הזמנה CPUFIH / איילה 242265888. FLEX: 23 ק״ג מזוודה + 8 ק״ג תיק יד לכל נוסע.',
+        'להיות בנתב״ג בסביבות 04:00 (3 שעות לפני). הזמנה CPUFIH / איילה 242265888. FLEX: 23 ק״ג מזוודה + 8 ק״ג תיק יד לכל נוסע. כרטיסי עלייה למטוס בארנק / בקישור בפעילות.',
     },
     {
       id: 'act-car-pickup',
@@ -307,6 +331,27 @@ export const dedicatedTripData = {
         'Pocket card: Arrivals → Level +1 → Rent a Car → Kaizen Rent → P1 → Sector E → Level 5.5. No shuttle outside the terminal. Voucher Rentalcars 751370640 · Kaizen 540586 · pickup from 11:00. At the desk get in writing: Slovakia Travel Permit (Zone I), fuel policy, e-vignette status, and early return evening 27 Aug ~20:30 with no out-of-hours fee. Photograph every side + odometer/fuel before loading bags. Deposit ~1,000 EUR on the main driver’s physical card. RentalCover TWVR-Q8JK-INS.',
       descriptionHe:
         'כרטיס כיס: Arrivals ← מפלס +1 ← Rent a Car ← Kaizen Rent ← P1 ← Sector E ← Level 5.5. בלי שאטל מחוץ לטרמינל. שובר Rentalcars 751370640 · Kaizen 540586 · איסוף מ-11:00. בדלפק לקבל בכתב: Travel Permit לסלובקיה (Zone I), מדיניות דלק, סטטוס e-vignette, והחזרה מוקדמת בערב 27/8 ~20:30 בלי עמלת out-of-hours. לצלם כל צד + קילומטראז׳/דלק לפני העמסת מזוודות. פיקדון ~1,000€ בכרטיס פיזי של הנהג הראשי. RentalCover TWVR-Q8JK-INS.',
+    },
+    {
+      id: 'act-eznamka',
+      dayNumber: 0,
+      nameEn: 'Slovak e-vignette — eznamka.sk',
+      nameHe: 'e-vignette סלובקית — eznamka.sk',
+      startTime: '11:20',
+      endTime: '11:30',
+      status: 'confirmed',
+      category: 'transport',
+      flexibility: 'flexible',
+      placeId: 'place-krk-airport',
+      placeName: 'Before driving into Slovakia',
+      indoorOutdoor: 'indoor',
+      weatherSensitivity: 'none',
+      imageId: 'place-drive',
+      externalUrl: 'https://eznamka.sk',
+      descriptionEn:
+        'Buy only on the official site eznamka.sk if the rental desk did not include a vignette. Needed before motorways in Slovakia on arrival day (17 Aug). Keep the confirmation offline.',
+      descriptionHe:
+        'לקנות רק באתר הרשמי eznamka.sk אם בדלפק הרכב לא כללו vignette. נדרש לפני כבישים מהירים בסלובקיה ביום ההגעה (17/8). לשמור אישור אופליין.',
     },
     {
       id: 'act-arrival-drive',
@@ -389,9 +434,9 @@ export const dedicatedTripData = {
       weatherSensitivity: 'none',
       imageId: 'place-drive',
       descriptionEn:
-        'Buy: water multipacks, breakfast basics (bread, cheese, yogurt, fruit), trail snacks, wet-clothes bags, kids treats. See Packing → Day-1 supermarket list.',
+        'Buy: water, breakfast basics, trail snacks, wet-clothes bags, kids treats, plus room supplies (see Packing → Day-1 supermarket list).',
       descriptionHe:
-        'לקנות: שישיות מים, מצרכי בוקר (לחם, גבינה, יוגורט, פרי), חטיפים למסלולים, שקיות לבגדים רטובים, פינוקים לילדים. ראו ציוד ← רשימת קניות יום ראשון.',
+        'לקנות: מים, מצרכי בוקר, חטיפים למסלולים, שקיות לבגדים רטובים, פינוקים לילדים, וגם מצרכים לחדר (ראו ציוד ← רשימת קניות יום הגעה).',
     },
     {
       id: 'act-supermarket-tesco',
@@ -411,9 +456,9 @@ export const dedicatedTripData = {
       weatherSensitivity: 'none',
       imageId: 'place-drive',
       descriptionEn:
-        'Use Tesco instead of Lidl if it is more convenient or you need a broader selection. Same shopping list: water, breakfast basics, trail snacks and wet-clothes bags.',
+        'Use Tesco instead of Lidl if it is more convenient or you need a broader selection. Same list: food + room supplies from Packing.',
       descriptionHe:
-        'לבחור בטסקו במקום לידל אם הוא נוח יותר או אם צריך מבחר גדול יותר. אותה רשימה: מים, מצרכי בוקר, חטיפים למסלולים ושקיות לבגדים רטובים.',
+        'לבחור בטסקו במקום לידל אם הוא נוח יותר או אם צריך מבחר גדול יותר. אותה רשימה: אוכל + מצרכים לחדר מציוד.',
     },
     {
       id: 'act-maladinovo-checkin',
@@ -1181,12 +1226,13 @@ export const dedicatedTripData = {
       placeId: 'place-bachledka',
       placeName: 'Bachledka Ski & Sun, Ždiar',
       bookingRef: '204-R9C1GY5',
+      documentIds: ['doc-bachledka'],
       indoorOutdoor: 'outdoor',
       weatherSensitivity: 'high',
       travelDurationMinutes: 15,
       imageId: 'place-bachledka',
-      descriptionEn: 'Tickets already bought. The tower closes in lightning — go early.',
-      descriptionHe: 'הכרטיסים כבר נרכשו. המגדל נסגר בברקים — להגיע מוקדם.',
+      descriptionEn: 'Tickets already bought (open from Wallet / activity link). The tower closes in lightning — go early.',
+      descriptionHe: 'הכרטיסים כבר נרכשו (לפתוח מהארנק / קישור בפעילות). המגדל נסגר בברקים — להגיע מוקדם.',
     },
     {
       id: 'act-grill-terrace',
@@ -1241,12 +1287,15 @@ export const dedicatedTripData = {
       placeId: 'place-chocholow',
       placeName: 'Chochołów 400, Poland',
       bookingRef: 'GYGWZAV7Z7Z3',
+      documentIds: ['doc-chocholow'],
       indoorOutdoor: 'mixed',
       weatherSensitivity: 'low',
       travelDurationMinutes: 70,
       imageId: 'place-chocholow',
-      descriptionEn: 'Crossing into Poland — carry passports and the vehicle documents.',
-      descriptionHe: 'מעבר לפולין — לקחת דרכונים ומסמכי הרכב.',
+      descriptionEn:
+        '3-hour booking — open entry tickets from Wallet / activity link. Crossing into Poland: carry passports and the vehicle documents.',
+      descriptionHe:
+        'הזמנה ל-3 שעות — לפתוח כרטיסי כניסה מהארנק / קישור בפעילות. מעבר לפולין: לקחת דרכונים ומסמכי הרכב.',
     },
     {
       id: 'act-gubalowka',
@@ -1983,13 +2032,46 @@ export const dedicatedTripData = {
       bookingRef: 'CPUFIH',
       createdAt: '2026-08-07T13:17:35.086Z',
       hasBlob: false,
-      note: 'Ayala booking 242265888 · phone ID CPUFIH. Out: LY5119, 17 Aug 07:00 TLV → 09:45 KRK. Home: LY5120, 28 Aug 09:50 KRK → 14:15 TLV. FLEX fare: 23kg checked + 8kg cabin, changeable. 4 passengers.',
+      note: 'Ayala booking 242265888 · phone ID CPUFIH. Out: LY5119, 17 Aug 07:00 TLV → 09:45 KRK. Home: LY5120, 28 Aug 09:50 KRK → 14:15 TLV. FLEX fare: 23kg checked + 8kg cabin, changeable. 4 passengers. Open the outbound boarding-pass PDF from the Boarding passes wallet card.',
       noteHe:
-        'הזמנה איילה 242265888 · מזהה טלפוני CPUFIH. הלוך: LY5119, 17/8 07:00 תל אביב ← 09:45 קרקוב. חזור: LY5120, 28/8 09:50 קרקוב ← 14:15 תל אביב. מחיר FLEX: 23 ק״ג מזוודה + 8 ק״ג תיק יד, ניתן לשינוי. 4 נוסעים.',
+        'הזמנה איילה 242265888 · מזהה טלפוני CPUFIH. הלוך: LY5119, 17/8 07:00 תל אביב ← 09:45 קרקוב. חזור: LY5120, 28/8 09:50 קרקוב ← 14:15 תל אביב. מחיר FLEX: 23 ק״ג מזוודה + 8 ק״ג תיק יד, ניתן לשינוי. 4 נוסעים. כרטיסי עלייה הלוך — בכרטיס Boarding passes בארנק.',
       fileUrl: 'docs/originals/flights-booking.pdf',
       summaryUrl: 'docs/flight-elal.html',
       qrValue: 'CPUFIH',
       externalUrl: 'https://www.elal.com/',
+    },
+    {
+      id: 'doc-boarding-outbound',
+      title: 'Boarding passes — TLV → Kraków (LY5119)',
+      titleHe: 'כרטיסי עלייה למטוס — תל אביב ← קרקוב (LY5119)',
+      category: 'flight',
+      mimeType: 'application/pdf',
+      dayNumber: 0,
+      bookingRef: 'CPUFIH',
+      createdAt: '2026-08-16T05:00:00.000Z',
+      hasBlob: false,
+      note: 'Outbound boarding passes for LY5119 on 17 Aug. Keep offline at the gate and in Essential / Wallet.',
+      noteHe:
+        'כרטיסי עלייה לטיסת הלוך LY5119 ב-17/8. לשמור אופליין בשער ובחיוני / ארנק.',
+      fileUrl: 'docs/originals/boarding-pass-outbound.pdf',
+      qrValue: 'CPUFIH',
+      externalUrl: 'https://www.elal.com/',
+    },
+    {
+      id: 'doc-tlv-cash',
+      title: 'TLV cash pickup — 300 PLN + 200 EUR',
+      titleHe: 'משיכת מט״ח בנתב״ג — 300 זלוטי + 200€',
+      category: 'other',
+      mimeType: 'application/pdf',
+      dayNumber: 0,
+      bookingRef: '9642',
+      createdAt: '2026-08-16T05:00:00.000Z',
+      hasBlob: false,
+      note: 'Fly Money / Bank Hapoalim desk order for Ben Gurion. Collect before the outbound flight on 17 Aug: 300 PLN + 200 EUR. PDF includes invoice emails and receipt photos.',
+      noteHe:
+        'הזמנת Fly Money / דלפק בנק הפועלים בנתב״ג. לגבות לפני טיסת הלוך ב-17/8: 300 זלוטי + 200€. ה-PDF כולל חשבוניות ואישורי קבלה.',
+      fileUrl: 'docs/originals/tlv-cash-withdrawal.pdf',
+      qrValue: '9642',
     },
     // ── Car rental ──────────────────────────────────────────────────────────
     {
@@ -2002,9 +2084,9 @@ export const dedicatedTripData = {
       bookingRef: '751370640',
       createdAt: '2026-08-07T13:17:35.086Z',
       hasBlob: false,
-      note: 'Rentalcars 751370640 · Kaizen 540586 · desk +48 881 212 968 / hub +48 76 727 99 99 · balice.rent@kaizenrent.pl. Pickup KRK terminal Level +1 on 17 Aug from 11:00 → P1 Sector E Level 5.5. Voucher still shows return 28 Aug 10:00 (conflicts with LY5120 09:50) — require written early return Thu 27 Aug ~20:30. Deposit ~1,000 EUR. Confirm Travel Permit Slovakia Zone I, fuel policy, e-vignette. RentalCover TWVR-Q8JK-INS.',
+      note: 'Rentalcars 751370640 · Kaizen 540586 · desk +48 881 212 968 / hub +48 76 727 99 99 · balice.rent@kaizenrent.pl. Pickup KRK terminal Level +1 on 17 Aug from 11:00 → P1 Sector E Level 5.5. Voucher still shows return 28 Aug 10:00 (conflicts with LY5120 09:50) — require written early return Thu 27 Aug ~20:30. Deposit ~1,000 EUR. Confirm Travel Permit Slovakia Zone I, fuel policy, e-vignette. RentalCover TWVR-Q8JK-INS. If vignette is not included, buy only via https://eznamka.sk.',
       noteHe:
-        'Rentalcars 751370640 · Kaizen 540586 · דלפק ‎+48 881 212 968‎ / מוקד ‎+48 76 727 99 99‎ · balice.rent@kaizenrent.pl. איסוף בטרמינל קרקוב מפלס +1 ב-17/8 מ-11:00 ← חניון P1 Sector E Level 5.5. השובר עדיין מציג החזרה 28/8 ב-10:00 (מתנגש עם LY5120 ב-09:50) — לדרוש אישור בכתב להחזרה מוקדמת ביום ה׳ 27/8 סביב 20:30. פיקדון ~1,000€. לאמת Travel Permit לסלובקיה (Zone I), מדיניות דלק ו-e-vignette. RentalCover TWVR-Q8JK-INS.',
+        'Rentalcars 751370640 · Kaizen 540586 · דלפק ‎+48 881 212 968‎ / מוקד ‎+48 76 727 99 99‎ · balice.rent@kaizenrent.pl. איסוף בטרמינל קרקוב מפלס +1 ב-17/8 מ-11:00 ← חניון P1 Sector E Level 5.5. השובר עדיין מציג החזרה 28/8 ב-10:00 (מתנגש עם LY5120 ב-09:50) — לדרוש אישור בכתב להחזרה מוקדמת ביום ה׳ 27/8 סביב 20:30. פיקדון ~1,000€. לאמת Travel Permit לסלובקיה (Zone I), מדיניות דלק ו-e-vignette. RentalCover TWVR-Q8JK-INS. אם אין vignette בהשכרה — לקנות רק ב-https://eznamka.sk.',
       fileUrl: 'docs/originals/car-rental-voucher.pdf',
       summaryUrl: 'docs/car-rental.html',
       qrValue: '751370640',

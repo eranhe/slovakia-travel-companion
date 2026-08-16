@@ -7,13 +7,65 @@ import { categoryImageId } from '@/media/images'
 import { openWazeForPlaceId } from '@/navigation/openPlaceWaze'
 import { googleMapsSearchUrl } from '@/navigation/waze'
 import { getPlaceByIdSync } from '@/places/PlaceRepository'
+import { getDocumentsByIdsSync } from '@/trip/TripRepository'
 import type { ContingencyActivity, DayItineraryState, PlanKind } from '@/types/itinerary'
-import type { ActivityStub } from '@/validation/tripSchemas'
+import type { ActivityStub, DocumentMeta } from '@/validation/tripSchemas'
 
 type TimelineItem = ActivityStub | ContingencyActivity
 
 function isMainActivity(item: TimelineItem): item is ActivityStub {
   return 'dayNumber' in item && 'status' in item
+}
+
+function resolveDocUrl(pathOrUrl: string): string {
+  if (/^https?:\/\//i.test(pathOrUrl)) return pathOrUrl
+  const base = import.meta.env.BASE_URL || '/'
+  return `${base}${pathOrUrl.replace(/^\//, '')}`
+}
+
+function docTitle(doc: DocumentMeta, isHe: boolean): string {
+  return isHe ? (doc.titleHe ?? doc.title) : doc.title
+}
+
+/** Ticket / boarding / receipt links attached to a schedule row. */
+function DocumentRowActions({
+  documentIds,
+  isHe,
+}: {
+  documentIds?: string[]
+  isHe: boolean
+}) {
+  if (!documentIds?.length) return null
+  const docs = getDocumentsByIdsSync(documentIds).filter((doc) => doc.fileUrl || doc.externalUrl)
+  if (docs.length === 0) return null
+
+  return (
+    <div className="settings-row" style={{ flexWrap: 'wrap', gap: '0.35rem', marginTop: '0.35rem' }}>
+      {docs.map((doc) =>
+        doc.fileUrl ? (
+          <a
+            key={doc.id}
+            className="btn btn-secondary"
+            href={resolveDocUrl(doc.fileUrl)}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {isHe ? `מסמך: ${docTitle(doc, true)}` : `Doc: ${docTitle(doc, false)}`}
+          </a>
+        ) : doc.externalUrl ? (
+          <a
+            key={doc.id}
+            className="btn btn-ghost"
+            href={doc.externalUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {docTitle(doc, isHe)}
+          </a>
+        ) : null,
+      )}
+    </div>
+  )
 }
 
 const STATUS_LABEL: Record<string, { en: string; he: string }> = {
@@ -242,6 +294,22 @@ export function DayTimeline({
                       compact
                       onToggle={() => onToggleCompleted(id)}
                     />
+                  ) : null}
+                  {main ? <DocumentRowActions documentIds={main.documentIds} isHe={isHe} /> : null}
+                  {main?.externalUrl ? (
+                    <div
+                      className="settings-row"
+                      style={{ flexWrap: 'wrap', gap: '0.35rem', marginTop: '0.35rem' }}
+                    >
+                      <a
+                        className="btn btn-secondary"
+                        href={main.externalUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {isHe ? 'פתח אתר רשמי' : 'Open official site'}
+                      </a>
+                    </div>
                   ) : null}
                   <PlaceRowActions placeId={placeId ?? undefined} isHe={isHe} />
                 </div>

@@ -35,6 +35,10 @@ export const ActivityStubSchema = z.object({
   startTime: z.string().optional(),
   endTime: z.string().optional(),
   bookingRef: z.string().optional(),
+  /** Wallet document ids to open from this activity (tickets, boarding, receipts). */
+  documentIds: z.array(z.string()).optional(),
+  /** External site for this activity (official booking / vignette / etc.). */
+  externalUrl: z.string().url().optional(),
   placeName: z.string().optional(),
   placeId: z.string().optional(),
   category: z
