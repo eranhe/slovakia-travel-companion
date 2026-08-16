@@ -231,9 +231,9 @@ export const destinationTips = [
     titleEn: 'Arrival day (17 Aug)',
     titleHe: 'יום הגעה (17/8)',
     bodyEn:
-      'TLV by ~04:00 · pocket card Arrivals→+1→Kaizen→P1 Sector E L5.5 · written Travel Permit + early-return + fuel/vignette · car photos · supermarket · Maladinovo PIN 0910 · soft lake only if energy remains.',
+      'Gett 03:00 (102307991) · FX desk · pocket card Arrivals→+1→Kaizen→P1 Sector E L5.5 · written Travel Permit + early-return + fuel/vignette · car photos · supermarket · Maladinovo PIN 0910 · soft lake only if energy remains.',
     bodyHe:
-      'נתב״ג בסביבות 04:00 · כרטיס כיס Arrivals←+1←Kaizen←P1 Sector E L5.5 · Travel Permit + החזרה מוקדמת + דלק/vignette בכתב · תמונות רכב · סופר · PIN מלאדינובו 0910 · אגם רק אם נשאר כוח.',
+      'Gett ב-03:00 (102307991) · דלפק מט״ח · כרטיס כיס Arrivals←+1←Kaizen←P1 Sector E L5.5 · Travel Permit + החזרה מוקדמת + דלק/vignette בכתב · תמונות רכב · סופר · PIN מלאדינובו 0910 · אגם רק אם נשאר כוח.',
   },
   {
     id: 'tip-departure',

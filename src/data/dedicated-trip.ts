@@ -34,10 +34,11 @@ export const dedicatedTripData = {
       lodgingPlaceId: 'place-maladinovo',
       imageId: 'place-airport',
       notes:
-        'Soft-landing day — do not pack attractions. Order: Bank Hapoalim desk cash (300 PLN + 200 EUR, already ordered) → flight → car desk → confirm/buy e-vignette on eznamka.sk if needed → lunch at Bacówka Chyżne near the border → Lidl or Tesco stock-up (room supplies) → Maladinovo check-in → optional lake → dinner at Bernard Pub → four day-bags + weather call for 18 Aug.',
+        'Soft-landing day — do not pack attractions. Order: Gett taxi 03:00 (booking 102307991) → Bank Hapoalim desk cash (300 PLN + 200 EUR) → flight → car desk → confirm/buy e-vignette on eznamka.sk if needed → lunch at Bacówka Chyżne near the border → Lidl or Tesco stock-up (room supplies) → Maladinovo check-in → optional lake → dinner at Bernard Pub → four day-bags + weather call for 18 Aug.',
       notesHe:
-        'יום נחיתה רכה — לא דוחסים אטרקציות. הסדר: משיכת מט״ח בדלפק בנק הפועלים בנתב״ג (300 זלוטי + 200€, כבר הוזמן) → טיסה → דלפק רכב → לאשר/לקנות e-vignette ב-eznamka.sk אם צריך → ארוחת צהריים ב-Bacówka Chyżne ליד הגבול → קניות בלידל או בטסקו (גם לחדר) → צ׳ק-אין במלאדינובו → אגם אם נשאר כוח → ארוחת ערב ב-Bernard Pub → ארבעה תיקי יום + החלטת מזג אוויר ל-18/8.',
+        'יום נחיתה רכה — לא דוחסים אטרקציות. הסדר: מונית Gett ב-03:00 (הזמנה 102307991) → משיכת מט״ח בדלפק בנק הפועלים בנתב״ג (300 זלוטי + 200€) → טיסה → דלפק רכב → לאשר/לקנות e-vignette ב-eznamka.sk אם צריך → ארוחת צהריים ב-Bacówka Chyżne ליד הגבול → קניות בלידל או בטסקו (גם לחדר) → צ׳ק-אין במלאדינובו → אגם אם נשאר כוח → ארוחת ערב ב-Bernard Pub → ארבעה תיקי יום + החלטת מזג אוויר ל-18/8.',
       activityIds: [
+        'act-gett-tlv',
         'act-tlv-cash-withdraw',
         'act-flight-out',
         'act-car-pickup',
@@ -126,9 +127,9 @@ export const dedicatedTripData = {
       lodgingPlaceId: 'place-maladinovo',
       imageId: 'place-sucha-bela',
       notes:
-        'Earliest start of the trip: wake 05:45, leave 06:10, in the gorge by ~07:40 before the ladder queues. Resort breakfast only starts 07:30 — prepare food the night before. One-way gorge, ~8.8 km loop, ~471 m ascent, 4–5 h with kids. Revital & Rotem decide in advance: resort day at Maladinovo or the flat Podlesok area. Back ~15:15 — consider laundry, then pack for tomorrow’s early transfer.',
+        'Earliest start of the trip: wake 05:45, leave 06:10, in the gorge by ~07:40 before the ladder queues. Resort breakfast only starts 07:30 — prepare food the night before. One-way gorge, ~8.8 km loop, ~471 m ascent, 4–5 h with kids. Revital & Rotem decide in advance: resort day at Maladinovo or the flat Podlesok area. Back ~15:15 — consider laundry, then pack for tomorrow’s early transfer. Resort tip: children’s animation runs Friday evenings — a soft option if energy remains.',
       notesHe:
-        'ההתחלה המוקדמת בטיול: השכמה 05:45, יציאה 06:10, בקניון עד ~07:40 לפני התורים בסולמות. ארוחת הבוקר בריזורט מתחילה רק ב-07:30 — להכין אוכל מהערב. הקניון חד-כיווני, מסלול ~8.8 ק״מ, ~471 מ׳ טיפוס, 4–5 שעות עם ילדים. רויטל ורותם מחליטות מראש: יום בריזורט במלאדינובו או האזור השטוח בפודלסוק. חוזרים ~15:15 — לשקול כביסה, ואז לארוז למעבר המוקדם של מחר.',
+        'ההתחלה המוקדמת בטיול: השכמה 05:45, יציאה 06:10, בקניון עד ~07:40 לפני התורים בסולמות. ארוחת הבוקר בריזורט מתחילה רק ב-07:30 — להכין אוכל מהערב. הקניון חד-כיווני, מסלול ~8.8 ק״מ, ~471 מ׳ טיפוס, 4–5 שעות עם ילדים. רויטל ורותם מחליטות מראש: יום בריזורט במלאדינובו או האזור השטוח בפודלסוק. חוזרים ~15:15 — לשקול כביסה, ואז לארוז למעבר המוקדם של מחר. טיפ מהריזורט: אנימציית ילדים בערבי שישי — אופציה רכה אם נשאר כוח.',
       activityIds: [
         'act-sucha-bela-drive',
         'act-maladinovo-easy-day',
@@ -269,6 +270,29 @@ export const dedicatedTripData = {
   activities: [
     // ── Day 0 · 17 Aug — arrival ────────────────────────────────────────────
     {
+      id: 'act-gett-tlv',
+      dayNumber: 0,
+      nameEn: 'Gett taxi to TLV',
+      nameHe: 'מונית Gett לנתב״ג',
+      startTime: '03:00',
+      endTime: '03:45',
+      status: 'confirmed',
+      category: 'transport',
+      flexibility: 'fixed',
+      placeId: 'place-tlv-airport',
+      placeName: 'Ben Gurion Airport (TLV)',
+      bookingRef: '102307991',
+      documentIds: ['doc-gett-tlv'],
+      indoorOutdoor: 'mixed',
+      weatherSensitivity: 'none',
+      imageId: 'place-drive',
+      externalUrl: 'https://gett.com/',
+      descriptionEn:
+        'Pre-booked Gett to Ben Gurion. Booking 102307991 · pickup 17 Aug 03:00. Edit / fare estimate / 24/7 support via the Gett order link. Arrive early enough for FX desk + security before LY5119 07:00.',
+      descriptionHe:
+        'מונית Gett מוזמנת מראש לנתב״ג. מספר הזמנה 102307991 · איסוף 17/8 ב-03:00. עריכה / מחיר משוער / נציג 24/7 דרך הזמנת Gett. להגיע מוקדם מספיק לדלפק מט״ח + בידוק לפני LY5119 ב-07:00.',
+    },
+    {
       id: 'act-tlv-cash-withdraw',
       dayNumber: 0,
       nameEn: 'Cash pickup — Bank Hapoalim desk (TLV)',
@@ -307,9 +331,9 @@ export const dedicatedTripData = {
       weatherSensitivity: 'none',
       imageId: 'place-airport',
       descriptionEn:
-        'Be at TLV by ~04:00 (3h before). Booking CPUFIH / Ayala 242265888. FLEX: 23 kg checked + 8 kg cabin each. Open boarding passes from Wallet / the link below on the activity.',
+        'Gett pickup at 03:00 (booking 102307991). Then FX desk + security for LY5119. Booking CPUFIH / Ayala 242265888. FLEX: 23 kg checked + 8 kg cabin each. Open boarding passes from Wallet / the activity link.',
       descriptionHe:
-        'להיות בנתב״ג בסביבות 04:00 (3 שעות לפני). הזמנה CPUFIH / איילה 242265888. FLEX: 23 ק״ג מזוודה + 8 ק״ג תיק יד לכל נוסע. כרטיסי עלייה למטוס בארנק / בקישור בפעילות.',
+        'איסוף Gett ב-03:00 (הזמנה 102307991). אחר כך דלפק מט״ח + בידוק ל-LY5119. הזמנה CPUFIH / איילה 242265888. FLEX: 23 ק״ג מזוודה + 8 ק״ג תיק יד לכל נוסע. כרטיסי עלייה למטוס בארנק / בקישור בפעילות.',
     },
     {
       id: 'act-car-pickup',
@@ -471,15 +495,15 @@ export const dedicatedTripData = {
       category: 'accommodation',
       flexibility: 'fixed',
       placeId: 'place-maladinovo',
-      placeName: 'Pri Zátoke 66/6, Liptovský Mikuláš',
+      placeName: 'Pri zátoke 66/6, Liptovský Mikuláš',
       bookingRef: '6299.313.025',
       indoorOutdoor: 'indoor',
       weatherSensitivity: 'none',
       imageId: 'place-resort',
       descriptionEn:
-        'Confirmation 6299.313.025 · PIN 0910. Window 15:00–19:30. Tell them the expected arrival time if delayed. Free parking on site.',
+        'Confirmation 6299.313.025 · PIN 0910. Reception in building no. 5 (Poludnica), in person or +421 914 160 160. Window 15:00–20:00. Resort is opposite Tatralandia (Pri zátoke 66/6). Call ahead for early/late (±€20 if available). Free parking on site.',
       descriptionHe:
-        'אישור 6299.313.025 · PIN 0910. חלון 15:00–19:30. לעדכן שעת הגעה אם מתעכבים. חניה חינם במקום.',
+        'אישור 6299.313.025 · PIN 0910. קבלה בבניין 5 (Poludnica), במקום או בטלפון ‎+421 914 160 160‎. חלון 15:00–20:00. הריזורט מול טטרלנדיה (Pri zátoke 66/6). להתקשר מראש על צ׳ק-אין מוקדם / צ׳ק-אאוט מאוחר (±20€ אם זמין). חניה חינם במקום.',
     },
     {
       id: 'act-liptovska-mara',
@@ -498,9 +522,9 @@ export const dedicatedTripData = {
       weatherSensitivity: 'high',
       imageId: 'place-liptovska-mara',
       descriptionEn:
-        'Do not commit to SUP in advance. If the car desk ran long or the kids are wiped — shore walk, ice cream and an early dinner are enough. There is a second, longer Mara afternoon on 19 Aug, so nothing is lost by cutting this short.',
+        'Do not commit to SUP in advance. SUP center on the lake is daily 10:00–18:00. If the car desk ran long or the kids are wiped — shore walk, ice cream and an early dinner are enough. There is a second, longer Mara afternoon on 19 Aug, so nothing is lost by cutting this short.',
       descriptionHe:
-        'אל תתחייבו לסאפ מראש. אם איסוף הרכב התארך או הילדים מותשים — הליכה על השפה, גלידה וארוחת ערב מוקדמת מספיקות. יש עוד אחה״צ ארוך במארה ב-19/8, כך שלא מפסידים כלום אם מקצרים.',
+        'אל תתחייבו לסאפ מראש. מרכז הסאפ באגם פתוח כל יום 10:00–18:00. אם איסוף הרכב התארך או הילדים מותשים — הליכה על השפה, גלידה וארוחת ערב מוקדמת מספיקות. יש עוד אחה״צ ארוך במארה ב-19/8, כך שלא מפסידים כלום אם מקצרים.',
     },
     {
       id: 'act-arrival-dinner',
@@ -720,9 +744,9 @@ export const dedicatedTripData = {
       weatherSensitivity: 'high',
       imageId: 'place-liptovska-mara',
       descriptionEn:
-        'Low-effort afternoon after the mountain: shore walk, swim, SUP rental by the hour if the water is calm. Off the water at the first thunder — the lake is exposed. Sunset over the water is the reward for the early start.',
+        'Low-effort afternoon after the mountain: shore walk, swim, SUP rental by the hour if the water is calm (SUP center daily 10:00–18:00). Off the water at the first thunder — the lake is exposed. Sunset over the water is the reward for the early start.',
       descriptionHe:
-        'אחה״צ בעומס נמוך אחרי ההר: הליכה על השפה, שחייה, השכרת סאפ לפי שעה אם המים רגועים. לצאת מהמים ברעם הראשון — האגם חשוף. השקיעה על המים היא הפרס על היציאה המוקדמת.',
+        'אחה״צ בעומס נמוך אחרי ההר: הליכה על השפה, שחייה, השכרת סאפ לפי שעה אם המים רגועים (מרכז סאפ כל יום 10:00–18:00). לצאת מהמים ברעם הראשון — האגם חשוף. השקיעה על המים היא הפרס על היציאה המוקדמת.',
     },
     {
       id: 'act-karting-monaco',
@@ -1735,21 +1759,21 @@ export const dedicatedTripData = {
       kind: 'check-in',
       titleEn: 'Online check-in — TLV → Kraków (LY5119)',
       titleHe: 'צ׳ק-אין מקוון — תל אביב ← קרקוב (LY5119)',
-      detailEn: 'Save boarding passes offline. Be at TLV by ~04:00 for the 07:00 flight.',
-      detailHe: 'לשמור כרטיסי עלייה אופליין. להיות בנתב״ג בסביבות 04:00 לטיסת 07:00.',
+      detailEn: 'Save boarding passes offline. Gett taxi pickup 03:00 (booking 102307991) for the 07:00 flight.',
+      detailHe: 'לשמור כרטיסי עלייה אופליין. מונית Gett ב-03:00 (הזמנה 102307991) לטיסת 07:00.',
     },
     {
       id: 'rem-leave-home-tlv',
       date: '2026-08-17',
-      time: '03:30',
+      time: '02:45',
       kind: 'prep',
       dayNumber: 0,
-      titleEn: 'Leave home for TLV — documents bag ready',
-      titleHe: 'לצאת מהבית לנתב״ג — תיק מסמכים מוכן',
+      titleEn: 'Gett pickup soon — documents bag ready',
+      titleHe: 'עוד מעט איסוף Gett — תיק מסמכים מוכן',
       detailEn:
-        'Passports, boarding passes, PassportCard 5814, rental voucher 751370640 + Kaizen 540586, physical + international driving licences, main-driver credit card (EUR 1,000 deposit), Maladinovo 6299.313.025 / PIN 0910, insurance 310823541, written early-return confirmation.',
+        'Gett booking 102307991 at 03:00. Passports, boarding passes, PassportCard 5814, rental voucher 751370640 + Kaizen 540586, physical + international driving licences, main-driver credit card (EUR 1,000 deposit), Maladinovo 6299.313.025 / PIN 0910, insurance 310823541, written early-return confirmation, FX pickup receipts.',
       detailHe:
-        'דרכונים, כרטיסי עלייה, PassportCard 5814, שובר רכב 751370640 + Kaizen 540586, רישיון ישראלי פיזי + בינלאומי, כרטיס אשראי של הנהג הראשי (פיקדון 1,000€), מלאדינובו 6299.313.025 / PIN 0910, ביטוח 310823541, אישור כתוב להחזרה מוקדמת.',
+        'הזמנת Gett 102307991 ב-03:00. דרכונים, כרטיסי עלייה, PassportCard 5814, שובר רכב 751370640 + Kaizen 540586, רישיון ישראלי פיזי + בינלאומי, כרטיס אשראי של הנהג הראשי (פיקדון 1,000€), מלאדינובו 6299.313.025 / PIN 0910, ביטוח 310823541, אישור כתוב להחזרה מוקדמת, אסמכתאות מט״ח.',
     },
     {
       id: 'rem-car-desk-checklist',
@@ -2058,6 +2082,24 @@ export const dedicatedTripData = {
       externalUrl: 'https://www.elal.com/',
     },
     {
+      id: 'doc-gett-tlv',
+      title: 'Gett taxi — home → TLV',
+      titleHe: 'מונית Gett — הבית ← נתב״ג',
+      category: 'transport',
+      mimeType: 'application/pdf',
+      dayNumber: 0,
+      bookingRef: '102307991',
+      createdAt: '2026-08-16T07:45:00.000Z',
+      hasBlob: false,
+      note: 'Pickup 17 Aug 03:00. Booking 102307991. Edit / estimate / 24/7 support in the Gett app or order page.',
+      noteHe:
+        'איסוף 17/8 ב-03:00. מספר הזמנה 102307991. עריכה / מחיר משוער / נציג 24/7 באפליקציית Gett או בדף ההזמנה.',
+      fileUrl: 'docs/originals/gett-tlv-booking.pdf',
+      summaryUrl: 'docs/gett-tlv.html',
+      qrValue: '102307991',
+      externalUrl: 'https://gett.com/',
+    },
+    {
       id: 'doc-tlv-cash',
       title: 'TLV cash pickup — 300 PLN + 200 EUR',
       titleHe: 'משיכת מט״ח בנתב״ג — 300 זלוטי + 200€',
@@ -2118,9 +2160,9 @@ Thank you.`,
       bookingRef: '6299.313.025',
       createdAt: '2026-08-07T13:17:35.086Z',
       hasBlob: false,
-      note: 'Check-in 17 Aug (15:00–19:30), check-out 22 Aug by 10:00 · 5 nights. PIN 0910. Pri Zátoke 66/6, Liptovský Mikuláš · +421 914 160 160. Free parking, no meals included.',
+      note: 'Check-in 17 Aug (15:00–20:00), check-out 22 Aug by 10:00 · 5 nights. PIN 0910. Reception building no. 5 (Poludnica). Pri zátoke 66/6, 031 05 Liptovský Mikuláš (opposite Tatralandia) · +421 914 160 160. Free parking, no meals included. Early/late check may cost €20 — ask ahead.',
       noteHe:
-        'צ׳ק-אין 17/8 (15:00–19:30), צ׳ק-אאוט 22/8 עד 10:00 · 5 לילות. קוד 0910. Pri Zátoke 66/6, Liptovský Mikuláš · ‎+421 914 160 160‎. חניה חינם, בלי ארוחות.',
+        'צ׳ק-אין 17/8 (15:00–20:00), צ׳ק-אאוט 22/8 עד 10:00 · 5 לילות. קוד 0910. קבלה בבניין 5 (Poludnica). Pri zátoke 66/6, 031 05 Liptovský Mikuláš (מול טטרלנדיה) · ‎+421 914 160 160‎. חניה חינם, בלי ארוחות. צ׳ק-אין מוקדם / צ׳ק-אאוט מאוחר עשויים לעלות 20€ — לשאול מראש.',
       fileUrl: 'docs/originals/lodging-maladinovo.pdf',
       summaryUrl: 'docs/lodging-maladinovo.html',
       qrValue: '6299.313.025',

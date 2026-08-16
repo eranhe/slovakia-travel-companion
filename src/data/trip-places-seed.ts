@@ -15,7 +15,7 @@ export const tripPlacesSeed: Place[] = [
     category: 'transport',
     addressEn: 'Ben Gurion Airport, Israel',
     dayNumbers: [0],
-    activityIds: ['act-flight-out', 'act-tlv-cash-withdraw'],
+    activityIds: ['act-flight-out', 'act-tlv-cash-withdraw', 'act-gett-tlv'],
     indoorOutdoor: 'indoor',
     privateLocation: false,
     imageId: 'place-airport',
@@ -96,9 +96,9 @@ export const tripPlacesSeed: Place[] = [
     category: 'attraction',
     websiteUrl: 'https://www.visitliptov.sk/',
     summaryEn:
-      'Slovakia’s largest reservoir, ~10 min from Maladinovo. Shore walks, swimming and hourly SUP rental. Visited twice: a soft landing on 17 Aug and a full afternoon on 19 Aug after Chopok.',
+      'Slovakia’s largest reservoir, ~10 min from Maladinovo. Shore walks, swimming and hourly SUP rental (SUP center daily 10:00–18:00). Visited twice: a soft landing on 17 Aug and a full afternoon on 19 Aug after Chopok.',
     summaryHe:
-      'המאגר הגדול בסלובקיה, ~10 דק׳ ממלאדינובו. הליכות על השפה, שחייה והשכרת סאפ לפי שעה. מבקרים פעמיים: נחיתה רכה ב-17/8 ואחה״צ מלא ב-19/8 אחרי חופוק.',
+      'המאגר הגדול בסלובקיה, ~10 דק׳ ממלאדינובו. הליכות על השפה, שחייה והשכרת סאפ לפי שעה (מרכז סאפ כל יום 10:00–18:00). מבקרים פעמיים: נחיתה רכה ב-17/8 ואחה״צ מלא ב-19/8 אחרי חופוק.',
     addressEn: 'Liptovská Mara reservoir, Slovakia',
     dayNumbers: [0, 2],
     activityIds: ['act-liptovska-mara', 'act-mara-afternoon'],
@@ -1132,7 +1132,7 @@ export const tripPlacesSeed: Place[] = [
       'First-night dinner inside Maladinovo Resort, with a children’s corner, outdoor terrace and playground. The kitchen currently lists dinner service from 17:00 to 21:00.',
     summaryHe:
       'ארוחת ערב ללילה הראשון בתוך ריזורט מלאדינובו, עם פינת ילדים, טרסה חיצונית ומגרש משחקים. המטבח מפרסם כרגע שירות ערב בין 17:00 ל-21:00.',
-    addressEn: 'Pri Zátoke 66/6, Liptovský Mikuláš, Slovakia',
+    addressEn: 'Pri zátoke 66/6, Liptovský Mikuláš, Slovakia',
     dayNumbers: [0],
     activityIds: ['act-arrival-dinner'],
     indoorOutdoor: 'mixed',
@@ -1164,7 +1164,7 @@ export const tripPlacesSeed: Place[] = [
     nameEn: 'Maladinovo Resort',
     nameHe: 'מלון מלאדינובו',
     category: 'accommodation',
-    addressEn: 'Pri Zátoke 66/6, Liptovský Mikuláš',
+    addressEn: 'Pri zátoke 66/6, 031 05 Liptovský Mikuláš',
     dayNumbers: [0, 1, 2, 3, 4, 5],
     activityIds: [
       'act-maladinovo-checkin',
@@ -1180,9 +1180,9 @@ export const tripPlacesSeed: Place[] = [
     imageId: 'place-resort',
     websiteUrl: 'https://www.maladinovo.sk/',
     summaryEn:
-      'Lakeside resort base for nights 17–21 Aug. Check-in PIN 0910 · free parking · breakfast served from 07:30 (too late for the 21 and 22 Aug early starts — pack food the night before). Rooms free until 10:00 on check-out day.',
+      'Lakeside resort opposite Tatralandia (nights 17–21 Aug). Reception building no. 5 · Poludnica · +421 914 160 160. Check-in 15:00–20:00 · PIN 0910 · free parking · breakfast from 07:30 (too late for 21/22 Aug early starts — pack food the night before). Rooms free until 10:00 on check-out. Early/late check may cost €20.',
     summaryHe:
-      'בסיס ליד האגם בלילות 17–21/8. PIN צ׳ק-אין 0910 · חניה חינם · ארוחת בוקר מ-07:30 (מאוחר מדי ליציאות המוקדמות ב-21 וב-22/8 — לארוז אוכל בערב שלפני). החדרים פנויים עד 10:00 ביום הצ׳ק-אאוט.',
+      'ריזורט מול טטרלנדיה (לילות 17–21/8). קבלה בבניין 5 · Poludnica · ‎+421 914 160 160‎. צ׳ק-אין 15:00–20:00 · PIN 0910 · חניה חינם · ארוחת בוקר מ-07:30 (מאוחר מדי ליציאות המוקדמות ב-21 וב-22/8 — לארוז אוכל בערב שלפני). החדרים פנויים עד 10:00 ביום הצ׳ק-אאוט. צ׳ק-אין מוקדם / צ׳ק-אאוט מאוחר עשויים לעלות 20€.',
     notes: 'Private accommodation — keep out of share exports.',
     notesHe: 'לינה פרטית — לא לכלול בשיתופים וייצוא.',
     forecastPoint: {
